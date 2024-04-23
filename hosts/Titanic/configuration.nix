@@ -96,13 +96,7 @@ services.xremap.config.modmap = [
     inherit config;
     inherit pkgs;
   };
-  home-manager.users.expressive-synapse = {
-    imports = [ 
-    ../../users/expressive-synapse/home.nix
-    inputs.nixvim.homeManagerModules.nixvim
-    ];
-
-  };
+  home-manager.users.expressive-synapse = import ../../users/expressive-synapse/home.nix;
   
   # Allow unfree packages
   nixpkgs.config.allowUnfree = true;

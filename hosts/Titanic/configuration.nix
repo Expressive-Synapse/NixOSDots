@@ -93,7 +93,6 @@ services.xremap.config.modmap = [
   home-manager.extraSpecialArgs = {
     inherit inputs;
     inherit flakeSettings;
-    inherit config;
     inherit pkgs;
   };
   home-manager.users.expressive-synapse = import ../../users/expressive-synapse/home.nix;

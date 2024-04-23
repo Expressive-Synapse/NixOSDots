@@ -20,8 +20,6 @@
       ./system/gnome-keyring.nix
 
       ./wm/hyprland.nix
-
-      ./nix-ld.nix
     ];
 
 services.xremap.config.modmap = [

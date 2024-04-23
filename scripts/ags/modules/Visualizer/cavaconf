@@ -1,0 +1,4 @@
+[output]
+method = raw
+raw_target = /dev/stdout
+data_format = ascii

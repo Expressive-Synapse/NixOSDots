@@ -2,7 +2,7 @@
 
   description = "my Primary flake";
   
-  outputs = inputs@{ self, nixpkgs, home-manager, nixpkgs-stable, home-manager-stable, nixvim, stylix, ... }:
+  outputs = inputs@{ self, nixpkgs, nixpkgs-stable, stylix, ... }:
     let
       flakeSettings = {
         system = "x86_64-linux"; # system architecture
@@ -24,6 +24,7 @@
       ${flakeSettings.hostname} = lib.nixosSystem {
 	      system = flakeSettings.system;
 	      modules = [
+    inputs.home-manager.nixosModules.home-manager
 	  inputs.sops-nix.nixosModules.sops
 	  inputs.xremap-flake.nixosModules.default
           ./hosts/${flakeSettings.hostname}/configuration.nix 
@@ -33,20 +34,6 @@
           inherit inputs;
           inherit flakeSettings;
         };
-      };
-    };
-
-    homeConfigurations = {
-      expressive-synapse = home-manager.lib.homeManagerConfiguration {
-	inherit pkgs;
-        modules = [
-         ./users/expressive-synapse/home.nix
-        ];
-
-        extraSpecialArgs = {
-          inherit inputs;
-          inherit flakeSettings;
-          };
       };
     };
   };

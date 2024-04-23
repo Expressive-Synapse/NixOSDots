@@ -2,7 +2,7 @@
 # your system.  Help is available in the configuration.nix(5) man page
 # and in the NixOS manual (accessible by running ‘nixos-help’).
 
-{ inputs, config, pkgs, ... }:
+{ inputs, config, pkgs, flakeSettings, ... }:
 
 {
   imports =
@@ -77,13 +77,28 @@ services.xremap.config.modmap = [
     xkb.variant = "";
   };
 
+  sops.defaultSopsFile = ../../secrets/secrets.yaml;
+  sops.defaultSopsFormat = "yaml";
+
+  sops.age.keyFile = "/home/expressive-synapse/Documents/Keys/sops-key.txt";
+  sops.secrets."users/expressive-synapse/accountpass" = { };
+  
   # Define a user account. Don't forget to set a password with ‘passwd’.
   users.users.expressive-synapse = {
     isNormalUser = true;
+    initialPassword = config.sops.secrets."users/expressive-synapse/accountpass".path;
     uid = 1000;
     description = "Connor Goff";
     extraGroups = [ "networkmanager" "wheel" ];
   };
+
+  home-manager.extraSpecialArgs = {
+    inherit inputs;
+    inherit flakeSettings;
+    inherit config;
+    inherit pkgs;
+  };
+  home-manager.users.expressive-synapse = import ../../users/expressive-synapse/home.nix;
   
   # Allow unfree packages
   nixpkgs.config.allowUnfree = true;

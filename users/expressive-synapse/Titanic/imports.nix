@@ -16,5 +16,6 @@ imports = [
   ./winOnLinux.nix
   ./officeTools.nix
   ./pirateTools.nix
+  ./virtualBox.nix
 ];
 }

@@ -25,6 +25,8 @@
 	      system = flakeSettings.system;
 	      modules = [
     inputs.home-manager.nixosModules.home-manager
+    inputs.disko.nixosModules.default
+    inputs.impermanence.nixosModules.impermanence
 	  inputs.sops-nix.nixosModules.sops
 	  inputs.xremap-flake.nixosModules.default
           ./hosts/${flakeSettings.hostname}/configuration.nix 
@@ -50,6 +52,11 @@
 
     sops-nix.url = "github:Mic92/sops-nix";
     sops-nix.inputs.nixpkgs.follows = "nixpkgs";
+
+    disko.url = "github:nix-community/disko";
+    disko.inputs.nixpkgs.follows = "nixpkgs";
+
+    impermanence.url = "github:nix-community/impermanence";
 
     stylix.url = "github:danth/stylix";
 

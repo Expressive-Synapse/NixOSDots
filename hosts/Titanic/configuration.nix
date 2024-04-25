@@ -20,6 +20,8 @@
       ./system/gnome-keyring.nix
 
       ./wm/hyprland.nix
+
+      ./virtualbox.nix
     ];
 
   # Bootloader.

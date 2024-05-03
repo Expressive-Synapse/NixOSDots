@@ -17,5 +17,10 @@ programs.bash = {
       [[ \${BLE_VERSION-} ]] && ble-attach";
   
 };
+home.persistence."/persist/home/expressive-synapse" = {
+  directories = [
+    ".local/share/atuin"
+  ];
+};
 
 }

@@ -34,8 +34,8 @@ wayland.windowManager.hyprland.settings = {
 
   exec-once = [
     "ags"
-    "foot --server"
     "tmux"
+    "foot --server"
   ];
 
   "$mod" = "SUPER";

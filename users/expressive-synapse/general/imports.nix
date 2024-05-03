@@ -9,6 +9,7 @@ imports = [
   ./termSystemUtils.nix
   ./shell/bash.nix
   ./tmux.nix
+  ./lf.nix
 ];
 
 }

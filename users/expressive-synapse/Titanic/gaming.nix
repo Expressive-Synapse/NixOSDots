@@ -3,7 +3,7 @@
 {
 home.persistence."/persist/home/expressive-synapse" = {
   directories = [
-    ".steam"
+   # ".steam"
     ".local/share/Steam"
   ];
 };

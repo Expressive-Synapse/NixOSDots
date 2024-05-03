@@ -6,6 +6,10 @@ home.persistence."/persist/home/expressive-synapse" = {
     ".steam"
     ".local/share/Steam"
   ];
+  files = [
+    ".steampath"
+    ".steampid"
+  ];
 };
 }
 

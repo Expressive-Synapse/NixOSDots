@@ -16,7 +16,7 @@ in
 #FileSystem#
 #
 
-home.persistence."/persist/home" = {
+home.persistence."/persist/home/expressive-synapse" = {
   directories = [
     "Pictures"
     "Documents"

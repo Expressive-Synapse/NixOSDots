@@ -8,6 +8,7 @@ home.packages = with pkgs; [
   home.persistence."/persist/home/expressive-synapse" = {
   directories = [
     ".local/share/protonmail"
+    ".config/protonmail"
   ];
 };
 }

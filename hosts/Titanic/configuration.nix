@@ -2,12 +2,13 @@
 # your system.  Help is available in the configuration.nix(5) man page
 # and in the NixOS manual (accessible by running ‘nixos-help’).
 
-{ inputs, config, pkgs, flakeSettings, ... }:
+{ inputs, config, lib, pkgs, flakeSettings, ... }:
 
 {
   imports =
     [ # Include the results of the hardware scan.
       ./hardware/hardware-configuration.nix
+      ./hardware/disko.nix
 
       ./netsec/firewall.nix
       ./netsec/syncthing.nix
@@ -25,11 +26,39 @@
     ];
 
   # Bootloader.
-  boot.loader.systemd-boot.enable = true;
+  boot.loader.grub.enable = true;
+  boot.loader.grub.efiSupport = true;
+  boot.loader.efi.efiSysMountPoint = "/boot/efi";
   boot.loader.efi.canTouchEfiVariables = true;
+  boot.loader.grub.device = "dev/sda";
 
-  boot.initrd.luks.devices."luks-33a2bcd5-4e13-4fd4-82c9-867f7f411a6f".device = "/dev/disk/by-uuid/33a2bcd5-4e13-4fd4-82c9-867f7f411a6f";
+###################################################
+#                    FileSystem                   #
+###################################################
+boot.initrd.postDeviceCommands = lib.mkAfter ''
+    mkdir /btrfs_tmp
+    mount /dev/root_vg/root /btrfs_tmp
+    if [[ -e /btrfs_tmp/root ]]; then
+        mkdir -p /btrfs_tmp/old_roots
+        timestamp=$(date --date="@$(stat -c %Y /btrfs_tmp/root)" "+%Y-%m-%-d_%H:%M:%S")
+        mv /btrfs_tmp/root "/btrfs_tmp/old_roots/$timestamp"
+    fi
 
+    delete_subvolume_recursively() {
+        IFS=$'\n'
+        for i in $(btrfs subvolume list -o "$1" | cut -f 9- -d ' '); do
+            delete_subvolume_recursively "/btrfs_tmp/$i"
+        done
+        btrfs subvolume delete "$1"
+    }
+
+    for i in $(find /btrfs_tmp/old_roots/ -maxdepth 1 -mtime +30); do
+        delete_subvolume_recursively "$i"
+    done
+
+    btrfs subvolume create /btrfs_tmp/root
+    umount /btrfs_tmp
+  '';
 ###################################################
 #                     Network                     #
 ###################################################

@@ -7,9 +7,25 @@ in
 {
   imports = [
   ./general/imports.nix
+  inputs.impermanence.nixosModules.home-manager.impermanence
   (./. + ("/" + flakeSettings.hostname) + "/imports.nix")
   (./. + ("/../../themes/" + userSettings.theme) + "/stylix.nix")
   ];
+
+#
+#FileSystem#
+#
+
+home.persistence."/persist/home" = {
+  directories = [
+    "Pictures"
+    "Documents"
+    "Videos"
+    ".ssh"
+    ".local/share/keyrings"
+  ];
+  allowOther= true;
+};
   
 ###################################################
 #                   Packages                      #

@@ -28,16 +28,16 @@
   # Bootloader.
   boot.loader.grub.enable = true;
   boot.loader.grub.efiSupport = true;
-  boot.loader.efi.efiSysMountPoint = "/boot/efi";
-  boot.loader.efi.canTouchEfiVariables = true;
-  boot.loader.grub.device = "dev/sda";
+#  boot.loader.efi.efiSysMountPoint = "/boot";
+#  boot.loader.efi.canTouchEfiVariables = true;
+  boot.loader.grub.device = "/dev/sda";
 
 ###################################################
 #                    FileSystem                   #
 ###################################################
 boot.initrd.postDeviceCommands = lib.mkAfter ''
     mkdir /btrfs_tmp
-    mount /dev/root_vg/root /btrfs_tmp
+    mount /dev/mapper/main /btrfs_tmp
     if [[ -e /btrfs_tmp/root ]]; then
         mkdir -p /btrfs_tmp/old_roots
         timestamp=$(date --date="@$(stat -c %Y /btrfs_tmp/root)" "+%Y-%m-%-d_%H:%M:%S")
@@ -59,6 +59,14 @@ boot.initrd.postDeviceCommands = lib.mkAfter ''
     btrfs subvolume create /btrfs_tmp/root
     umount /btrfs_tmp
   '';
+
+fileSystems."/persist".neededForBoot = true;
+environment.persistence."/persist/system" = {
+  hideMounts = true;
+  directories = [
+    "/etc/nixos"
+  ];
+};
 ###################################################
 #                     Network                     #
 ###################################################
@@ -94,17 +102,18 @@ boot.initrd.postDeviceCommands = lib.mkAfter ''
 
 /*---------------expressive-synapse--------------*/
 
-sops.age.keyFile = "/home/expressive-synapse/Documents/Keys/sops-key.txt";
+sops.age.keyFile = "/persist/Keys/sops-key.txt";
 sops.secrets."users/expressive-synapse/accountpass" = { };
 
 users.users.expressive-synapse = {
   isNormalUser = true;
-  initialPassword = config.sops.secrets."users/expressive-synapse/accountpass".path;
+#  initialPassword = config.sops.secrets."users/expressive-synapse/accountpass".path;
+  initialPassword = "temp";
   uid = 1000;
   description = "Connor Goff";
   extraGroups = [ "networkmanager" "wheel" ];
 };
-
+programs.fuse.userAllowOther = true;
 home-manager.extraSpecialArgs = {
   inherit inputs;
   inherit flakeSettings;

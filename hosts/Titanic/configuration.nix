@@ -23,6 +23,7 @@
       ./wm/hyprland.nix
 
       ./virtualbox.nix
+      ./gaming.nix
     ];
 
   # Bootloader.

@@ -104,12 +104,14 @@ environment.persistence."/persist/system" = {
 /*---------------expressive-synapse--------------*/
 
 sops.age.keyFile = "/persist/Keys/sops-key.txt";
-sops.secrets."users/expressive-synapse/accountpass" = { };
+sops.secrets."users/expressive-synapse/accountpass" = {
+  neededForUsers = true;
+
+};
 
 users.users.expressive-synapse = {
   isNormalUser = true;
-#  initialPassword = config.sops.secrets."users/expressive-synapse/accountpass".path;
-  initialPassword = "temp";
+  hashedPasswordFile = config.sops.secrets."users/expressive-synapse/accountpass".path;
   uid = 1000;
   description = "Connor Goff";
   extraGroups = [ "networkmanager" "wheel" ];

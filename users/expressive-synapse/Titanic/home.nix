@@ -1,8 +1,24 @@
-{ config, pkgs, inputs, ... }:
+{ ... }:
 
 {
-  imports = [
-  ];
+imports = [
+  ../../../themes/Catppucchin-Mocha/stylix.nix
+
+  ./terminal/foot.nix
+  
+  ./wm/hyprland.nix
+
+  ./netsec/proton.nix
+
+  ./deviceInterfacing.nix
+  ./firefox.nix
+  ./keepass.nix
+  ./vesktop.nix
+  ./gaming.nix
+  ./winOnLinux.nix
+  ./officeTools.nix
+  ./pirateTools.nix
+];
 
 ###################################################
 #                   FileSystem                    #
@@ -13,8 +29,6 @@ home.persistence."/persist/home/expressive-synapse" = {
     "Pictures"
     "Documents"
     "Videos"
-    ".ssh"
-    ".local/share/keyrings"
   ];
   allowOther= true;
 };
@@ -33,4 +47,5 @@ home.homeDirectory = "/home/expressive-synapse";
 programs.home-manager.enable = false;
 
 home.stateVersion = "23.11"; # Please read the comment before changing.
+
 }

@@ -4,16 +4,11 @@
   
   outputs = inputs@{ self, nixpkgs, nixpkgs-stable, stylix, ... }:
     let
-      flakeSettings = {
-        system = "x86_64-linux"; # system architecture
-        hostname = "Titanic"; # system hostname
-      };
-
       lib = nixpkgs.lib;
-      pkgs = nixpkgs.legacyPackages.${flakeSettings.system};
+      pkgs = nixpkgs.legacyPackages."x86_64-linux";
 
       pkgs-stable = import nixpkgs-stable {
-        system = flakeSettings.system;
+        system = "x86_64-linux";
       	config = {
 	        allowUnfree = true;
 	        allowUnfreePredicate = (_: true);
@@ -21,20 +16,19 @@
       };
     in {
     nixosConfigurations = {
-      ${flakeSettings.hostname} = lib.nixosSystem {
-	      system = flakeSettings.system;
+      "Titanic" = lib.nixosSystem {
+	      system = "x86_64-linux";
 	      modules = [
     inputs.home-manager.nixosModules.home-manager
     inputs.disko.nixosModules.default
     inputs.impermanence.nixosModules.impermanence
 	  inputs.sops-nix.nixosModules.sops
 	  inputs.xremap-flake.nixosModules.default
-          ./hosts/${flakeSettings.hostname}/configuration.nix 
+          ./hosts/Titanic/configuration.nix 
         ];
       
         specialArgs = {
           inherit inputs;
-          inherit flakeSettings;
         };
       };
     };

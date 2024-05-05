@@ -2,7 +2,7 @@
 # your system.  Help is available in the configuration.nix(5) man page
 # and in the NixOS manual (accessible by running ‘nixos-help’).
 
-{ inputs, config, lib, pkgs, flakeSettings, ... }:
+{ inputs, config, lib, pkgs, ... }:
 
 {
   imports =
@@ -119,10 +119,15 @@ users.users.expressive-synapse = {
 programs.fuse.userAllowOther = true;
 home-manager.extraSpecialArgs = {
   inherit inputs;
-  inherit flakeSettings;
   inherit pkgs;
 };
-home-manager.users.expressive-synapse = import ../../users/expressive-synapse/home.nix;
+home-manager.users.expressive-synapse = {
+  imports = [ 
+    inputs.impermanence.nixosModules.home-manager.impermanence
+    ../../users/expressive-synapse/general/home.nix
+    ../../users/expressive-synapse/TItanic/home.nix
+  ];
+};
 
 ###################################################
 #                    Packages                     #

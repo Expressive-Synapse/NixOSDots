@@ -1,8 +1,16 @@
-{ config, pkgs, inputs, ... }:
+{ ... }:
 
 {
-  imports = [
-  ];
+
+imports = [
+  ./git.nix
+  ./nixvim.nix
+  ./termFileManager.nix
+  ./termSystemUtils.nix
+  ./shell/bash.nix
+  ./tmux.nix
+  ./lf.nix
+];
 
 ###################################################
 #                   FileSystem                    #
@@ -10,9 +18,6 @@
 
 home.persistence."/persist/home/expressive-synapse" = {
   directories = [
-    "Pictures"
-    "Documents"
-    "Videos"
     ".ssh"
     ".local/share/keyrings"
   ];
@@ -33,4 +38,6 @@ home.homeDirectory = "/home/expressive-synapse";
 programs.home-manager.enable = false;
 
 home.stateVersion = "23.11"; # Please read the comment before changing.
+
+
 }

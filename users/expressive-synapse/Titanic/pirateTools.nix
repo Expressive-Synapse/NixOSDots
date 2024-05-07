@@ -8,4 +8,11 @@ home.packages = with pkgs; [
   onthespot
   picard
 ];
+
+home.persistence."/persist/home/expressive-synapse" = {
+  directories = [
+    ".config/casualOnTheSpot"
+    ".config/qBittorrent"
+  ];
+};
 }

@@ -125,7 +125,7 @@ home-manager.users.expressive-synapse = {
   imports = [ 
     inputs.impermanence.nixosModules.home-manager.impermanence
     ../../users/expressive-synapse/general/home.nix
-    ../../users/expressive-synapse/TItanic/home.nix
+    ../../users/expressive-synapse/Titanic/home.nix
   ];
 };
 

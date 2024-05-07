@@ -1,7 +1,9 @@
 { pkgs, inputs, ... }:
 
 {
-
+imports = [
+  inputs.hyprland.nixosModules.default
+];
 /*-------------------hyprland--------------------*/
 programs = {
   hyprland = {

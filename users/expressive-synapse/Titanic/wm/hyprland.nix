@@ -4,6 +4,7 @@
 
 imports = [
   inputs.ags.homeManagerModules.default
+  inputs.hyprland.homeManagerModules.default
 ];
 
 home.packages = with pkgs; [

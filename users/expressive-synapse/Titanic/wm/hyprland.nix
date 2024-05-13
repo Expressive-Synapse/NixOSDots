@@ -36,7 +36,7 @@ wayland.windowManager.hyprland.settings = {
   exec-once = [
     "ags"
     "runuser -l expressive-synapse -c 'foot --server'"
-    "runuser -l expressive-synapse -c 'foot --server tmux'"
+    "runuser -l expressive-synapse -c 'zellij --session main'"
 
   ];
 
@@ -45,7 +45,8 @@ wayland.windowManager.hyprland.settings = {
    # Application Controls #
     "$mod, M, exec, hyprctl dispatch exit 1" # exit desktop
     "$mod SHIFT, Q, killactive," # close window
-    "$mod, RETURN, exec, footclient tmux attach" # open terminal
+    "$mod, RETURN, exec, footclient zellij attach main" # open terminal
+    "$mod SHIFT, RETURN, exec, footclient zellij --session main" # open terminal with new session
     "$mod, SPACE, exec, rofi -show drun" # open app launcher
     "$mod SHIFT, SPACE, exec, rofi -show run" #open program launcher
 

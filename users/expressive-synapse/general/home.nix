@@ -8,7 +8,7 @@ imports = [
   ./termFileManager.nix
   ./termSystemUtils.nix
   ./shell/bash.nix
-  ./tmux.nix
+  ./zellij.nix
   ./lf.nix
 ];
 

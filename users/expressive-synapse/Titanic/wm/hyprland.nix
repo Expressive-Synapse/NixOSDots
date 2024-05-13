@@ -35,7 +35,9 @@ wayland.windowManager.hyprland.settings = {
 
   exec-once = [
     "ags"
+    "runuser -l expressive-synapse -c 'foot --server'"
     "runuser -l expressive-synapse -c 'foot --server tmux'"
+
   ];
 
   "$mod" = "SUPER";

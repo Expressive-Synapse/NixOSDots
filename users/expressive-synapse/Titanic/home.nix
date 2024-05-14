@@ -7,6 +7,7 @@ imports = [
   ./terminal/foot.nix
   
   ./wm/hyprland.nix
+  ./wm/sway.nix
 
   ./netsec/proton.nix
 

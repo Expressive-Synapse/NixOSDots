@@ -20,12 +20,12 @@ wayland.windowManager.sway.extraConfig = "
 wayland.windowManager.sway.config.output = {
   DP-3 = {
     mode = "2560x1440@164Hz";
-    position = "0 0";
+    position = "1080 215";
     power = "on";
   };
   HDMI-A-1 = {
     mode = "1920x1080@60Hz";
-    position = "-1080 -215";
+    position = "0 0";
     transform = "270";
     power = "on";
   };
@@ -35,6 +35,7 @@ wayland.windowManager.sway.config = {
   modifier = "Mod4";
   menu = "bemenu-run";
   terminal = "footclient zellij attach primary";
+  window.titlebar = false;
 };
 
 wayland.windowManager.sway.config.keybindings =

@@ -78,6 +78,12 @@ environment.persistence."/persist/system" = {
   networking.networkmanager.enable = true;
 
 ###################################################
+#                    Security                     #
+###################################################
+
+security.polkit.enable = true;
+
+###################################################
 #                    Location                     #
 ###################################################
   # Set your time zone.

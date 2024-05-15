@@ -1,20 +1,32 @@
-{ pkgs, config, lib, ... }:
+{ pkgs, config, lib, modulesPath, ... }:
 
 {
+
+imports = [ 
+  (d: import "${modulesPath}/services/window-managers/i3-sway/sway.nix" (d // { pkgs = d.pkgs // { 
+    xvfb-run = pkgs.writeShellScriptBin "xvfb-run" "exit 0"; 
+  }; }))
+];
+
+disabledModules = ["services/window-managers/i3-sway/sway.nix"];
 
 home.packages = with pkgs; [
   autotiling
   swaysome
+  swayfx
 ];
 
 wayland.windowManager.sway.enable = true;
+wayland.windowManager.sway.package = pkgs.swayfx;
 wayland.windowManager.sway.extraConfig = "
   
   exec swaysome init 1 \n
   exec autotiling \n 
   exec waybar \n
   exec foot --server \n
-  exec zellij --session primary 
+  exec zellij --session primary \n 
+
+  corner_radius 5
 
 ";
 wayland.windowManager.sway.config.output = {
@@ -36,6 +48,11 @@ wayland.windowManager.sway.config = {
   menu = "bemenu-run";
   terminal = "footclient zellij attach primary";
   window.titlebar = false;
+};
+
+wayland.windowManager.sway.config.gaps = {
+  inner = 10;
+  outer = 5;
 };
 
 wayland.windowManager.sway.config.keybindings =

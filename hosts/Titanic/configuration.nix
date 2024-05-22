@@ -14,6 +14,7 @@
       ./netsec/syncthing.nix
       ./netsec/sambamount.nix
       ./netsec/wireguard.nix
+      ./netsec/clamAV.nix
 
       ./system/wayland.nix
       ./system/pipewire.nix

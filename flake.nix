@@ -19,14 +19,27 @@
       "Titanic" = lib.nixosSystem {
 	      system = "x86_64-linux";
 	      modules = [
-    inputs.home-manager.nixosModules.home-manager
-    inputs.disko.nixosModules.default
-    inputs.impermanence.nixosModules.impermanence
-	  inputs.sops-nix.nixosModules.sops
-	  inputs.xremap-flake.nixosModules.default
+          inputs.home-manager.nixosModules.home-manager
+          inputs.disko.nixosModules.default
+          inputs.impermanence.nixosModules.impermanence
+          inputs.sops-nix.nixosModules.sops
+          inputs.xremap-flake.nixosModules.default
           ./hosts/Titanic/configuration.nix 
-        ];
-      
+        ]; 
+        specialArgs = {
+          inherit inputs;
+        };
+      };
+      "ServerBoy" = lib.nixosSystem {
+	      system = "x86_64-linux";
+	      modules = [
+          inputs.home-manager.nixosModules.home-manager
+          inputs.disko.nixosModules.default
+          inputs.impermanence.nixosModules.impermanence
+          inputs.sops-nix.nixosModules.sops
+          inputs.xremap-flake.nixosModules.default
+          ./hosts/ServerBoy/configuration.nix 
+        ]; 
         specialArgs = {
           inherit inputs;
         };

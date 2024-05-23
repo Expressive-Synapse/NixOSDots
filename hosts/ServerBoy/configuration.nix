@@ -71,6 +71,8 @@ environment.persistence."/persist/system" = {
   # Enable networking
   networking.networkmanager.enable = true;
 
+  services.openssh.enable = true;
+
 ###################################################
 #                    Location                     #
 ###################################################

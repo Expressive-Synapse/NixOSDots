@@ -17,7 +17,7 @@
 
       listenPort = 51820;
 
-      privateKeyFile = "/Persist/Keys/Wireguard/serverboy-privatekey";
+      privateKeyFile = "/persist/Keys/WireGuard/serverboy-privatekey";
 
       peers = [
         {#Titanic

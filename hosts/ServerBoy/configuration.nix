@@ -59,7 +59,6 @@ environment.persistence."/persist/system" = {
   hideMounts = true;
   directories = [
     "/etc/nixos"
-    "/samba"
   ];
 };
 ###################################################
@@ -134,6 +133,7 @@ home-manager.users.expressive-synapse = {
     git
     sops
     nix-index
+    upower
   ];
 
 ###################################################

@@ -41,6 +41,7 @@ networking.firewall.allowPing = true;
 environment.persistence."/persist/system" = {
   hideMounts = true;
   directories = [
+    "/samba"
     "/var/lib/samba"
   ];
 };

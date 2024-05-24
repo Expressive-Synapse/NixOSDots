@@ -37,4 +37,13 @@ services.samba = {
 networking.firewall.enable = true;
 networking.firewall.allowPing = true;
 
+
+environment.persistence."/persist/system" = {
+  hideMounts = true;
+  directories = [
+    "/var/lib/samba"
+  ];
+};
+
+
 }

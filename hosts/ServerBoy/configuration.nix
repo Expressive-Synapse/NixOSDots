@@ -9,6 +9,8 @@
     [ # Include the results of the hardware scan.
       ./hardware/hardware-configuration.nix
       ./hardware/disko.nix
+
+      ./system/upower.nix
       
       ./netsec/clamAV.nix
       ./netsec/samba.nix
@@ -59,6 +61,7 @@ environment.persistence."/persist/system" = {
   hideMounts = true;
   directories = [
     "/etc/nixos"
+    "/etc/ssh"
   ];
 };
 ###################################################

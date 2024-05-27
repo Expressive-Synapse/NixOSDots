@@ -22,12 +22,12 @@
       peers = [
         {#Titanic
         publicKey = "07K9yYdRC2eqRU2TCajFaddWDuOHC6YDdVsgbmm5MC8=";
-        allowedIPs = [ "10.0.0.2/32" ];
+        allowedIPs = [ "10.0.0.2/8" ];
         }
 
         {#Pixel 7 Pro
         publicKey = "9Ai7ipGaCF33dJwBOFV7pk/Tm0gufefiRymi3/RdMH8=";
-        allowedIPs = [ "10.0.0.3/32" ];
+        allowedIPs = [ "10.0.0.3/8" ];
         }
       ];      
     };

@@ -5,6 +5,7 @@ imports = [
   ../../../themes/Catppucchin-Mocha/stylix.nix
 
   ./terminal/foot.nix
+  ./terminal/alacritty.nix
   
   ./wm/hyprland.nix
   ./wm/sway.nix

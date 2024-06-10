@@ -9,6 +9,7 @@ home.persistence."/persist/home/expressive-synapse" = {
   directories = [
    # ".steam"
     ".local/share/Steam"
+    ".local/share/prismlauncher"
   ];
 };
 }

@@ -2,6 +2,6 @@
 
 {
 environment.systemPackages = with pkgs; [
- jdk8
+ jdk11
 ];
 }

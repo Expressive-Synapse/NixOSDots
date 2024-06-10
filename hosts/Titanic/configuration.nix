@@ -20,7 +20,6 @@
       ./system/pipewire.nix
       ./system/dbus.nix
       ./system/gnome-keyring.nix
-      ./system/java.nix
 
       ./wm/hyprland.nix
 

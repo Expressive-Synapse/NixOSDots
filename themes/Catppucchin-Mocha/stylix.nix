@@ -10,6 +10,9 @@ in
 imports = [
   inputs.stylix.homeManagerModules.stylix
   ];
+
+stylix.enable = true;
+
 stylix.image = pkgs.fetchurl {
   url = wallpaperUrl;
   sha256 = wallpaperSha256;

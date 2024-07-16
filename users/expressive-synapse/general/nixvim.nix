@@ -203,8 +203,7 @@ action = "<cmd>:Neotree buffers reveal float<CR>";
 options.desc = "format code";
 mode = [ "n" ];
 key = "<leader>cf";
-lua = true;
-action = "vim.lsp.buf.format";
+action.__raw = "vim.lsp.buf.format";
 }
 /*------------------zenmode---------------------*/
 {

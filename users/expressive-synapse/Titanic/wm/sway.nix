@@ -23,7 +23,6 @@ wayland.windowManager.sway.extraConfig = "
   exec swaysome init 1 \n
   exec autotiling \n 
   exec waybar \n
-  exec foot --server \n
   exec zellij --session primary \n 
 
   corner_radius 5
@@ -46,7 +45,7 @@ wayland.windowManager.sway.config.output = {
 wayland.windowManager.sway.config = { 
   modifier = "Mod4";
   menu = "bemenu-run";
-  terminal = "footclient zellij attach primary";
+  terminal = "alacritty -e zellij attach primary";
   window.titlebar = false;
 };
 

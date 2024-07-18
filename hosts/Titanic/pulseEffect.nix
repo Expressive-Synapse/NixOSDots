@@ -4,6 +4,6 @@
 
  programs.dconf.enable = true;
 
- programs.pulseeffects.enable = true;
+ services.pulseeffects.enable = true;
 
 }

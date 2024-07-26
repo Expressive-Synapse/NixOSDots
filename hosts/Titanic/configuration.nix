@@ -25,7 +25,6 @@
 
       ./virtualbox.nix
       ./gaming.nix
-      ./pulseEffect.nix
     ];
 
   # Bootloader.

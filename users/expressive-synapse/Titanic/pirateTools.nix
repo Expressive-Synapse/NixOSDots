@@ -14,7 +14,7 @@ home.persistence."/persist/home/expressive-synapse" = {
   directories = [
     ".config/casualOnTheSpot"
     ".config/qBittorrent"
-    ".local/qBittorrent"
+    ".local/share/qBittorrent"
     "Downloads/torrents"
   ];
 };

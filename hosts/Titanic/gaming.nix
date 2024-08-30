@@ -25,5 +25,7 @@ nixpkgs.config.packageOverrides = pkgs: {
  programs.steam.enable = true;
  programs.steam.gamescopeSession.enable = true;
  programs.gamemode.enable = true;
+
+ services.xserver.desktopManager.retroarch.enable = true;
  
 }

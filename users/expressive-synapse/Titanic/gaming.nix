@@ -10,6 +10,7 @@ home.persistence."/persist/home/expressive-synapse" = {
    # ".steam"
     ".local/share/Steam"
     ".local/share/PrismLauncher"
+    ".config/retroarch"
   ];
 };
 }

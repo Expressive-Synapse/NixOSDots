@@ -20,6 +20,13 @@ nixpkgs.config.packageOverrides = pkgs: {
 
  environment.systemPackages = with pkgs; [
   mangohud
+  (retroarch.override {
+    cores = with libretro; [
+      genesis-plus-gx
+      snes9x
+      beetle-psx-hw
+    ];
+  })
  ];
 
  programs.steam.enable = true;

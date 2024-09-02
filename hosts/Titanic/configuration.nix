@@ -25,6 +25,7 @@
 
       ./virtualbox.nix
       ./gaming.nix
+      ./vesktop.nix
     ];
 
   # Bootloader.

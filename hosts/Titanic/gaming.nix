@@ -25,6 +25,8 @@ nixpkgs.config.packageOverrides = pkgs: {
       genesis-plus-gx
       snes9x
       beetle-psx-hw
+      dolphin
+      mupen64plus
     ];
   })
  ];

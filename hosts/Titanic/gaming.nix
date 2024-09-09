@@ -28,6 +28,7 @@ nixpkgs.config.packageOverrides = pkgs: {
       dolphin
       mupen64plus
       mgba
+      beetle-pce
     ];
   })
  ];

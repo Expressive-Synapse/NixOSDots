@@ -23,6 +23,7 @@
 
       ./wm/hyprland.nix
 
+      ./deviceInterfacing.nix
       ./virtualbox.nix
       ./gaming.nix
       ./vesktop.nix

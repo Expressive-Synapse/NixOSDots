@@ -6,6 +6,7 @@ environment.systemPackages = with pkgs; [
   simple-mtpfs
   via
   piper
+  usbutils
 ];
 
 services.ratbagd.enable = true;

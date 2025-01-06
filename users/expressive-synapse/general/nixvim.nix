@@ -25,6 +25,10 @@ programs.nixvim.opts = {
 ###################################################
 #              Plugins Configuration              #
 ###################################################
+/*-----------------web-devicons-----------------*/
+programs.nixvim.plugins.web-devicons = {
+  enable = true;
+};
 /*------------------autoclose-------------------*/
 programs.nixvim.plugins.autoclose = {
   enable = true;
@@ -77,9 +81,9 @@ programs.nixvim.plugins.luasnip = {
 programs.nixvim.plugins.lsp = {
   enable = true;
   servers = {
-    tsserver.enable = true;
+    ts_ls.enable = true;
     pyright.enable = true;
-    lua-ls.enable = true;
+    lua_ls.enable = true;
     bashls.enable = true;
     cssls.enable = true;
     html.enable = true;

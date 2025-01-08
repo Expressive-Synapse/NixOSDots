@@ -10,4 +10,6 @@ environment.systemPackages = with pkgs; [
 ];
 
 services.ratbagd.enable = true;
+
+services.gvfs.enable = true;
 }

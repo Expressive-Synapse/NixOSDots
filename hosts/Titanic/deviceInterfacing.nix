@@ -7,6 +7,8 @@ environment.systemPackages = with pkgs; [
   via
   piper
   usbutils
+  jmtpfs
+  glib
 ];
 
 services.ratbagd.enable = true;

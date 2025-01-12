@@ -34,7 +34,6 @@ wayland.windowManager.hyprland.settings = {
   ];
 
   exec-once = [
-    "ags"
     "runuser -l expressive-synapse -c 'foot --server'"
     "zellij --session main"
 
@@ -84,16 +83,21 @@ wayland.windowManager.hyprland.settings = {
   ];
 };
 
-programs.ags = {
-  enable = true;
-  configDir = ../../../../scripts/ags;
+programs.waybar.enable = true;
+programs.waybar.settings = {
+  mainBar =  {
+    layer = "top";
+    position = "top";
+    height = 30;
+    modules-left = [ "hyprland/workspaces" ];
+    modules-right = [ "pulseaudio" "clock" "tray" ];
 
-  extraPackages = with pkgs; [
-    gtksourceview
-    webkitgtk
-    accountsservice
-  ];
+    "hyprland/workspaces" = {
+      diable-scroll = true;
+    };
+  };
 };
+
 services.dunst.enable = true;
 
 

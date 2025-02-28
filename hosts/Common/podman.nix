@@ -3,7 +3,7 @@
 {
 
 environment.systemPackages = with pkgs; [
-  pdoman-compose 
+  podman-compose 
 ];
 
 virtualisation.podman = {

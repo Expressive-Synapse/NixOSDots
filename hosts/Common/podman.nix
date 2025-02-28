@@ -2,8 +2,6 @@
 
 {
 
-defaultnetwork.settings.dns_enabled = true;
-
 environment.systemPackages = with pkgs; [
   pdoman-compose 
 ];

@@ -18,8 +18,9 @@
       ./netsec/samba.nix
       ./netsec/wireguard.nix
 
-      ./searx.nix
       ./jellyfin.nix
+
+      ./containers/YaCy.nix
 
     ];
 

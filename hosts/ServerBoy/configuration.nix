@@ -10,6 +10,8 @@
       ./hardware/hardware-configuration.nix
       ./hardware/disko.nix
 
+      ../Common/podman.nix
+
       ./system/upower.nix
       
       ./netsec/clamAV.nix

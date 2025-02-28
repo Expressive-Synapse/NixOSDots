@@ -6,10 +6,12 @@ services.samba = {
   enable = true;
   securityType = "user";
   openFirewall = true;
-  settings = {
-    workgroup = "WORKGROUP";
-    "server string" = "smbnix";
-    "server role" = "standalone server";
+  settings = { 
+    global = {
+      workgroup = "WORKGROUP";
+      "server string" = "smbnix";
+      "server role" = "standalone server";
+    };
   };
   shares = {
     jellyfiles = {

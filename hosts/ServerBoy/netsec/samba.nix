@@ -4,7 +4,6 @@
 
 services.samba = {
   enable = true;
-  securityType = "user";
   openFirewall = true;
   settings = { 
     global = {
@@ -13,7 +12,10 @@ services.samba = {
       "server role" = "standalone server";
     };
   };
-  shares = {
+  settings = {
+    global = {
+      security = "user";
+    };
     jellyfiles = {
       path = "/samba/jellyfiles";
       writable = "yes";

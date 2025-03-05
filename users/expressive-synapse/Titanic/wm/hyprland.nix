@@ -34,8 +34,8 @@ wayland.windowManager.hyprland.settings = {
   ];
 
   exec-once = [
-    "runuser -l expressive-synapse -c 'foot --server'"
-    "runuser -l expressive-synapse -c 'zellij --session main'"
+    "foot --server"
+    "zellij --session main"
 
   ];
 

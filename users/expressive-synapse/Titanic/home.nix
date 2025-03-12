@@ -15,6 +15,7 @@ imports = [
   ./deviceInterfacing.nix
   ./firefox.nix
   ./librewolf.nix
+  ./floorp.nix
   ./keepass.nix
   ./vesktop.nix
   ./gaming.nix

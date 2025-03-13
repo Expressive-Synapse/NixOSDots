@@ -11,6 +11,8 @@ environment.systemPackages = with pkgs; [
   via
 ];
 
+programs.kdeconnect.enable = true;
+
 services.ratbagd.enable = true;
 
 services.gvfs.enable = true;

@@ -15,6 +15,7 @@
       ./netsec/sambamount.nix
       ./netsec/wireguard.nix
       ./netsec/clamAV.nix
+      ./netsec/protonvpn.nix
 
       ./system/wayland.nix
       ./system/pipewire.nix

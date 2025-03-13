@@ -34,7 +34,6 @@ wayland.windowManager.hyprland.settings = {
   ];
 
   exec-once = [
-    "foot --server"
     "zellij --session main"
 
   ];
@@ -45,7 +44,7 @@ wayland.windowManager.hyprland.settings = {
     "$mod, M, exec, hyprctl dispatch exit 1" # exit desktop
     "$mod SHIFT, Q, killactive," # close window
     "$mod, RETURN, exec, footclient zellij attach main" # open terminal
-    "$mod SHIFT, RETURN, exec, footclient zellij --session main" # open terminal with new session
+    "$mod SHIFT, RETURN, exec, footclient zellij attach main" # open terminal with new session
     "$mod, SPACE, exec, rofi -show drun" # open app launcher
     "$mod SHIFT, SPACE, exec, rofi -show run" #open program launcher
 

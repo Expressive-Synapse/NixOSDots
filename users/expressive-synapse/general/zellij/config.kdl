@@ -1,4 +1,12 @@
 keybinds clear-defaults=true {
+    normal {
+      bind "Enter" {
+        // passthru
+        WriteChars "\u{000D}";
+        // force autolock to assess
+        MessagePlugin "autolock" {};
+      }
+    }
     locked {
         bind "Ctrl g" { SwitchToMode "normal"; }
     }
@@ -117,6 +125,12 @@ keybinds clear-defaults=true {
             SwitchToMode "normal"
         }
     }
+    shared {
+      bind "Alt Shift z" {
+        // enable autolock
+        MessagePlugin "autolock" {payload "enable";};
+      }
+    }
     shared_except "locked" {
         bind "Alt left" { MoveFocusOrTab "left"; }
         bind "Alt down" { MoveFocus "down"; }
@@ -137,6 +151,11 @@ keybinds clear-defaults=true {
         bind "Alt n" { NewPane; }
         bind "Alt o" { MoveTab "right"; }
         bind "Ctrl q" { Quit; }
+        bind "Alt z" {
+          // Disable autolock
+          MessagePlugin "autolock" {payload "disable";};
+          SwitchToMode "Locked";
+        }
     }
     shared_except "locked" "move" {
         bind "Ctrl h" { SwitchToMode "move"; }
@@ -242,12 +261,19 @@ plugins {
     welcome-screen location="zellij:session-manager" {
         welcome_screen true
     }
+    autolock location="file:/persist/NixOSDots/users/expressive-synapse/general/zellij/plugins/zellij-autolock.wasm" {
+      is_enabled true
+      triggers "nvim"
+      reaction_seconds "0.3"
+      print_to_log true
+    }
 }
 
 // Plugins to load in the background when a new session starts
 // eg. "file:/path/to/my-plugin.wasm"
 // eg. "https://example.com/my-plugin.wasm"
 load_plugins {
+  autolock
 }
  
 // Use a simplified UI without special fonts (arrow glyphs)
@@ -260,7 +286,7 @@ load_plugins {
 // Choose the theme that is specified in the themes section.
 // Default: default
 // 
-// theme "dracula"
+ theme "stylix"
  
 // Choose the base input mode of zellij.
 // Default: normal

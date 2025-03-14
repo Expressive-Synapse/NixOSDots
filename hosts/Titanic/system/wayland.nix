@@ -1,10 +1,13 @@
-{ pkgs, inputs, ... }:
+{ pkgs, ... }:
 
 {
 environment.systemPackages = with pkgs; [
   wayland
   waydroid
 ];
+
+programs.xwayland.enable = true;
+
 services.xserver = {
   enable = true;
   xkb = {

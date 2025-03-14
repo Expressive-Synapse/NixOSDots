@@ -80,6 +80,7 @@ programs.nixvim.plugins.luasnip = {
 /*---------------------LSP----------------------*/
 programs.nixvim.plugins.lsp = {
   enable = true;
+  inlayHints = true;
   servers = {
     ts_ls.enable = true;
     pyright.enable = true;

@@ -18,6 +18,7 @@ imports = [
   ./floorp.nix
   ./keepass.nix
   ./vesktop.nix
+  ./discord.nix
   ./gaming.nix
   ./winOnLinux.nix
   ./officeTools.nix

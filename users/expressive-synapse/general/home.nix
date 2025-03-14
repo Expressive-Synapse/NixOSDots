@@ -8,7 +8,7 @@ imports = [
   ./termFileManager.nix
   ./termSystemUtils.nix
   ./shell/bash.nix
-  ./zellij.nix
+  ./zellij/zellij.nix
   ./lf.nix
 ];
 

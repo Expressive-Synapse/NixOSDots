@@ -1,4 +1,4 @@
-{ config, lib, inputs, ... }: let
+{ pkgs, config, lib, inputs, ... }: let
   utils = inputs.nixCats.utils;
 in {
   imports = [
@@ -27,11 +27,76 @@ in {
       # they refer to how multiple categoryDefinitions get merged together by the module.
       # for useage of this section, refer to :h nixCats.flake.outputs.categories
       categoryDefinitions.replace = ({ pkgs, settings, categories, extra, name, mkNvimPlugin, ... }@packageDef: {
-        lspsAndRuntimeDeps = {
-          general = [];
+        lspsAndRuntimeDeps = with pkgs; {
+          general = [
+            universal-ctags
+            ripgrep
+            fd
+            stdenv.cc.cc
+            nix-doc
+            lua-language-server
+            nixd
+            stylua
+          ];
+          kickstart-debug = [
+            delve
+          ];
+          kickstart-lint = [
+            markdownlint-cli
+          ];
+          
         };
-        startupPlugins = {
-          general = [];
+        startupPlugins = with pkgs.vimPlugins; {
+          general = [
+            vim-sleuth
+            lazy-nvim
+            comment-nvim
+            gitsigns-nvim
+            which-key-nvim
+            telescope-nvim
+            telescope-fzf-native-nvim
+            telescope-ui-select-nvim
+            nvim-web-devicons
+            plenary-nvim
+            nvim-lspconfig
+            lazydev-nvim
+            fidget-nvim
+            conform-nvim
+            nvim-cmp
+            luasnip
+            cmp_luasnip
+            cmp-nvim-lsp
+            cmp-path
+            tokyonight-nvim
+            todo-comments-nvim
+            mini-nvim
+            nvim-treesitter.withAllGrammars
+          ];
+          kickstart-debug = [
+            nvim-dap
+            nvim-dap-ui
+            nvim-dap-go
+            nvim-nio
+          ];
+          kickstart-indent_line = [
+            indent-blankline-nvim
+          ];
+          kickstart-lint = [
+            nvim-lint
+          ];
+          kickstart-autopairs = [
+            nvim-autopairs
+          ];
+          kickstart-neo-tree = [
+            neo-tree-nvim
+            nui-nvim
+            # nixCats will filter out duplicate packages
+            # so you can put dependencies with stuff even if they're
+            # also somewhere else
+            nvim-web-devicons
+            plenary-nvim
+          ];
+
           # themer = with pkgs; [
           #   # you can even make subcategories based on categories and settings sets!
           #   (builtins.getAttr packageDef.categories.colorscheme {
@@ -98,7 +163,24 @@ in {
           # (and other information to pass to lua)
           categories = {
             general = true;
+            gitPlugins = true;
+            customPlugins = true;
             test = true;
+
+            kickstart-autopairs = true;
+            kickstart-neo-tree = true;
+            kickstart-debug = true;
+            kickstart-lint = true;
+            kickstart-indent_line = true;
+
+            # this kickstart extra didnt require any extra plugins
+            # so it doesnt have a category above.
+            # but we can still send the info from nix to lua that we want it!
+            kickstart-gitsigns = true;
+
+            # we can pass whatever we want actually.
+            have_nerd_font = false;
+
             example = {
               youCan = "add more than just booleans";
               toThisSet = [
@@ -106,6 +188,7 @@ in {
                 "will be accessible to your lua with"
                 "nixCats('path.to.value')"
                 "see :help nixCats"
+                "and type :NixCats to see the categories set in nvim"
               ];
             };
           };

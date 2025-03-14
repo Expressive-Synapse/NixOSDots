@@ -142,25 +142,25 @@ programs.nixvim.keymaps = [
 {
 options.desc = "navigate left or tab";
 mode = [ "n" ];
-key = "<C-h>";
+key = "<M-h>";
 action = "<cmd>ZellijNavigateLeftTab<cr>";
 }
 {
 options.desc = "navigate down";
 mode = [ "n" ];
-key = "<C-j>";
+key = "<M-j>";
 action = "<cmd>ZellijNavigateDown<cr>";
 }
 {
 options.desc = "navigate up";
 mode = [ "n" ];
-key = "<C-k>";
+key = "<M-k>";
 action = "<cmd>ZellijNavigateUp<cr>";
 }
 {
 options.desc = "navigate right or tab";
 mode = [ "n" ];
-key = "<C-l>";
+key = "<M-l>";
 action = "<cmd>ZellijNavigateRightTab<cr>";
 }
 /*------------------Telescope------------------*/

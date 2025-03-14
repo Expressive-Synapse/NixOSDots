@@ -34,7 +34,7 @@ wayland.windowManager.hyprland.settings = {
   ];
 
   exec-once = [
-    "userrun -l expressive-synapse -c 'zellij --session main'"
+    "zellij --session main"
 
   ];
 

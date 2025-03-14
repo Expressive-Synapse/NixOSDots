@@ -126,6 +126,11 @@ programs.nixvim.plugins.none-ls = {
   enable = true;
   enableLspFormat = true;
 };
+
+programs.nixvim.plugins.zellij-nav = {
+  enable = true;
+  autoLoad = true;
+};
 ###################################################
 #                    Keymaps                      #
 ###################################################

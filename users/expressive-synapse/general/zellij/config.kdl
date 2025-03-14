@@ -261,7 +261,7 @@ plugins {
     welcome-screen location="zellij:session-manager" {
         welcome_screen true
     }
-    autolock location="file:/persist/NixOSDots/users/expressive-synapse/general/zellij/plugins/zellij-autolock.wasm" {
+    autolock location="file:~/.config/zellij/plugins/zellij-autolock.wasm" {
       is_enabled true
       triggers "nvim"
       reaction_seconds "0.3"
@@ -286,7 +286,7 @@ load_plugins {
 // Choose the theme that is specified in the themes section.
 // Default: default
 // 
- theme "stylix"
+ theme "stylix.kdl"
  
 // Choose the base input mode of zellij.
 // Default: normal

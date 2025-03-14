@@ -62,11 +62,6 @@
       url = "github:Aylur/ags";
     };
 
-    nixCats = {
-      url = "github:BirdeeHub/nixCats-nvim";
-    };
-
-
   };
 
   outputs = inputs@{ self, nixpkgs, nixpkgs-stable, stylix, ... }:

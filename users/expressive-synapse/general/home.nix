@@ -4,7 +4,7 @@
 
 imports = [
   ./git.nix
-  ./nvf.nix
+  ./nixvim.nix
   ./termFileManager.nix
   ./termSystemUtils.nix
   ./shell/bash.nix

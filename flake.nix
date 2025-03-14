@@ -62,8 +62,8 @@
       url = "github:Aylur/ags";
     };
 
-    nvf = {
-      url = "github:notashelf/nvf";
+    nixCats = {
+      url = "github:BirdeeHub/nixCats-nvim";
     };
 
 

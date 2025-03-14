@@ -4,7 +4,7 @@
 
 imports = [
   ./git.nix
-  ./nixvim.nix
+  ./nixCats/nixCats.nix
   ./termFileManager.nix
   ./termSystemUtils.nix
   ./shell/bash.nix
@@ -28,6 +28,13 @@ home.persistence."/persist/home/expressive-synapse" = {
 #                   Packages                      #
 ###################################################
 nixpkgs.config.allowUnfreePredicate = _: true;
+
+###################################################
+#                   Packages                      #
+###################################################
+home.sessionVariables = {
+  EDITOR = "vim";
+  };
 
 ###################################################
 #                 Home-Manager                    #

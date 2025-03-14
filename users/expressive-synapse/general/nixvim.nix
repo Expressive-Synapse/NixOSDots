@@ -140,24 +140,28 @@ programs.nixvim.keymaps = [
 /*--------------------General------------------*/
 #splits navigation
 {
+options.desc = "navigate left or tab";
 mode = [ "n" ];
 key = "<C-h>";
-action = "<C-w>h";
+action = "<cmd>ZellijNavigateLeftTab<cr>";
 }
 {
+options.desc = "navigate down";
 mode = [ "n" ];
 key = "<C-j>";
-action = "<C-w>j";
+action = "<cmd>ZellijNavigateDown<cr>";
 }
 {
+options.desc = "navigate up";
 mode = [ "n" ];
 key = "<C-k>";
-action = "<C-w>k";
+action = "<cmd>ZellijNavigateUp<cr>";
 }
 {
+options.desc = "navigate right or tab";
 mode = [ "n" ];
 key = "<C-l>";
-action = "<C-w>l";
+action = "<cmd>ZellijNavigateRightTab<cr>";
 }
 /*------------------Telescope------------------*/
 {

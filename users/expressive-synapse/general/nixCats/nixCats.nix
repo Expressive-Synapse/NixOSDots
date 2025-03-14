@@ -84,7 +84,7 @@ in {
       packageDefinitions.replace = {
         # These are the names of your packages
         # you can include as many as you wish.
-        myHomeModuleNvim = {pkgs , ... }: {
+        ncats = {pkgs , ... }: {
           # they contain a settings set defined above
           # see :help nixCats.flake.outputs.settings
           settings = {

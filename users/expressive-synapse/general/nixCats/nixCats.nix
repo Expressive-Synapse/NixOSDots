@@ -68,6 +68,7 @@ in {
             cmp-nvim-lsp
             cmp-path
             tokyonight-nvim
+            base16-nvim
             todo-comments-nvim
             mini-nvim
             nvim-treesitter.withAllGrammars

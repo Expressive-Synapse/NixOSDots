@@ -41,6 +41,11 @@ stylix.fonts = {
     package = pkgs.noto-fonts-emoji;
     name = "Noto Color Emoji";
   };
+
 };
+
+stylix.targets.neovim = {
+      plugin = "mini.base16";
+    };
 
 }

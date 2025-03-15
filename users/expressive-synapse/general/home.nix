@@ -5,7 +5,6 @@
 imports = [
   ./git.nix
   ./nixCats/nixCats.nix
-  ./helix.nix
   ./termFileManager.nix
   ./termSystemUtils.nix
   ./shell/bash.nix

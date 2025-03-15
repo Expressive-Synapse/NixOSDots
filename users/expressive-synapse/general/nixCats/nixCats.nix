@@ -67,10 +67,9 @@ in {
             cmp_luasnip
             cmp-nvim-lsp
             cmp-path
-            tokyonight-nvim
             todo-comments-nvim
             mini-nvim
-            mini-base16
+            base16-nvim
             nvim-treesitter.withAllGrammars
             zellij-nav-nvim
           ];

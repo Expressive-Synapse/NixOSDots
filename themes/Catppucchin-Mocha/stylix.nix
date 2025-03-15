@@ -44,8 +44,4 @@ stylix.fonts = {
 
 };
 
-stylix.targets.neovim = {
-      plugin = "mini.base16";
-    };
-
 }

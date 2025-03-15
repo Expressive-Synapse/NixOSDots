@@ -37,7 +37,6 @@ in {
             lua-language-server
             nixd
             stylua
-            pyright
           ];
           kickstart-debug = [
             delve

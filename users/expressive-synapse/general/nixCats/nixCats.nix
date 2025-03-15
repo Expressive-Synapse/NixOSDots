@@ -71,6 +71,7 @@ in {
             todo-comments-nvim
             mini-nvim
             nvim-treesitter.withAllGrammars
+            zellij-nav-nvim
           ];
           kickstart-debug = [
             nvim-dap

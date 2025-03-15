@@ -263,7 +263,7 @@ plugins {
     }
     autolock location="file:~/.config/zellij/plugins/zellij-autolock.wasm" {
       is_enabled true
-      triggers "vim"
+      triggers "vi|vim|nvim|ncats"
       reaction_seconds "0.3"
       print_to_log true
     }

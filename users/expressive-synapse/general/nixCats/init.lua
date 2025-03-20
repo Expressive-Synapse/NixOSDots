@@ -72,7 +72,7 @@ vim.opt.splitbelow = true
 -- Sets how neovim will display certain whitespace characters in the editor.
 --  See `:help 'list'`
 --  and `:help 'listchars'`
-vim.opt.list = true
+vim.opt.list = false
 vim.opt.listchars = { tab = "» ", trail = "·", nbsp = "␣" }
 
 -- Preview substitutions live, as you type!
@@ -681,7 +681,7 @@ require("nixCatsUtils.lazyCat").setup(nixCats.pawsible({ "allPlugins", "start", 
         }
       end,
       formatters_by_ft = {
-        lua = { "lua-format" },
+        lua = { "stylua" },
         -- Conform can also run multiple formatters sequentially
         -- python = { "isort", "black" },
         --

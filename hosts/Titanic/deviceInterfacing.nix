@@ -13,6 +13,8 @@ environment.systemPackages = with pkgs; [
 
 programs.kdeconnect.enable = true;
 
+programs.cdemu.enable = true;
+
 services.ratbagd.enable = true;
 
 services.gvfs.enable = true;

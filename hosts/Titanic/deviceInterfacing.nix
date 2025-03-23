@@ -9,6 +9,7 @@ environment.systemPackages = with pkgs; [
   jmtpfs
   glib
   via
+  cdemu-daemon
 ];
 
 programs.kdeconnect.enable = true;

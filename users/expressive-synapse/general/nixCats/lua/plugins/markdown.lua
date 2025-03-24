@@ -1,7 +1,8 @@
 return {
 	{
 		"tadmccorkle/markdown.nvim",
-		ft = "mardown",
-		opts = {},
+		config = function()
+			require("markdown").setup()
+		end,
 	},
 }

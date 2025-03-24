@@ -13,11 +13,8 @@ imports = [
   ./netsec/proton.nix
 
   ./deviceInterfacing.nix
-  ./firefox.nix
-  ./librewolf.nix
   ./floorp.nix
   ./keepass.nix
-  ./vesktop.nix
   ./discord.nix
   ./gaming.nix
   ./winOnLinux.nix

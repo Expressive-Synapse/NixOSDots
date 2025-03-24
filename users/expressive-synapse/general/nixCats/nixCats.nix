@@ -3,8 +3,15 @@
 in {
   imports = [
     inputs.nixCats.homeModule
-  ];
+  ]; 
   config = {
+    # persist reavent folders and files for vim to function properly
+    home.persistence."/persist/home/expressive-synapse" = {
+      directories = [
+      ".vim/undodir" 
+      ];
+    }; 
+
     # this value, nixCats is the defaultPackageName you pass to mkNixosModules
     # it will be the namespace for your options.
     nixCats = {

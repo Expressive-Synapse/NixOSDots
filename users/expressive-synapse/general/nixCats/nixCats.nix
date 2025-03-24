@@ -80,6 +80,7 @@ in {
             nvim-treesitter.withAllGrammars
             zellij-nav-nvim
             undotree
+            lsp_lines-nvim
           ];
           kickstart-debug = [
             nvim-dap

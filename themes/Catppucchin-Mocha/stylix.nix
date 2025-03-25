@@ -44,7 +44,10 @@ stylix.fonts = {
 
 };
 
-stylix.targets.firefox = {
+stylix.targets.floorp = {
+  profileNames = [
+      "default"
+    ];
   colorTheme.enable = true;
   };
 

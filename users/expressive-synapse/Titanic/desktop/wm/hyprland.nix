@@ -36,6 +36,7 @@ wayland.windowManager.hyprland.settings = {
   exec-once = [
     "zellij --session main"
     "waypaper --restore"
+    "flameshot"
   ];
 
   "$mod" = "SUPER";
@@ -60,6 +61,10 @@ wayland.windowManager.hyprland.settings = {
     "$mod, up, movefocus, u"
     "$mod, down, movefocus, d"
 
+    # Screen Capture #
+    "Print, exec, XDG_CURRENT_DESKTOP=sway flameshot gui"
+    "SHIFT, Print, exec, XDG_CURRENT_DESKTOP=sway flameshot screen"
+
   ] # Workspace Controls #
   ++ (
        builtins.concatLists (builtins.genList (
@@ -79,6 +84,15 @@ wayland.windowManager.hyprland.settings = {
     # Window Mouse Controls #
     "$mod, mouse:272, movewindow" # drag window with mouse
     "$mod, mouse:273, resizewindow" # resize window with mouse
+  ];
+
+  windowrule = [
+    # Flameshot compatibility rules #
+    "noanim, class:^(flameshot)$"
+    "float, class:^(flameshot)$"
+    "move 0 0, class:^(flameshot)$"
+    "pin, class:^(flameshot)$"
+    "monitor 1, class:^(flameshot)$" # Set to left most monitor
   ];
 };
 

@@ -6,4 +6,10 @@
    hyprpaper
    mpvpaper
   ];
+
+home.persistence."/persist/home/expressive-synapse" = {
+  directories = [
+    ".conifg/waypaper"
+  ];
+};
 }

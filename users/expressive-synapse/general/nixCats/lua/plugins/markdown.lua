@@ -15,7 +15,4 @@ return {
 			vim.fn["mkdp#util#install"]()
 		end,
 	},
-	require("obsidian").setup({
-		ui = { enable = false },
-	}),
 }

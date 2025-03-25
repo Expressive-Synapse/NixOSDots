@@ -82,7 +82,6 @@ in {
             undotree
             render-markdown-nvim
             markdown-preview-nvim
-            obsidian-nvim
           ];
           kickstart-debug = [
             nvim-dap

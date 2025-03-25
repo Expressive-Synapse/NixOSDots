@@ -2,7 +2,6 @@
 
 {
 imports = [
-  ../../../themes/Catppucchin-Mocha/stylix.nix
 
   ./terminal/foot.nix
   ./terminal/alacritty.nix

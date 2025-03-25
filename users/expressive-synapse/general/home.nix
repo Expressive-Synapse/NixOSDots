@@ -3,6 +3,9 @@
 {
 
 imports = [
+
+  ../../../themes/Catppucchin-Mocha/stylix.nix
+
   ./git.nix
   ./nixCats/nixCats.nix
   ./helix.nix

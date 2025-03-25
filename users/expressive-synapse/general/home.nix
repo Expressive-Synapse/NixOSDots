@@ -4,7 +4,7 @@
 
 imports = [
 
-  ../../../themes/Catppucchin-Mocha/stylix.nix
+  ./stylix/stylix.nix
 
   ./git.nix
   ./nixCats/nixCats.nix

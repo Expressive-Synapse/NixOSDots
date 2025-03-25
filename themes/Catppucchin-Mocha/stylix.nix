@@ -44,4 +44,8 @@ stylix.fonts = {
 
 };
 
+stylix.targets.firefox = {
+  colorTheme.enable = true;
+  };
+
 }

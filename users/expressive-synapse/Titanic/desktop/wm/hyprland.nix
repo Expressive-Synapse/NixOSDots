@@ -35,7 +35,7 @@ wayland.windowManager.hyprland.settings = {
 
   exec-once = [
     "zellij --session main"
-
+    "waypaper --restore"
   ];
 
   "$mod" = "SUPER";

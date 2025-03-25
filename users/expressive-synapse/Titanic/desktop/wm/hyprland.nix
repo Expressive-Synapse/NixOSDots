@@ -36,7 +36,6 @@ wayland.windowManager.hyprland.settings = {
   exec-once = [
     "zellij --session main"
     "waypaper --restore"
-    "flameshot"
   ];
 
   "$mod" = "SUPER";
@@ -89,9 +88,9 @@ wayland.windowManager.hyprland.settings = {
     # Flameshot compatibility rules #
     "noanim, class:^(flameshot)$"
     "float, class:^(flameshot)$"
-    "move 0 0, class:^(flameshot)$"
+    "move -1080 -215, class:^(flameshot)$"
     "pin, class:^(flameshot)$"
-    "monitor 2, class:^(flameshot)$" # Set to left most monitor
+    "monitor 1, class:^(flameshot)$" # Set to left most monitor
   ];
 };
 

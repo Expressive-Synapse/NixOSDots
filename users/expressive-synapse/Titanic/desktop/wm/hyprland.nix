@@ -44,8 +44,7 @@ wayland.windowManager.hyprland.settings = {
    # Application Controls #
     "$mod, M, exec, hyprctl dispatch exit 1" # exit desktop
     "$mod SHIFT, Q, killactive," # close window
-    "$mod, RETURN, exec, footclient zellij attach main" # open terminal
-    "$mod SHIFT, RETURN, exec, footclient zellij attach main" # open terminal with new session
+    "$mod, RETURN, exec, foot zellij attach main" # open terminal
     "$mod, SPACE, exec, rofi -show drun" # open app launcher
     "$mod SHIFT, SPACE, exec, rofi -show run" #open program launcher
 
@@ -62,8 +61,8 @@ wayland.windowManager.hyprland.settings = {
     "$mod, down, movefocus, d"
 
     # Screen Capture #
-    " , Print, exec, XDG_CURRENT_DESKTOP=sway flameshot gui"
-    " , SHIFT, Print, exec, XDG_CURRENT_DESKTOP=sway flameshot screen"
+    ", Print, exec, XDG_CURRENT_DESKTOP=sway flameshot gui"
+    "SHIFT, Print, exec, XDG_CURRENT_DESKTOP=sway flameshot screen"
 
   ] # Workspace Controls #
   ++ (

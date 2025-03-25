@@ -11,7 +11,13 @@ imports = [
 
 stylix.enable = true;
 
-  stylix.base16Scheme = ./themes + theme;
+stylix.base16Scheme = ./themes + theme;
+
+stylix.cursor = {
+    package = pkgs.catppuccin-cursors.mochaDark;
+    name = "catppuccin-mocha-dark-cursors";
+    size = 24;
+  };
 
 stylix.fonts = {
   

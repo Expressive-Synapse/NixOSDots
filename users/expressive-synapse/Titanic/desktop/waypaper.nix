@@ -1,6 +1,9 @@
 { pkgs, ... }: 
 {
  home.packages = with pkgs; [
-    waypaper
+   waypaper
+   swww
+   hyprpaper
+   mpvpaper
   ];
 }

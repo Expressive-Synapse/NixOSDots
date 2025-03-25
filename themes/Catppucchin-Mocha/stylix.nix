@@ -12,12 +12,12 @@ imports = [
   ];
 
 stylix.enable = true;
-
+/*
 stylix.image = pkgs.fetchurl {
   url = wallpaperUrl;
   sha256 = wallpaperSha256;
   };
-
+*/
 stylix.base16Scheme = ./. + base16;
 
 stylix.fonts = {

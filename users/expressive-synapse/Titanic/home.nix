@@ -10,7 +10,7 @@ imports = [
   ./desktop/waypaper.nix
 
   ./netsec/proton.nix
-
+  ./flameshot.nix
   ./deviceInterfacing.nix
   ./floorp.nix
   ./keepass.nix

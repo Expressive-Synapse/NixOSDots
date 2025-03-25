@@ -1,5 +1,8 @@
 { inputs, pkgs, ... }:
 
+let
+  theme = "/Catppuccin Mocha.yaml";
+in
 {
 
 imports = [
@@ -8,7 +11,7 @@ imports = [
 
 stylix.enable = true;
 
-  stylix.base16Scheme = "./themes/Catppuccin Mocha.yaml";
+  stylix.base16Scheme = ./themes + theme;
 
 stylix.fonts = {
   

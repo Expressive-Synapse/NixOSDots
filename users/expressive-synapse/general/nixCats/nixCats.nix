@@ -8,7 +8,8 @@ in {
     # persist reavent folders and files for vim to function properly
     home.persistence."/persist/home/expressive-synapse" = {
       directories = [
-      ".vim/undodir" 
+      ".vim/undodir"
+      ".vim/spell"
       ];
     }; 
 

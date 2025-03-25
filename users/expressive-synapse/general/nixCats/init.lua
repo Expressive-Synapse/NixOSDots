@@ -76,6 +76,14 @@ vim.opt.shiftwidth = 2
 vim.opt.list = false
 vim.opt.listchars = { tab = "» ", trail = "·", nbsp = "␣" }
 
+-- Set encoding
+vim.opt.encoding = "utf-8"
+
+-- Spellcheck features
+vim.opt.spelllang = "en_us"
+vim.opt.spell = true
+vim.opt.spellfile = os.getenv("HOME") .. "/.vim/spell/spellfile.utf-8.add"
+
 -- Preview substitutions live, as you type!
 vim.opt.inccommand = "split"
 

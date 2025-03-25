@@ -15,7 +15,6 @@ programs = {
     portalPackage = pkgs.xdg-desktop-portal-hyprland;
   };
 };
-wayland.windowManager.hyprland.systemd.variables = ["--all"];
 /*---------------desktop-portal------------------*/
 xdg.portal = {
   enable = true;

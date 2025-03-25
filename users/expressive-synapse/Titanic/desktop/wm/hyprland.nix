@@ -29,8 +29,8 @@ wayland.windowManager.hyprland.plugins = [
 wayland.windowManager.hyprland.settings = {
   
   monitor = [
-    "DP-3,2560x1440@164,0x0,1"
-    "HDMI-A-1,1920x1080@60,-1080x-215,1,transform,1"
+    "DP-3,2560x1440@164,1080x215,1"
+    "HDMI-A-1,1920x1080@60,0x0,1,transform,1"
   ];
 
   exec-once = [
@@ -86,11 +86,11 @@ wayland.windowManager.hyprland.settings = {
 
   windowrule = [
     # Flameshot compatibility rules #
-    "noanim, class:^(flameshot)$"
+    #"noanim, class:^(flameshot)$"
     "float, class:^(flameshot)$"
-    "move -1080 -215, class:^(flameshot)$"
+    "move 0 0, class:^(flameshot)$"
     "pin, class:^(flameshot)$"
-    "monitor 1, class:^(flameshot)$" # Set to left most monitor
+    "monitor HDMI-A-1, class:^(flameshot)$" # Set to left most monitor
   ];
 };
 

@@ -87,12 +87,11 @@ wayland.windowManager.hyprland.settings = {
   windowrule = [
     # Flameshot compatibility rules #
     #"noanim, class:^(flameshot)$"
-    "float, initialClass:^(flameshot)$"
-    "move 0 0, initialClass:^(flameshot)$"
-    "pin, initialClass:^(flameshot)$"
-    "fullscreenstate 1 1, initialClass:^(flameshot)$"
-    "nomaxsize , initialClass:^(flameshot)$"
-    "monitor HDMI-A-1, intialClass:^(flameshot)$" # Set to left most monitor
+    "float, class:^(flameshot)$"
+    "move 0 0, class:^(flameshot)$"
+    "pin, class:^(flameshot)$"
+    #"nomaxsize , class:^(flameshot)$"
+    "monitor HDMI-A-1, class:^(flameshot)$" # Set to left most monitor
   ];
 };
 

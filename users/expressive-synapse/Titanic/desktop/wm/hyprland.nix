@@ -62,8 +62,8 @@ wayland.windowManager.hyprland.settings = {
     "$mod, down, movefocus, d"
 
     # Screen Capture #
-    "Print, exec, XDG_CURRENT_DESKTOP=sway flameshot gui"
-    "SHIFT, Print, exec, XDG_CURRENT_DESKTOP=sway flameshot screen"
+    " , Print, exec, XDG_CURRENT_DESKTOP=sway flameshot gui"
+    " , SHIFT, Print, exec, XDG_CURRENT_DESKTOP=sway flameshot screen"
 
   ] # Workspace Controls #
   ++ (

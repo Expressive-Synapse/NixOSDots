@@ -1,10 +1,7 @@
-{ userSettings, pkgs, ... }:
+{ pkgs, ... }:
 
 {
 
-home.packages = with pkgs; [
-  foot
-];
 programs.foot = {
   enable = true;
   server.enable = true;

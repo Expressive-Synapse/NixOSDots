@@ -44,6 +44,10 @@ stylix.fonts = {
 
 };
 
+stylix.opacity = {
+    terminal = 0.7;
+  };
+
 stylix.targets.floorp = {
   profileNames = [
       "default"

@@ -18,7 +18,28 @@ programs.waybar.settings = {
 
     "hyprland/workspaces" = {
       diable-scroll = true;
+      all-outputs = false;
     };
+    
+    "pulseaudio" = {
+        format = "{icon} {volume}";
+        format-muted = "󰖁";
+        tooltip-format = "{icon} {desc} // {volume}%";
+        format-icons = {
+            headphone = "";
+            hands-free = "";
+            headset = "";
+            phone = "";
+            portable = "";
+            car = "";
+            default = ["" "" ""];
+        };
+      };
+
+    "clock" = {
+        format = " {:%H:%M}";
+      };
+
   };
 };
 }

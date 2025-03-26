@@ -34,6 +34,7 @@ window#waybar {
   color: ${colors.base06}; 
   background: ${colors.base01}; 
   margin: 4px 0px 4px 0px;
+  border-radius: 9px;
   opacity: 1;
   border: 0px solid ${colors.base00};
 }

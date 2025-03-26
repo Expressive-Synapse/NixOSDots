@@ -6,11 +6,11 @@ in
 
 {
 
-progams.waybar.style = ''
+programs.waybar.style = ''
 * {
   border: none;
   border-radius: 0px;
-  font-family: "${config.stylix.monospace.name}";
+  font-family: "${config.stylix.fonts.monospace.name}";
   font-weight: bold;
   font-size: 15px;
   min-height: 13px;
@@ -75,6 +75,7 @@ tooltip {
 #workspaces button:hover {
   background: ${colors.base01};
   border: none;
+}
 
 #workspaces {
   padding: 0px;
@@ -100,7 +101,7 @@ tooltip {
 }
 
 #backlight {
-  color: ${colors.Base0A}; 
+  color: ${colors.base0A}; 
   padding-left: 0px;
   padding-right: 19px;
 }

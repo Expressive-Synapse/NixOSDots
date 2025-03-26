@@ -2,8 +2,8 @@
 
 {
 
-import = [
-    "./style.nix"
+imports = [
+    ./style.nix
   ];
 programs.waybar.enable = true;
 programs.waybar.settings = {

@@ -22,6 +22,9 @@ Device specific organization is separated into their respective
 folders. If two or more devices should require the same .nix file
 a copy is to be made for each device. This is so that changes to 
 one devices  configuration will not affect another.
+> ![NOTE]
+> some user specific configuration may need
+> to be made at a system level.
 
 ## Users
 
@@ -41,3 +44,7 @@ This folder is used to store encrypted files required for these configurations
 to function properly. The encrypted files are designed to function with the 
 sops-nix module. The key required to un-encrypt these files is intended to be
 stored in a folder one layer outside of the NixOSDots folder called Keys. (ie ../Keys)
+> [!NOTE]
+> Some system level configuration may require
+> user specific secrets, so this folder currently
+> remains outside of the users directory.

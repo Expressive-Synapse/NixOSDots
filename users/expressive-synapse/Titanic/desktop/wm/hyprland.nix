@@ -106,6 +106,5 @@ wayland.windowManager.hyprland.settings = {
   ];
 };
 
-services.dunst.enable = true;
 
 }

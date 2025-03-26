@@ -6,7 +6,7 @@ in
 
 {
 
-programs.waybar.style = ''
+programs.waybar.style = /*CSS*/''
 * {
   border: none;
   border-radius: 0px;
@@ -114,7 +114,7 @@ tooltip {
 }
 
 #battery {
-  color: ${colors.base0C}; /* Rose Pine Moon - Pine */
+  color: ${colors.base0C}; 
   padding-left: 0px;
   padding-right: 0px;
 }

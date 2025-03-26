@@ -109,8 +109,8 @@ tooltip {
 
 #pulseaudio {
   color: ${colors.base0E}; 
-  padding-left: 0px;
-  padding-right: 19px;
+  padding-left: 5px;
+  padding-right: 5px;
 }
 
 #battery {
@@ -120,8 +120,8 @@ tooltip {
 }
 
 #tray {
-  padding-left: 0px;
-  padding-right: 19px;
+  padding-left: 5px;
+  padding-right: 5px;
 }
 
 #network {
@@ -131,8 +131,8 @@ tooltip {
 
 #clock {
   color: ${colors.base09};
-  padding-left: 0px;
-  padding-right: 0px;
+  padding-left: 5px;
+  padding-right: 5px;
 }
 
 #custom-right {

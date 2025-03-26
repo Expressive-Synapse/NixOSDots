@@ -9,7 +9,9 @@ in
 services.dunst.enable = true;
 
 services.dunst.settings = {
-  corner_radius = 15;
-  gap_size = 10;
+  global = { 
+    corner_radius = 15;
+    gap_size = 10;
+  };
 };
 }

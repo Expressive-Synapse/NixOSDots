@@ -9,6 +9,7 @@ imports = [
   ./desktop/wm/hyprland.nix
   ./desktop/waybar/waybar.nix
   ./desktop/waypaper.nix
+  ./desktop/dunst/dunst.nix
 
   ./netsec/proton.nix
   ./flameshot.nix

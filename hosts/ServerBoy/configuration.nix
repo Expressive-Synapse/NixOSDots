@@ -10,7 +10,7 @@
       ./hardware/hardware-configuration.nix
       ./hardware/disko.nix
 
-      ../Common/podman.nix
+      ./podman.nix
 
       ./system/upower.nix
       

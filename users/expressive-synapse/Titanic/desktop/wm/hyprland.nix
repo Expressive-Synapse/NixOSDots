@@ -1,4 +1,4 @@
-{ pkgs, inputs, ... }:
+{ pkgs, inputs, lib, config, ... }:
 
 {
 
@@ -27,7 +27,13 @@ wayland.windowManager.hyprland.plugins = [
 ];
 
 wayland.windowManager.hyprland.settings = {
-  
+ 
+  general = {
+    "col.active_border" = "rgba(${config.lib.stylix.colors.base0E}ff) rgba(${config.lib.stylix.colors.base0C}ff) rgba(${config.lib.stylix.colors.base0A}ff) 10deg";
+
+    "col.inactive_border" = "rgba(${config.lib.stylix.colors.base03}ff)";
+  };
+
   monitor = [
     "DP-3,2560x1440@164,1080x215,1"
     "HDMI-A-1,1920x1080@60,0x0,1,transform,1"

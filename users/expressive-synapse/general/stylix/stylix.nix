@@ -47,6 +47,8 @@ stylix.opacity = {
     terminal = 0.7;
   };
 
+stylix.targets.hyprland.enable = false;
+
 stylix.targets.floorp = {
   profileNames = [
       "default"

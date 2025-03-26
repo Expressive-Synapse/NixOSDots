@@ -45,6 +45,7 @@ stylix.fonts = {
 
 stylix.opacity = {
     terminal = 0.7;
+    popups = 0.7;
   };
 
 stylix.targets.hyprland.enable = false;

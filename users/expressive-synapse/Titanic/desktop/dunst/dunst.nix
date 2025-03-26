@@ -1,9 +1,5 @@
 {config, lib, ... }:
-let
 
-  transparancy = builtins.mul config.stylix.opacity.popups 100;
-
-in
 {
 
 services.dunst.enable = true;

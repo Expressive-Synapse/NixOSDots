@@ -1,6 +1,8 @@
 return {
 	{
-		"norcalli/nvim-colorizer.lua",
-		require("colorizer").setup(),
+		"catgoose/nvim-colorizer.lua",
+		event = "BufReadPre",
+		opts = { -- set to setup table
+		},
 	},
 }

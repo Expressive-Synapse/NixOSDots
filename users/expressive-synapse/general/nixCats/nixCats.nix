@@ -86,6 +86,7 @@ in {
             obsidian-nvim
             plenary-nvim #obsidian-nvim dependency
             transparent-nvim
+            colorizer
           ];
           kickstart-debug = [
             nvim-dap

@@ -45,6 +45,7 @@ wayland.windowManager.hyprland.settings = {
 
   exec-once = [
     "zellij --session main"
+    "waybar"
     "waypaper --restore"
   ];
 
@@ -105,22 +106,6 @@ wayland.windowManager.hyprland.settings = {
   ];
 };
 
-programs.waybar.enable = true;
-programs.waybar.settings = {
-  mainBar =  {
-    layer = "top";
-    position = "top";
-    height = 30;
-    modules-left = [ "hyprland/workspaces" ];
-    modules-right = [ "pulseaudio" "clock" "tray" ];
-
-    "hyprland/workspaces" = {
-      diable-scroll = true;
-    };
-  };
-};
-
 services.dunst.enable = true;
-
 
 }

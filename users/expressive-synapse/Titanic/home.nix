@@ -7,6 +7,7 @@ imports = [
   ./terminal/alacritty.nix
   
   ./desktop/wm/hyprland.nix
+  ./desktop/waybar/waybar.nix
   ./desktop/waypaper.nix
 
   ./netsec/proton.nix

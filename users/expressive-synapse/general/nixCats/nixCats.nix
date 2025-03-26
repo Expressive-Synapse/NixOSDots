@@ -83,6 +83,8 @@ in {
             undotree
             render-markdown-nvim
             markdown-preview-nvim
+            obsidian-nvim
+            plenary-nvim #obsidian-nvim dependency
             transparent-nvim
           ];
           kickstart-debug = [

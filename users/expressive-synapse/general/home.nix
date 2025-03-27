@@ -13,6 +13,7 @@ imports = [
   ./termSystemUtils.nix
   ./shell/bash.nix
   ./zellij/zellij.nix
+  ./starship.nix
   ./lf.nix
 ];
 

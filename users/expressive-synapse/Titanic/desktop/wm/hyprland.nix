@@ -47,7 +47,7 @@ wayland.windowManager.hyprland.settings = {
   "$mod" = "SUPER";
   bind = [
    # Application Controls #
-    "$mod, M, exec, hyprctl dispatch exit 1" # exit desktop
+    "$mod, M, exec, wlogout" # open wlogout
     "$mod SHIFT, Q, killactive," # close window
     "$mod, RETURN, exec, foot zellij attach main" # open terminal
     "$mod, SPACE, exec, rofi -show drun" # open app launcher

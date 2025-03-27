@@ -1,6 +1,9 @@
-{ ... }:
+{ config, lib, ... }:
 
 {
+imports = [
+  ./zjstatus.nix
+];
 programs.zellij.enable = true;
 
 home.file.".config/zellij/plugins" = {
@@ -285,7 +288,7 @@ plugins {
 load_plugins {
   autolock
 }
- 
+
 '';
 
 }

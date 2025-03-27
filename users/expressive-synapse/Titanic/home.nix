@@ -10,6 +10,7 @@ imports = [
   ./desktop/waybar/waybar.nix
   ./desktop/waypaper.nix
   ./desktop/dunst/dunst.nix
+  ./desktop/rofi.nix
 
   ./netsec/proton.nix
   ./flameshot.nix

@@ -7,11 +7,6 @@ imports = [
   inputs.hyprland.homeManagerModules.default
 ];
 
-home.packages = with pkgs; [
-  rofi-wayland
-  grimblast
-];
-
 wayland.windowManager.hyprland = {
   enable = true;
   package = inputs.hyprland.packages.${pkgs.system}.hyprland;

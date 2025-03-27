@@ -11,6 +11,7 @@ imports = [
   ./desktop/waypaper.nix
   ./desktop/dunst/dunst.nix
   ./desktop/rofi.nix
+  ./desktop/wlogout/wlogout.nix
 
   ./netsec/proton.nix
   ./flameshot.nix

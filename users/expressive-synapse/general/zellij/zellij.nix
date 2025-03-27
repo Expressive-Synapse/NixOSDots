@@ -2,7 +2,6 @@
 
 {
 imports = [
-  ./zjstatus.nix
 ];
 programs.zellij.enable = true;
 

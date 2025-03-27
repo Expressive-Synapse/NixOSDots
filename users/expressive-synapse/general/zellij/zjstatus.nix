@@ -27,7 +27,7 @@ layout {
                 format_left   "#[bg=$base02,fg=$base0D]#[bg=$base0D,fg=$base01,bold] {session} #[bg=$base02] {mode}#[bg=$base02] {tabs}"
                 format_center "{notifications}"
                 format_right  "#[bg=$base02,fg=$base0F]#[fg=$base01,bg=$base0F] #[bg=$base03,fg=$base0F,bold] {command_user}@{command_host}#[bg=$base02,fg=$base03]#[bg=$base02,fg=$base08]#[bg=$base08,fg=$base01]󰃭 #[bg=$base03,fg=$base08,bold] {datetime}#[bg=$base02,fg=$base03]"
-                format_space  "#[bg=$base02]"
+                //format_space  "#[bg=$base02]"
                 format_hide_on_overlength "true"
                 format_precedence "lrc"
 
@@ -81,7 +81,7 @@ layout {
 
                 datetime          "{format}"
                 datetime_format   "%Y-%m-%d 󰅐 %H:%M"
-                datetime_timezone "Europe/Stockholm"
+                datetime_timezone "America/New_York"
 
             }
         }

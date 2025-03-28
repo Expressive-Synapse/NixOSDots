@@ -3,6 +3,7 @@ return {
 	{ -- Collection of various small independent plugins/modules
 		"echasnovski/mini.nvim",
 		config = function()
+			--[[
 			require("mini.base16").setup({
 				palette = {
 					base00 = string.format("#%s", nixCats("stylix.base00")),
@@ -23,6 +24,7 @@ return {
 					base0F = string.format("#%s", nixCats("stylix.base0F")),
 				},
 			})
+			]]
 			-- Better Around/Inside textobjects
 			--
 			-- Examples:
@@ -37,7 +39,7 @@ return {
 			-- - sd'   - [S]urround [D]elete [']quotes
 			-- - sr)'  - [S]urround [R]eplace [)] [']
 			require("mini.surround").setup()
-
+			--[[
 			-- Simple and easy statusline.
 			--  You could remove this setup call if you don't like it,
 			--  and try some other statusline plugin
@@ -52,6 +54,7 @@ return {
 			statusline.section_location = function()
 				return "%2l:%-2v"
 			end
+			]]
 
 			-- ... and there is more!
 			--  Check out: https://github.com/echasnovski/mini.nvim

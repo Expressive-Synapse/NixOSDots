@@ -10,8 +10,9 @@
       ./hardware/hardware-configuration.nix
       ./hardware/disko.nix
 
+      ./containers/syncthing.nix
+
       ./netsec/firewall.nix
-      ./netsec/syncthing.nix
       ./netsec/sambamount.nix
       ./netsec/wireguard.nix
       ./netsec/clamAV.nix
@@ -27,6 +28,7 @@
       ./deviceInterfacing.nix
       ./virtualbox.nix
       ./gaming.nix
+      ./podman.nix
     ];
 
   # Bootloader.

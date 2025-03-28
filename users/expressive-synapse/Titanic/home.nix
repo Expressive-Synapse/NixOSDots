@@ -10,7 +10,6 @@ imports = [
   ./desktop/waybar/waybar.nix
   ./desktop/waypaper.nix
   ./desktop/dunst/dunst.nix
-  ./desktop/rofi.nix
   ./desktop/tofi.nix
   ./desktop/wlogout/wlogout.nix
 

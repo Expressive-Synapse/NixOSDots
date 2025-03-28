@@ -50,8 +50,8 @@ wayland.windowManager.hyprland.settings = {
     "$mod, M, exec, wlogout" # open wlogout
     "$mod SHIFT, Q, killactive," # close window
     "$mod, RETURN, exec, foot zellij attach main" # open terminal
-    "$mod, SPACE, exec, rofi -show drun" # open app launcher
-    "$mod SHIFT, SPACE, exec, rofi -show run" #open program launcher
+    "$mod, SPACE, exec, tofi-drun" # open app launcher
+    "$mod SHIFT, SPACE, exec, tofi" #open program launcher
 
     # Window Controls #
     "$mod, V, togglefloating," # toggle windows floating

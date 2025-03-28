@@ -28,7 +28,8 @@ programs.starship.settings = {
     "[ ](fg:base0D bg:base04)"
     "$docker_context"
     "$conda"
-    "[ ](fg:base02)"
+    "[](fg:base04 bg:base04)"
+    "[ ](fg:base04)"
     "$line_break$character"
   ];
   palette = "stylix";

@@ -11,7 +11,7 @@
     horizontal = true;
     anchor = "top";
     width = "100%";
-    height = 48;
+    height = 38;
     
     outline-width = 0;
     border-width = 0;
@@ -27,22 +27,25 @@
     prompt-padding = 30;
 
     background-color = "#${config.lib.stylix.colors.base00}";
-    text-color = "#${config.lib.stylix.colors.base06}";
+    text-color = "#${config.lib.stylix.colors.base02}";
 
     prompt-background = "#${config.lib.stylix.colors.base0E}";
     prompt-background-padding = "4, 10";
     prompt-background-corner-radius = 12;
 
-    input-color = "#${config.lib.stylix.colors.base07}";
+    input-color = "#${config.lib.stylix.colors.base02}";
     input-background = "#${config.lib.stylix.colors.base0F}";
     input-background-padding = "4, 10";
     input-background-corner-radius = 12;
 
+    default-result-color = "#${config.lib.stylix.colors.base06}";
+
+    alternate-result-color = "#${config.lib.stylix.colors.base02}";
     alternate-result-background = "#${config.lib.stylix.colors.base0C}";
     alternate-result-background-padding = "4, 10";
     alternate-result-background-corner-radius = 12;
 
-    selection-color = "#${config.lib.stylix.colors.base09}";
+    selection-color = "#${config.lib.stylix.colors.base02}";
     selection-background = "#${config.lib.stylix.colors.base0D}";
     selection-background-padding = "4, 10";
     selection-background-corner-radius = 12;

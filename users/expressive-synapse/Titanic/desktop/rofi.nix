@@ -9,9 +9,9 @@ programs.rofi.extraConfig = {
   modi = "drun,filebrowser,run";
   font = config.stylix.fonts.monospace.name;
   drun-display-format = "{icon} {name}";
-  display-drun = " Apps";
-  display-run = " Run";
-  display-filebrowser = " File";
+  display-drun = "  Apps";
+  display-run = "  Run";
+  display-filebrowser = "  File";
 };
 
 programs.rofi.theme =
@@ -73,7 +73,7 @@ programs.rofi.theme =
       background-color = lib.mkForce (mkLiteral "@selected");
       text-color = lib.mkForce (mkLiteral "@text-selected");
       cursor = mkLiteral "text";
-      placeholder = "🖥️ Search ";
+      placeholder = " Search ";
       placeholder-color = mkLiteral "inherit";
     };
     "listbox" = {

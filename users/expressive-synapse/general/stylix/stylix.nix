@@ -54,6 +54,8 @@ stylix.targets.waybar.enable = false;
 
 stylix.targets.rofi.enable = false;
 
+stylix.targets.starship.enable = false;
+
 stylix.targets.floorp = {
   profileNames = [
       "default"

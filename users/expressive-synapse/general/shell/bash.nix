@@ -12,9 +12,14 @@ programs.bash = {
     ll = "ls -l";
     ".." = "cd ..";
   };
-  initExtra = "source \"$(blesh-share)\"/ble.sh --attach=none\n
-      eval \"$(atuin init bash)\"\n
-      [[ \${BLE_VERSION-} ]] && ble-attach";
+  initExtra = /*bash*/"
+    source \"$(blesh-share)\"/ble.sh --attach=none\n
+    eval \"$(atuin init bash)\"\n
+    [[ \${BLE_VERSION-} ]] && ble-attach
+  ";
+  bashrcExtra = /*bash*/"
+    eval \"\$(starship init bash)\"
+  ";
   
 };
 home.persistence."/persist/home/expressive-synapse" = {

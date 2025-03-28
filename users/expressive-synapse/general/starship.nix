@@ -3,15 +3,17 @@
 
 programs.starship.enable = true;
 programs.starship.settings = {
+  "$schema" = "https://starship.rs/config-schema.json";
   format = lib.concatStrings [
-    "[](color_orange)"
+    "[ ](base09)"
     "$os"
-    "[](bg:color_yellow fg:color_orange)"
+    "$username"
+    "[ ](bg:base0A fg:base09)"
     "$directory"
-    "[](fg:color_yellow bg:color_aqua)"
+    "[ ](fg:base0A bg:base0c)"
     "$git_branch"
     "$git_status"
-    "[](fg:color_aqua bg:color_blue)"
+    "[ ](fg:base0c bg:base0D)"
     "$c"
     "$rust"
     "$golang"
@@ -21,56 +23,74 @@ programs.starship.settings = {
     "$kotlin"
     "$haskell"
     "$python"
-    "$nix"
+    "$nix_shell"
     "$lua"
-    "[](fg:color_blue bg:color_bg3)"
+    "[ ](fg:base0D bg:base04)"
     "$docker_context"
     "$conda"
-    "[ ](fg:color_bg1)"
-    "$line_break$character\"\"\""
+    "[ ](fg:base02)"
+    "$line_break$character"
   ];
   palette = "stylix";
 
   palettes = {
     stylix = {
-      color_fg0 = "#${config.lib.stylix.colors.base06}";
-      color_bg1 = "#${config.lib.stylix.colors.base02}";
-      color_bg3 = "#${config.lib.stylix.colors.base04}";
-      color_blue = "#${config.lib.stylix.colors.base0D}";
-      color_aqua = "#${config.lib.stylix.colors.base0C}";
-      color_green = "#${config.lib.stylix.colors.base0B}";
-      color_orange = "#${config.lib.stylix.colors.base09}";
-      color_purple = "#${config.lib.stylix.colors.base0E}";
-      color_red = "#${config.lib.stylix.colors.base08}";
-      color_yellow = "#${config.lib.stylix.colors.base0A}";
+      base00 = "#${config.lib.stylix.colors.base00}";
+      base01 = "#${config.lib.stylix.colors.base01}";
+      base02 = "#${config.lib.stylix.colors.base02}";
+      base03 = "#${config.lib.stylix.colors.base03}";
+      base04 = "#${config.lib.stylix.colors.base04}";
+      base05 = "#${config.lib.stylix.colors.base05}";
+      base06 = "#${config.lib.stylix.colors.base06}";
+      base07 = "#${config.lib.stylix.colors.base07}";
+      base08 = "#${config.lib.stylix.colors.base08}";
+      base09 = "#${config.lib.stylix.colors.base09}";
+      base0a = "#${config.lib.stylix.colors.base0A}";
+      base0b = "#${config.lib.stylix.colors.base0B}";
+      base0c = "#${config.lib.stylix.colors.base0C}";
+      base0d = "#${config.lib.stylix.colors.base0D}";
+      base0e = "#${config.lib.stylix.colors.base0E}";
+      base0f = "#${config.lib.stylix.colors.base0F}";
     };
   };
-  os.symbols = {
-    Windows = "󰍲";
-    Ubuntu = "󰕈";
-    SUSE = "";
-    Raspbian = "󰐿";
-    Mint = "󰣭";
-    Macos = "󰀵";
-    Manjaro = "";
-    Linux = "󰌽";
-    Gentoo = "󰣨";
-    Fedora = "󰣛";
-    Alpine = "";
-    Amazon = "";
-    Android = "";
-    Arch = "󰣇";
-    Artix = "󰣇";
-    EndeavourOS = "";
-    CentOS = "";
-    Debian = "󰣚";
-    Redhat = "󱄛";
-    RedHatEnterprise = "󱄛";
-    Pop = "";
-    NixOS = "󱄅";
+  
+  os = {
+    disabled = false;
+    style = "bg:base09 fg:base04";
+    symbols = {
+      Windows = "󰍲";
+      Ubuntu = "󰕈";
+      SUSE = "";
+      Raspbian = "󰐿";
+      Mint = "󰣭";
+      Macos = "󰀵";
+      Manjaro = "";
+      Linux = "󰌽";
+      Gentoo = "󰣨";
+      Fedora = "󰣛";
+      Alpine = "";
+      Amazon = "";
+      Android = "";
+      Arch = "󰣇";
+      Artix = "󰣇";
+      EndeavourOS = "";
+      CentOS = "";
+      Debian = "󰣚";
+      Redhat = "󱄛";
+      RedHatEnterprise = "󱄛";
+      Pop = "";
+      NixOS = "󱄅";
+    };
+  };
+
+  username = {
+    show_always = true;
+    style_user = "bg:base09 fg:base04";
+    style_root = "bg:base09 fg:base04";
+    format = "[ $user ]($style)";
   };
   directory = {
-    style = "fg:color_fg0 bg:color_yellow";
+    style = "fg:base04 bg:base0A";
     format = "[ $path ]($style)";
     truncation_length = 3;
     truncation_symbol = "…/";
@@ -85,88 +105,88 @@ programs.starship.settings = {
   };
   git_branch = {
     symbol = "";
-    style = "bg:color_aqua";
-    format = "[[ $symbol $branch ](fg:color_fg0 bg:color_aqua)]($style)";
+    style = "bg:base0c";
+    format = "[[ $symbol $branch ](fg:base04 bg:base0c)]($style)";
   };
   git_status = {
-    style = "bg:color_aqua";
-    format = "[[($all_status$ahead_behind )](fg:color_fg0 bg:color_aqua)]($style)";
+    style = "bg:base0C";
+    format = "[[($all_status$ahead_behind )](fg:base04 bg:base0C)]($style)";
   };
   nodejs = {
     symbol = "";
-    style = "bg:color_blue";
-    format = "[[ $symbol( $version) ](fg:color_fg0 bg:color_blue)]($style)";
+    style = "bg:base0D";
+    format = "[[ $symbol( $version) ](fg:base06 bg:base0D)]($style)";
   };
   c = {
     symbol = " ";
-    style = "bg:color_blue";
-    format = "[[ $symbol( $version) ](fg:color_fg0 bg:color_blue)]($style)";
+    style = "bg:base0D";
+    format = "[[ $symbol( $version) ](fg:base06 bg:base0D)]($style)";
   };
   rust = {
     symbol = "";
-    style = "bg:color_blue";
-    format = "[[ $symbol( $version) ](fg:color_fg0 bg:color_blue)]($style)";
+    style = "bg:base0D";
+    format = "[[ $symbol( $version) ](fg:base06 bg:base0D)]($style)";
   };
   golang = {
     symbol = "";
-    style = "bg:color_blue";
-    format = "[[ $symbol( $version) ](fg:color_fg0 bg:color_blue)]($style)";
+    style = "bg:base0D";
+    format = "[[ $symbol( $version) ](fg:base06 bg:base0D)]($style)";
   };
   php = {
     symbol = "";
-    style = "bg:color_blue";
-    format = "[[ $symbol( $version) ](fg:color_fg0 bg:color_blue)]($style)";
+    style = "bg:base0D";
+    format = "[[ $symbol( $version) ](fg:base06 bg:base0D)]($style)";
   };
   java = {
     symbol = "";
-    style = "bg:color_blue";
-    format = "[[ $symbol( $version) ](fg:color_fg0 bg:color_blue)]($style)";
+    style = "bg:base0D";
+    format = "[[ $symbol( $version) ](fg:base06 bg:base0D)]($style)";
   };
   kotlin = {
     symbol = "";
-    style = "bg:color_blue";
-    format = "[[ $symbol( $version) ](fg:color_fg0 bg:color_blue)]($style)";
+    style = "bg:base0D";
+    format = "[[ $symbol( $version) ](fg:base06 bg:base0D)]($style)";
   };
   haskell = {
     symbol = "";
-    style = "bg:color_blue";
-    format = "[[ $symbol( $version) ](fg:color_fg0 bg:color_blue)]($style)";
+    style = "bg:base0D";
+    format = "[[ $symbol( $version) ](fg:base06 bg:base0D)]($style)";
   };
   python = {
     symbol = "";
-    style = "bg:color_blue";
-    format = "[[ $symbol( $version) ](fg:color_fg0 bg:color_blue)]($style)";
+    style = "bg:base0D";
+    format = "[[ $symbol( $version) ](fg:base06 bg:base0D)]($style)";
   };
-  nix = {
+  nix_shell = {
     symbol = "󱄅";
-    style = "bg:color_blue";
-    format = "[[ $symbol( $version) ](fg:color_fg0 bg:color_blue)]($style)";
+    style = "bg:base0D";
+    format = "[[ $symbol( $version) ](fg:base06 bg:base0D)]($style)";
   };
   lua = {
     symbol = "";
-    style = "bg:color_blue";
-    format = "[[ $symbol( $version) ](fg:color_fg0 bg:color_blue)]($style)";
+    style = "bg:base0D";
+    format = "[[ $symbol( $version) ](fg:base06 bg:base0D)]($style)";
   };
   docker_context = {
     symbol = "";
-    style = "bg:color_bg3";
-    format = "[[ $symbol( $context) ](fg:color_aqua bg:color_bg3)]($style)";
+    style = "bg:base04";
+    format = "[[ $symbol( $context) ](fg:base0c bg:base04)]($style)";
   };
   conda = {
-    style = "bg:color_bg3";
-    format = "[[ $symbol( $environment) ](fg:color_aqua bg:color_bg3)]($style)";
+    style = "bg:base04";
+    format = "[[ $symbol( $environment) ](fg:base0c bg:base04)]($style)";
   };
   line_break = {
     disabled = false;
   };
   character = {
     disabled = false;
-    success_symbol = "[](bold fg:color_green)";
-    error_symbol = "[](bold fg:color_red)";
-    vimcmd_symbol = "[](bold fg:color_green)";
-    vimcmd_replace_one_symbol = "[](bold fg:color_purple)";
-    vimcmd_replace_symbol = "[](bold fg:color_purple)";
-    vimcmd_visual_symbol = "[](bold fg:color_yellow)";
+    success_symbol = "[](bold fg:base0B)";
+    error_symbol = "[](bold fg:base08)";
+    vimcmd_symbol = "[](bold fg:base0B)";
+    vimcmd_replace_one_symbol = "[](bold fg:base0E)";
+    vimcmd_replace_symbol = "[](bold fg:base0E)";
+    vimcmd_visual_symbol = "[](bold fg:base0A)";
   };
 };
 

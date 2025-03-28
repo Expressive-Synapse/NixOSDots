@@ -84,9 +84,9 @@ in {
             render-markdown-nvim
             markdown-preview-nvim
             obsidian-nvim
-            plenary-nvim #obsidian-nvim dependency
             transparent-nvim
             nvim-colorizer-lua
+            noice-nvim
           ];
           kickstart-debug = [
             nvim-dap

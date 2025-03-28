@@ -3,7 +3,6 @@ return {
 	{ -- Collection of various small independent plugins/modules
 		"echasnovski/mini.nvim",
 		config = function()
-			--[[
 			require("mini.base16").setup({
 				palette = {
 					base00 = string.format("#%s", nixCats("stylix.base00")),
@@ -24,7 +23,6 @@ return {
 					base0F = string.format("#%s", nixCats("stylix.base0F")),
 				},
 			})
-			]]
 			-- Better Around/Inside textobjects
 			--
 			-- Examples:

@@ -18,7 +18,8 @@ programs.bash = {
     [[ \${BLE_VERSION-} ]] && ble-attach
   ";
   bashrcExtra = /*bash*/"
-    eval \"\$(starship init bash)\"
+    eval \"\$(starship init bash)\"\n
+    fastfetch
   ";
   
 };

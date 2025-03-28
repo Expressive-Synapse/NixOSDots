@@ -15,6 +15,7 @@ imports = [
   ./zellij/zellij.nix
   ./starship.nix
   ./lf.nix
+  ./fastfetch.nix
 ];
 
 ###################################################

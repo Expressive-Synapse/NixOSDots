@@ -87,6 +87,7 @@ in {
             transparent-nvim
             nvim-colorizer-lua
             noice-nvim
+            nvim-notify
           ];
           kickstart-debug = [
             nvim-dap

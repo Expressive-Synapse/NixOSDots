@@ -6,6 +6,12 @@ imports = [
 ];
 programs.zellij.enable = true;
 
+home.persistence."/persist/home/expressive-synapse" = {
+  files = [
+    ".cache/zellij/permissions.kdl"
+  ];
+};
+
 home.file.".config/zellij/plugins" = {
   source = ./plugins;
 };

@@ -39,7 +39,7 @@ wayland.windowManager.hyprland.settings = {
   ];
 
   exec-once = [
-    "zellij --session main"
+    "runuser -l expressive-synapse -c 'zellij --session main'"
     "waybar"
     "waypaper --restore"
   ];

@@ -4,17 +4,21 @@
 
 imports = [
 
+  ./shell/bash.nix
+
+  ./zellij/zellij.nix
+
   ./stylix/stylix.nix
 
-  ./git.nix
   ./nixCats/nixCats.nix
+
+  ./fileManagement/lf.nix
+  ./fileManagement/yazi.nix
+
+  ./git.nix
   ./helix.nix
-  ./termFileManager.nix
   ./termSystemUtils.nix
-  ./shell/bash.nix
-  ./zellij/zellij.nix
   ./starship.nix
-  ./lf.nix
   ./fastfetch.nix
 ];
 

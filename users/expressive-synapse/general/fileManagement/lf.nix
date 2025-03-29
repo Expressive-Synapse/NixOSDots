@@ -1,0 +1,5 @@
+{ ... }:
+
+{
+  progams.lf.enable = true;
+}

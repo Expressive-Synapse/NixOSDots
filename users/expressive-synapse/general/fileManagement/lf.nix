@@ -1,5 +1,5 @@
 { ... }:
 
 {
-  progams.lf.enable = true;
+  programs.lf.enable = true;
 }

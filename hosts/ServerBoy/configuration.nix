@@ -141,6 +141,8 @@ home-manager.users.expressive-synapse = {
     nix-index
     upower
   ];
+  # fix for home-manager bug
+  programs.dconf.enable = true; 
 
 ###################################################
 #                   Keymapping                    #

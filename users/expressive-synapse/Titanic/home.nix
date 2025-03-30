@@ -4,7 +4,7 @@
 imports = [
 
   ./terminal/foot.nix
-  ./terminal/alacritty.nix
+  ./terminal/ghosttty.nix
   
   ./desktop/wm/hyprland.nix
   ./desktop/waybar/waybar.nix

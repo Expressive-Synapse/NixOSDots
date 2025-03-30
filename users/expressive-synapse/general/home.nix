@@ -6,7 +6,7 @@ imports = [
 
   ./shell/bash.nix
 
-  ./zellij/zellij.nix
+  ./multiplexers/zellij/zellij.nix
 
   ./stylix/stylix.nix
 

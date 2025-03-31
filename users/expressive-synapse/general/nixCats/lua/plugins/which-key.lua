@@ -21,8 +21,7 @@ return {
 				{ "<leader>w_", hidden = true },
 				{
 					mode = { "v" },
-					{ "<leader>h", group = "Git [H]unk" },
-					{ "<leader>h_", hidden = true },
+					{ "<leader>G", group = "[G]it" },
 				},
 			})
 		end,

@@ -117,49 +117,49 @@ return {
 			},
 			-- git
 			{
-				"<leader>gb",
+				"<leader>Gb",
 				function()
 					Snacks.picker.git_branches()
 				end,
 				desc = "Git Branches",
 			},
 			{
-				"<leader>gl",
+				"<leader>Gl",
 				function()
 					Snacks.picker.git_log()
 				end,
 				desc = "Git Log",
 			},
 			{
-				"<leader>gL",
+				"<leader>GL",
 				function()
 					Snacks.picker.git_log_line()
 				end,
 				desc = "Git Log Line",
 			},
 			{
-				"<leader>gs",
+				"<leader>Gs",
 				function()
 					Snacks.picker.git_status()
 				end,
 				desc = "Git Status",
 			},
 			{
-				"<leader>gS",
+				"<leader>GS",
 				function()
 					Snacks.picker.git_stash()
 				end,
 				desc = "Git Stash",
 			},
 			{
-				"<leader>gd",
+				"<leader>Gd",
 				function()
 					Snacks.picker.git_diff()
 				end,
 				desc = "Git Diff (Hunks)",
 			},
 			{
-				"<leader>gf",
+				"<leader>Gf",
 				function()
 					Snacks.picker.git_log_file()
 				end,

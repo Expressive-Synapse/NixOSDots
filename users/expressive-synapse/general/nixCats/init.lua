@@ -12,6 +12,8 @@ require("nixCatsUtils").setup({
 	non_nix_value = true,
 })
 
+require("keymap")
+
 -- Set <space> as the leader key
 -- See `:help mapleader`
 --  NOTE: Must happen before plugins are loaded (otherwise wrong leader will be used)
@@ -102,30 +104,17 @@ vim.opt.undofile = true
 -- Enable terminal colors for nvim
 vim.opt.termguicolors = true
 
--- [[ Basic Keymaps ]]
---  See `:help vim.keymap.set()`
-
--- Set move controls for blocks of selected text
-vim.keymap.set("v", "J", ":m '>+1<CR>gv=gv")
-vim.keymap.set("v", "K", ":m '<-2<CR>gv=gv")
-
--- Set highlight on search, but clear on pressing <Esc> in normal mode
-vim.opt.hlsearch = true
-vim.keymap.set("n", "<Esc>", "<cmd>nohlsearch<CR>")
-
--- Diagnostic keymaps
-vim.keymap.set("n", "[d", vim.diagnostic.goto_prev, { desc = "Go to previous [D]iagnostic message" })
-vim.keymap.set("n", "]d", vim.diagnostic.goto_next, { desc = "Go to next [D]iagnostic message" })
-vim.keymap.set("n", "<leader>e", vim.diagnostic.open_float, { desc = "Show diagnostic [E]rror messages" })
-vim.keymap.set("n", "<leader>q", vim.diagnostic.setloclist, { desc = "Open diagnostic [Q]uickfix list" })
-
--- Exit terminal mode in the builtin terminal with a shortcut that is a bit easier
--- for people to discover. Otherwise, you normally need to press <C-\><C-n>, which
--- is not what someone will guess without a bit more experience.
---
--- NOTE: This won't work in all terminal emulators/tmux/etc. Try your own mapping
--- or just use <C-\><C-n> to exit terminal mode
-vim.keymap.set("t", "<Esc><Esc>", "<C-\\><C-n>", { desc = "Exit terminal mode" })
+vim.opt.hlsearch =
+	true,
+	-- [[ Basic Keymaps ]]
+	--  See `:help vim.keymap.set()`
+	-- Exit terminal mode in the builtin terminal with a shortcut that is a bit easier
+	-- for people to discover. Otherwise, you normally need to press <C-\><C-n>, which
+	-- is not what someone will guess without a bit more experience.
+	--
+	-- NOTE: This won't work in all terminal emulators/tmux/etc. Try your own mapping
+	-- or just use <C-\><C-n> to exit terminal mode
+	vim.keymap.set("t", "<Esc><Esc>", "<C-\\><C-n>", { desc = "Exit terminal mode" })
 
 -- TIP: Disable arrow keys in normal mode
 -- vim.keymap.set('n', '<left>', '<cmd>echo "Use h to move!!"<CR>')
@@ -137,13 +126,14 @@ vim.keymap.set("t", "<Esc><Esc>", "<C-\\><C-n>", { desc = "Exit terminal mode" }
 --  Use CTRL+<hjkl> to switch between windows
 --
 --  See `:help wincmd` for a list of all window commands
-require("zellij-nav").setup()
 
-vim.keymap.set("n", "<M-h>", "<cmd>ZellijNavigateLeftTab<cr>", { desc = "Move focus to the left window" })
-vim.keymap.set("n", "<M-l>", "<cmd>ZellijNavigateRightTab<cr>", { desc = "Move focus to the right window" })
-vim.keymap.set("n", "<M-j>", "<cmd>ZellijNavigateDown<cr>", { desc = "Move focus to the lower window" })
-vim.keymap.set("n", "<M-k>", "<cmd>ZellijNavigateUp<cr>", { desc = "Move focus to the upper window" })
-
+--require("zellij-nav").setup()
+--
+--vim.keymap.set("n", "<M-h>", "<cmd>ZellijNavigateLeftTab<cr>", { desc = "Move focus to the left window" })
+--vim.keymap.set("n", "<M-l>", "<cmd>ZellijNavigateRightTab<cr>", { desc = "Move focus to the right window" })
+--vim.keymap.set("n", "<M-j>", "<cmd>ZellijNavigateDown<cr>", { desc = "Move focus to the lower window" })
+--vim.keymap.set("n", "<M-k>", "<cmd>ZellijNavigateUp<cr>", { desc = "Move focus to the upper window" })
+--
 -- [[ Basic Autocommands ]]
 --  See `:help lua-guide-autocommands`
 

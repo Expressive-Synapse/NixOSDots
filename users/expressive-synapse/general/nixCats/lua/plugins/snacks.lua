@@ -5,6 +5,7 @@ return {
 		priority = 1000,
 		lazy = false,
 		---@type snacks.Config
+		require("transparent").clear_prefix("snacks"),
 		opts = {
 			bigfile = { enabled = true },
 			dashboard = { enabled = true },

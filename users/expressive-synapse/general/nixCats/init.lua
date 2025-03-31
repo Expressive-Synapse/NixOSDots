@@ -12,7 +12,7 @@ require("nixCatsUtils").setup({
 	non_nix_value = true,
 })
 
-require("keymap")
+require("config")
 
 -- Set <space> as the leader key
 -- See `:help mapleader`

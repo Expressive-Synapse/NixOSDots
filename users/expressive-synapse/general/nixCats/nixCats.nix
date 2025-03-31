@@ -194,7 +194,7 @@ in {
             # this kickstart extra didnt require any extra plugins
             # so it doesnt have a category above.
             # but we can still send the info from nix to lua that we want it!
-            kickstart-gitsigns = true;
+            kickstart-gitsigns = false;
 
             # we can pass whatever we want actually.
             have_nerd_font = true;

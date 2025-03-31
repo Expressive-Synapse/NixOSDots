@@ -189,7 +189,7 @@ in {
             kickstart-neo-tree = false;
             kickstart-debug = true;
             kickstart-lint = true;
-            kickstart-indent_line = true;
+            kickstart-indent_line = false;
 
             # this kickstart extra didnt require any extra plugins
             # so it doesnt have a category above.

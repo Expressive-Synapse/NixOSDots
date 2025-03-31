@@ -445,7 +445,7 @@ return {
 				desc = "Rename File",
 			},
 			{
-				"<leader>gB",
+				"<leader>GB",
 				function()
 					Snacks.gitbrowse()
 				end,
@@ -453,7 +453,7 @@ return {
 				mode = { "n", "v" },
 			},
 			{
-				"<leader>gg",
+				"<leader>Gg",
 				function()
 					Snacks.lazygit()
 				end,

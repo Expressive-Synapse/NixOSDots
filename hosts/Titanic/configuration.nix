@@ -29,6 +29,7 @@
       ./virtualbox.nix
       ./gaming.nix
       ./podman.nix
+      ./pirateTools.nix
     ];
 
   # Bootloader.

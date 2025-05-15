@@ -3,7 +3,6 @@
 {
 home.packages = with pkgs; [
   prismlauncher
-  suyu
 ];
 
 home.persistence."/persist/home/expressive-synapse" = {
@@ -11,8 +10,6 @@ home.persistence."/persist/home/expressive-synapse" = {
    # ".steam"
     ".local/share/Steam"
     ".local/share/PrismLauncher"
-    ".local/share/suyu"
-    ".config/suyu"
     ".config/retroarch"
   ];
 };

@@ -34,6 +34,7 @@ home.persistence."/persist/home/expressive-synapse" = {
     "Pictures"
     "Documents"
     "Videos"
+    ".local/share/FoundryVTT"
   ];
   allowOther= true;
 };

@@ -6,6 +6,7 @@ libreoffice
     #thunderbird
 obsidian
 filezilla
+gimp3
 ];
 
 /*

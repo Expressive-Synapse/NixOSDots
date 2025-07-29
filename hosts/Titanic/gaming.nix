@@ -28,6 +28,7 @@ nixpkgs.config.packageOverrides = pkgs: {
       beetle-pce
   ]))
   mangohud
+  protontricks
  ];
 
  programs.steam.enable = true;

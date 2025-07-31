@@ -10,4 +10,11 @@ home.packages = with pkgs; [
 ];
 
 programs.yazi.enable = true;
+
+xdg.mimeApps = {
+    enable = true;
+    defaultApplications = {
+      "inode/directory" = "yazi.desktop"
+    };
+  };
 }

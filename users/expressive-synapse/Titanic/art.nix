@@ -3,6 +3,14 @@
 {
 home.packages = with pkgs; [
 inkscape
-blender
+blender-hip
 ];
+
+home.persistence."/persist/home/expressive-synapse" = {
+  directories = [
+    ".config/inkscape"
+    ".config/blender"
+  ];
+};
+
 }

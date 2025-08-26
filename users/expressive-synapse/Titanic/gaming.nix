@@ -11,6 +11,7 @@ home.persistence."/persist/home/expressive-synapse" = {
     ".local/share/Steam"
     ".local/share/PrismLauncher"
     ".config/retroarch"
+    "Zomboid"
   ];
 };
 }

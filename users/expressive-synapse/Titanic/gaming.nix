@@ -3,6 +3,9 @@
 {
 home.packages = with pkgs; [
   prismlauncher
+  r2modman
+  scarab
+  olympus
 ];
 
 home.persistence."/persist/home/expressive-synapse" = {

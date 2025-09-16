@@ -3,7 +3,7 @@
 {
 
 home.packages = with pkgs; [
- floorp 
+ floorp-bin
 ];
 
 home.persistence."/persist/home/expressive-synapse" = {

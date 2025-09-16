@@ -2,9 +2,10 @@
 
 {
 
-home.packages = with pkgs; [
- floorp-bin
-];
+programs.firefox = {
+    enable = true;
+    package = pkgs.floorp-bin-unwrapped;
+};
 
 home.persistence."/persist/home/expressive-synapse" = {
   directories = [

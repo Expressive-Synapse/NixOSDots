@@ -17,7 +17,7 @@ imports = [
   ./art.nix
   ./flameshot.nix
   ./deviceInterfacing.nix
-  ./floorp.nix
+  ./librewolf.nix
   ./keepass.nix
   ./discord.nix
   ./gaming.nix

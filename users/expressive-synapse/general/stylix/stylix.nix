@@ -60,9 +60,9 @@ stylix.targets.starship.enable = false;
 
 stylix.targets.floorp = {
   profileNames = [
-      "default"
+      "expressive-synapse"
     ];
   colorTheme.enable = true;
-  };
-
+};
+  
 }

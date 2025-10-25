@@ -9,6 +9,7 @@ home.packages = with pkgs; [
 
 home.persistence."/persist/home/expressive-synapse" = {
   directories = [
+      ".config/dosbox"
   ];
 };
 }

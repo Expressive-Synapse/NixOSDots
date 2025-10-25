@@ -24,6 +24,7 @@ imports = [
   ./winOnLinux.nix
   ./officeTools.nix
   ./pirateTools.nix
+  ./dosbox.nix
 ];
 
 ###################################################

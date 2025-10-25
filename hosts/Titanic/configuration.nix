@@ -126,7 +126,7 @@ users.users.expressive-synapse = {
   hashedPasswordFile = config.sops.secrets."users/expressive-synapse/accountpass".path;
   uid = 1000;
   description = "Connor Goff";
-  extraGroups = [ "networkmanager" "wheel" ];
+  extraGroups = [ "networkmanager" "wheel" "cdrom" ];
 };
 programs.fuse.userAllowOther = true;
 home-manager.extraSpecialArgs = {

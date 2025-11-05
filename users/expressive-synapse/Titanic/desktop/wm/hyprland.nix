@@ -96,7 +96,7 @@ wayland.windowManager.hyprland.settings = {
     "move 0 0, class:^(flameshot)$"
     "pin, class:^(flameshot)$"
     "noinitialfocus, class:^(flameshot)$"
-    "monitor HDMI-A-1, class:^(flameshot)$" # Set to left most monitor
+    "monitor 1, class:^(flameshot)$" # Set to left most monitor
   ];
 };
 

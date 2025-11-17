@@ -58,7 +58,7 @@ stylix.targets.tofi.enable = false;
 
 stylix.targets.starship.enable = false;
 
-stylix.targets.floorp = {
+stylix.targets.zen-browser = {
   profileNames = [
       "expressive-synapse"
     ];

@@ -40,11 +40,6 @@
       url = "github:danth/stylix";
     };
 
-    nixvim = {
-      url = "github:nix-community/nixvim";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
-
     xremap-flake = {
       url = "github:xremap/nix-flake";
     };
@@ -64,6 +59,11 @@
 
     nixCats = {
       url = "github:BirdeeHub/nixCats-nvim";
+    };
+
+    zen-browser = {
+      url = "github:0xc000022070/zen-browser-flake";
+      inputs.nixpkgs.follows = "nixpkgs";
     };
 
   };

@@ -62,7 +62,6 @@ stylix.targets.zen-browser = {
   profileNames = [
       "expressive-synapse"
     ];
-  colorTheme.enable = true;
 };
   
 }

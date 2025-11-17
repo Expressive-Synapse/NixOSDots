@@ -25,6 +25,7 @@ imports = [
   ./officeTools.nix
   ./pirateTools.nix
   ./dosbox.nix
+  ./zen-browser.nix
 ];
 
 ###################################################

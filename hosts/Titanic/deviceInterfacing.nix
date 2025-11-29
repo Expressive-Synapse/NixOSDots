@@ -10,7 +10,7 @@ environment.systemPackages = with pkgs; [
   glib
   via
   cdemu-daemon
-  antimicroX
+  antimicrox
   linuxConsoleTools
 ];
 

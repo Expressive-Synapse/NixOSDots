@@ -10,6 +10,7 @@ environment.systemPackages = with pkgs; [
   glib
   via
   cdemu-daemon
+  antimicroX
 ];
 
 programs.kdeconnect.enable = true;

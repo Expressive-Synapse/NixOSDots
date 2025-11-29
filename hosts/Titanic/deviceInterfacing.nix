@@ -11,6 +11,7 @@ environment.systemPackages = with pkgs; [
   via
   cdemu-daemon
   antimicroX
+  linuxConsoleTools
 ];
 
 programs.kdeconnect.enable = true;

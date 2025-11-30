@@ -7,4 +7,11 @@ home.packages = with pkgs; [
   via
   piper
 ];
+
+home.persistence."/persist/home/expressive-synapse" = {
+  directories = [
+    ".config/antimircox"
+  ];
+};
+
 }

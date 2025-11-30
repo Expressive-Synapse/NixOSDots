@@ -10,7 +10,7 @@ home.packages = with pkgs; [
 
 home.persistence."/persist/home/expressive-synapse" = {
   directories = [
-    ".config/antimircox"
+    ".config/antimicrox"
   ];
 };
 

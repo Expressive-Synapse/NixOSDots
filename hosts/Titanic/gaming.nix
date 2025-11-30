@@ -26,6 +26,7 @@ nixpkgs.config.packageOverrides = pkgs: {
       mame
       beetle-pcfx
       beetle-pce
+      mupen64plus
   ]))
   mangohud
   protontricks

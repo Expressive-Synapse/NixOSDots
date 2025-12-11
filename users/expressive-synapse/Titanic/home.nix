@@ -38,6 +38,7 @@ home.persistence."/persist/home/expressive-synapse" = {
     "Documents"
     "Videos"
     ".local/share/FoundryVTT"
+    ".config/VirtualBox"
   ];
   allowOther= true;
 };

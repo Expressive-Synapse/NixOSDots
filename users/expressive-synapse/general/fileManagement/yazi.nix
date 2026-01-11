@@ -7,6 +7,7 @@ home.packages = with pkgs; [
   pqiv
   exiftool
   fd
+  feh
 ];
 
 programs.yazi.enable = true;

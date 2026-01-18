@@ -27,11 +27,15 @@ xdg.portal = {
 services.xremap.withWlroots = true;
 
 /*---------------------sddm----------------------*/
-services.displayManager.sddm = {
+/*services.displayManager.sddm = {
 enable = true;
 wayland.enable = true;
 extraPackages = with pkgs; [
   libsForQt5.qt5.qtgraphicaleffects
 ];
-};
+};*/
+/*----------------------ly-----------------------*/
+services.displayManager.ly = {
+    enable = true;
+  };
 }

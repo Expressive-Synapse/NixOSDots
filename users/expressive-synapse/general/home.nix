@@ -32,7 +32,6 @@ home.persistence."/persist" = {
     ".ssh"
     ".local/share/keyrings"
   ];
-  allowOther= true;
 };
   
 ###################################################

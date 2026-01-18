@@ -41,7 +41,6 @@ home.persistence."/persist" = {
     ".local/share/FoundryVTT"
     ".config/VirtualBox"
   ];
-  allowOther= true;
 };
   
 ###################################################

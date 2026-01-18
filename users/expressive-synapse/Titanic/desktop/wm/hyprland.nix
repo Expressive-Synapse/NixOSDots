@@ -23,6 +23,7 @@ wayland.windowManager.hyprland = {
 
 wayland.windowManager.hyprland.plugins = [
   #inputs.split-monitor-workspaces.packages.${pkgs.stdenv.hostPlatform.system}.split-monitor-workspaces
+  inputs.hyprland-plugins.packages.${pkgs.stdenv.hostPlatform.system}.hyprsplit
 ];
 
 wayland.windowManager.hyprland.settings = {

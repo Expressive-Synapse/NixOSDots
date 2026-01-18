@@ -4,7 +4,7 @@
 
 programs.firefox = {
     enable = true;
-    package = pkgs.librewolf-wayland;
+    package = pkgs.librewolf;
 
     profiles = {
       expressive-synapse = {};

@@ -2,7 +2,7 @@
 
 {
 environment.systemPackages = with pkgs; [
-  mtpfs
+  #mtpfs
   simple-mtpfs
   piper
   usbutils

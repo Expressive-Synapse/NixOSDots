@@ -12,7 +12,7 @@
       url = "nixpkgs/nixos-23.11";
     };
 
-    home-manager = {
+    /*home-manager = {
       url = "github:nix-community/home-manager/master";
       inputs.nixpkgs.follows = "nixpkgs";
     };
@@ -20,7 +20,7 @@
     home-manager-stable = {
       url = "github:nix-community/home-manager/release-23.11";
       inputs.nixpkgs.follows = "nixpkgs-stable";
-    };
+    };*/
 
     sops-nix = {
       url = "github:Mic92/sops-nix";
@@ -99,7 +99,7 @@
       "ServerBoy" = lib.nixosSystem {
 	      system = "x86_64-linux";
 	      modules = [
-          inputs.home-manager.nixosModules.home-manager
+          #inputs.home-manager.nixosModules.home-manager
           inputs.disko.nixosModules.default
           inputs.impermanence.nixosModules.impermanence
           inputs.sops-nix.nixosModules.sops

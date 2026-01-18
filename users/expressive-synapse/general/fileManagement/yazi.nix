@@ -12,6 +12,15 @@ home.packages = with pkgs; [
 
 programs.yazi.enable = true;
 
+programs.yazi.settings = {
+  opener = {
+    edit = [
+      { run = "hx %s"; block = true; for = "unix"; }
+      { run = "hx %s"; block = true; for = "windows"; }
+    ];
+  };
+};
+
 xdg.mimeApps = {
     enable = true;
     defaultApplications = {

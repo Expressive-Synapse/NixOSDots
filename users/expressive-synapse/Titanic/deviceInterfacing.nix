@@ -2,7 +2,7 @@
 
 {
 home.packages = with pkgs; [
-  mtpfs
+  #mtpfs
   simple-mtpfs
   via
   piper

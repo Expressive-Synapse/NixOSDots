@@ -29,5 +29,9 @@ hardware.keyboard.qmk.enable = true;
 services.udev.packages = with pkgs; [
   via
 ];
-
+services.udev.extraRules = ''
+#8bitdo
+SUBSYSTEM=="hidraw", ATTRS{idVendor}=="2dc8", ATTRS{idProduct}=="5200", MODE="0666"
+SUBSYSTEM=="hidraw", ATTRS{idVendor}=="2dc8", ATTRS{idProduct}=="5201", MODE="0666"
+  ''
 }

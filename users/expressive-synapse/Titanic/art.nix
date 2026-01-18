@@ -3,7 +3,7 @@
 {
 home.packages = with pkgs; [
 inkscape
-blender-hip
+blender
 ];
 
 home.persistence."/persist" = {

@@ -6,7 +6,7 @@ inkscape
 blender-hip
 ];
 
-home.persistence."/persist/home/expressive-synapse" = {
+home.persistence."/persist" = {
   directories = [
     ".config/inkscape"
     ".config/blender"

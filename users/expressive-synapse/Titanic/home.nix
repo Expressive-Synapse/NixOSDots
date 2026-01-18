@@ -33,7 +33,7 @@ imports = [
 #                   FileSystem                    #
 ###################################################
 
-home.persistence."/persist/home/expressive-synapse" = {
+home.persistence."/persist" = {
   directories = [
     "Pictures"
     "Documents"

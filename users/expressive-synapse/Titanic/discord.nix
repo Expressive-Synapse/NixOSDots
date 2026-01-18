@@ -9,7 +9,7 @@ home.packages = with pkgs; [
   })
 ];
 
-home.persistence."/persist/home/expressive-synapse" = {
+home.persistence."/persist" = {
   directories = [
     ".config/discord"
     ".config/Vencord"

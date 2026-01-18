@@ -7,7 +7,7 @@ home.packages = with pkgs; [
   firefox
 ];
 
-home.persistence."/persist/home/expressive-synapse" = {
+home.persistence."/persist" = {
   directories = [
     ".mozilla"
   ];

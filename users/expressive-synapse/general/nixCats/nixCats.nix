@@ -6,7 +6,7 @@ in {
   ]; 
   config = {
     # persist reavent folders and files for vim to function properly
-    home.persistence."/persist/home/expressive-synapse" = {
+    home.persistence."/persist" = {
       directories = [
       ".vim/undodir"
       ".vim/spell"

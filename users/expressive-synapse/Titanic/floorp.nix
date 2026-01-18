@@ -7,7 +7,7 @@ programs.firefox = {
     package = pkgs.floorp-bin-unwrapped;
 };
 
-home.persistence."/persist/home/expressive-synapse" = {
+home.persistence."/persist" = {
   directories = [
    ".floorp" 
   ];

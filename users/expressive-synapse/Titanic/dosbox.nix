@@ -7,7 +7,7 @@ home.packages = with pkgs; [
   dosbox-staging
 ];
 
-home.persistence."/persist/home/expressive-synapse" = {
+home.persistence."/persist" = {
   directories = [
       ".config/dosbox"
   ];

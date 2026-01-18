@@ -6,7 +6,7 @@ imports = [
 ];
 programs.zellij.enable = true;
 
-home.persistence."/persist/home/expressive-synapse" = {
+home.persistence."/persist" = {
   files = [
     ".cache/zellij/permissions.kdl"
   ];

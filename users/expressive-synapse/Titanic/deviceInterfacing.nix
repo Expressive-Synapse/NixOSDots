@@ -8,7 +8,7 @@ home.packages = with pkgs; [
   piper
 ];
 
-home.persistence."/persist/home/expressive-synapse" = {
+home.persistence."/persist" = {
   directories = [
     ".config/antimicrox"
   ];

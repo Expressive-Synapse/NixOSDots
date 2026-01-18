@@ -5,7 +5,7 @@
     vesktop
   ];
 
-  home.persistence."/persist/home/expressive-synapse" = {
+  home.persistence."/persist" = {
   directories = [
     ".config/vesktop"
   ];

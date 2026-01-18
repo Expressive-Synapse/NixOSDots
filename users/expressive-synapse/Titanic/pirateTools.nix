@@ -10,7 +10,7 @@ home.packages = with pkgs; [
   picard
 ];
 
-home.persistence."/persist/home/expressive-synapse" = {
+home.persistence."/persist" = {
   directories = [
     ".config/casualOnTheSpot"
     ".config/qBittorrent"

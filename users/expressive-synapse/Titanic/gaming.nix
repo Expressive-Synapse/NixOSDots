@@ -8,7 +8,7 @@ home.packages = with pkgs; [
   olympus
 ];
 
-home.persistence."/persist/home/expressive-synapse" = {
+home.persistence."/persist" = {
   directories = [
    # ".steam"
     ".local/share/Steam"

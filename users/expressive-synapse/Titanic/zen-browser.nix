@@ -4,7 +4,7 @@
     inputs.zen-browser.homeModules.beta
   ];
 
-  home.persistence."/persist/home/expressive-synapse" = {
+  home.persistence."/persist" = {
     directories = [
       ".zen"
     ];

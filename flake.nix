@@ -85,7 +85,7 @@
       "Titanic" = lib.nixosSystem {
 	      system = "x86_64-linux";
 	      modules = [
-          inputs.home-manager.nixosModules.home-manager
+          #inputs.home-manager.nixosModules.home-manager
           inputs.disko.nixosModules.default
           inputs.impermanence.nixosModules.impermanence
           inputs.sops-nix.nixosModules.sops

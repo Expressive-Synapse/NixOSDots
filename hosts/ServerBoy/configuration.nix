@@ -152,6 +152,7 @@ services.xserver = {
   xkb.layout = "us";
   xkb.variant = "";
 };
+services.xremap.enable = true;
 services.xremap.config.modmap = [
   {
   name = "cool CapsLock";

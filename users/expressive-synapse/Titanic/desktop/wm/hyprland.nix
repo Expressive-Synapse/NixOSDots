@@ -42,7 +42,9 @@ wayland.windowManager.hyprland.settings = {
     "DP-3,2560x1440@164,1080x215,1"
     "HDMI-A-1,1920x1080@60,0x0,1,transform,1"
   ];
-
+  cursor = {
+    "no_hardware_cursors" = "true";
+  };
   exec-once = [
     "waybar"
     "waypaper --restore"

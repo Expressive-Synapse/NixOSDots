@@ -4,9 +4,11 @@
 
 programs.git = {
   enable = true;
-  userName = "Expressive-Synapse";
-  userEmail = "ConnorDGoff@protonmail.com";
-  extraConfig = {
+  settings = {
+    user = {
+        name = "Expressive-Synapse";
+        email = "ConnorDGoff@protonmail.com";
+    };
     init.defaultBranch = "main";
   };
 };

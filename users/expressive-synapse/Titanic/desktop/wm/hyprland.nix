@@ -7,6 +7,10 @@ imports = [
   inputs.hyprland.homeManagerModules.default
 ];
 
+home.packages = with pkgs; [
+hyprcursor
+];
+
 wayland.windowManager.hyprland = {
   enable = true;
   package = inputs.hyprland.packages.${pkgs.stdenv.hostPlatform.system}.hyprland;

@@ -30,8 +30,9 @@
     via
   ];
   services.udev.extraRules = ''
-    #8bitdo
-    SUBSYSTEM=="hidraw", ATTRS{idVendor}=="2dc8", ATTRS{idProduct}=="5200", MODE="0666"
-    SUBSYSTEM=="hidraw", ATTRS{idVendor}=="2dc8", ATTRS{idProduct}=="5201", MODE="0666"
+    #8BitDo 8BitDo Pro 3 Receiver
+    SUBSYSTEM=="hidraw", ATTRS{idVendor}=="2dc8", ATTRS{idProduct}=="310b", MODE="0666"
+    #8BitDo 8BitDo Pro 3 Controller
+    SUBSYSTEM=="hidraw", ATTRS{idVendor}=="2dc8", ATTRS{idProduct}=="310b", MODE="0666"
   '';
 }

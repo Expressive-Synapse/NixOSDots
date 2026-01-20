@@ -7,7 +7,7 @@
     obsidian
     filezilla
     gimp3
-    bookworm
+    calibre
   ];
   /*
     home.persistence."/persist = {

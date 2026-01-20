@@ -7,7 +7,7 @@
     obsidian
     filezilla
     gimp3
-    kdePackages.okular
+    foliate
   ];
   /*
     home.persistence."/persist = {

@@ -7,7 +7,7 @@
     obsidian
     filezilla
     gimp3
-    calibre
+    ocular
   ];
   /*
     home.persistence."/persist = {

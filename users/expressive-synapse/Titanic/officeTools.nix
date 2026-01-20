@@ -7,7 +7,7 @@
     obsidian
     filezilla
     gimp3
-    okular
+    kdePackages.okular
   ];
   /*
     home.persistence."/persist = {

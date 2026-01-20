@@ -7,7 +7,7 @@
     obsidian
     filezilla
     gimp3
-    ocular
+    okular
   ];
   /*
     home.persistence."/persist = {

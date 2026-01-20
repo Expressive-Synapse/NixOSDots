@@ -7,13 +7,11 @@ libreoffice
 obsidian
 filezilla
 gimp3
+bookworm
 ];
 
-/*
-home.persistence."/persist/home/expressive-synapse" = {
+home.persistence."/persist = {
   directories = [
-    ".thunderbird"
   ];
 };
-*/
 }

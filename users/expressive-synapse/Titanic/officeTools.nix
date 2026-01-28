@@ -8,6 +8,7 @@
     filezilla
     gimp3
     foliate
+    kdePackages.kdenlive
   ];
   /*
     home.persistence."/persist = {

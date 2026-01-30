@@ -3,6 +3,7 @@
 {
   environment.systemPackages = with pkgs; [
     #mtpfs
+    exfat
     ntfs3g
     simple-mtpfs
     piper

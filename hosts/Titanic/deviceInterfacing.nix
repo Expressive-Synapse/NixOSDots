@@ -3,6 +3,7 @@
 {
   environment.systemPackages = with pkgs; [
     #mtpfs
+    ntfs3g
     simple-mtpfs
     piper
     usbutils

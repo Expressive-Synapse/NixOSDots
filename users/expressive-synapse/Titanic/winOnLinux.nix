@@ -4,6 +4,7 @@
   home.packages = with pkgs; [
     bottles
     wineWowPackages.waylandFull
+    lutris
     winetricks
   ];
 

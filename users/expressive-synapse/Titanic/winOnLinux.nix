@@ -3,7 +3,6 @@
 {
   home.packages = with pkgs; [
     bottles
-    wineWowPackages.stable
     wineWowPackages.waylandFull
     winetricks
   ];

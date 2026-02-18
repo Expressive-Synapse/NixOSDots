@@ -1,13 +1,14 @@
-{pkgs, inputs, ...}:
+{ pkgs, ... }:
 
 {
-home.packages = with pkgs; [
-  bottles
-];
-
-home.persistence."/persist" = {
-  directories = [
-    ".local/share/bottles"
+  home.packages = with pkgs; [
+    bottles
+    wine-wayland
   ];
-};
+
+  home.persistence."/persist" = {
+    directories = [
+      ".local/share/bottles"
+    ];
+  };
 }

@@ -3,7 +3,7 @@
 {
   home.packages = with pkgs; [
     bottles
-    wineWowPackages.waylandFull
+    wineWow64Packages.waylandFull
     lutris
     winetricks
   ];

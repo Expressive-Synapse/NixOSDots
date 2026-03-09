@@ -1,4 +1,4 @@
-{ inputs, system, ... }:
+{ inputs, ... }:
 {
   imports = [
     inputs.zen-browser.homeModules.beta
@@ -21,7 +21,7 @@
     let
       value =
         let
-          zen-browser = inputs.zen-browser.packages.${system}.beta; # or twilight
+          zen-browser = inputs.zen-browser.homeModules.beta; # or twilight
         in
         zen-browser.meta.desktopFileName;
 

@@ -71,7 +71,6 @@
       "$mod, V, togglefloating," # toggle windows floating
       "$mod, F, fullscreen" # toggle fullscreen
       "$mod, P, pseudo," # dwindle
-      "$mod, J, togglesplit," # dwindle
 
       # Focus Controls #
       "$mod, left, movefocus, l"

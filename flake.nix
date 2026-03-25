@@ -1,13 +1,13 @@
 {
 
   description = "my Primary flake";
-  
+
   inputs = {
-    
+
     nixpkgs = {
       url = "nixpkgs/nixos-unstable";
     };
-    
+
     nixpkgs-stable = {
       url = "nixpkgs/nixos-23.11";
     };
@@ -57,7 +57,7 @@
       url = "github:Duckonaut/split-monitor-workspaces";
       inputs.hyprland.follows = "hyprland";
     };
-    
+
     ags = {
       url = "github:Aylur/ags";
     };
@@ -71,51 +71,64 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
+    hytale-launcher = {
+      url = "github:JPyke3/hytale-launcher-nix";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+
   };
 
-  outputs = inputs@{ self, nixpkgs, nixpkgs-stable, stylix, ... }:
+  outputs =
+    inputs@{
+      self,
+      nixpkgs,
+      nixpkgs-stable,
+      stylix,
+      ...
+    }:
     let
       lib = nixpkgs.lib;
       pkgs = nixpkgs.legacyPackages."x86_64-linux";
 
       pkgs-stable = import nixpkgs-stable {
         system = "x86_64-linux";
-      	config = {
-	        allowUnfree = true;
-	        allowUnfreePredicate = (_: true);
+        config = {
+          allowUnfree = true;
+          allowUnfreePredicate = (_: true);
         };
       };
-    in {
-    nixosConfigurations = {
-      "Titanic" = lib.nixosSystem {
-	      system = "x86_64-linux";
-	      modules = [
-          inputs.home-manager.nixosModules.home-manager
-          inputs.disko.nixosModules.default
-          inputs.impermanence.nixosModules.impermanence
-          inputs.sops-nix.nixosModules.sops
-          inputs.xremap-flake.nixosModules.default
-          ./hosts/Titanic/configuration.nix 
-        ]; 
-        specialArgs = {
-          inherit inputs;
+    in
+    {
+      nixosConfigurations = {
+        "Titanic" = lib.nixosSystem {
+          system = "x86_64-linux";
+          modules = [
+            inputs.home-manager.nixosModules.home-manager
+            inputs.disko.nixosModules.default
+            inputs.impermanence.nixosModules.impermanence
+            inputs.sops-nix.nixosModules.sops
+            inputs.xremap-flake.nixosModules.default
+            ./hosts/Titanic/configuration.nix
+          ];
+          specialArgs = {
+            inherit inputs;
+          };
         };
-      };
-      "ServerBoy" = lib.nixosSystem {
-	      system = "x86_64-linux";
-	      modules = [
-          inputs.home-manager.nixosModules.home-manager
-          inputs.disko.nixosModules.default
-          inputs.impermanence.nixosModules.impermanence
-          inputs.sops-nix.nixosModules.sops
-          inputs.xremap-flake.nixosModules.default
-          ./hosts/ServerBoy/configuration.nix 
-        ]; 
-        specialArgs = {
-          inherit inputs;
+        "ServerBoy" = lib.nixosSystem {
+          system = "x86_64-linux";
+          modules = [
+            inputs.home-manager.nixosModules.home-manager
+            inputs.disko.nixosModules.default
+            inputs.impermanence.nixosModules.impermanence
+            inputs.sops-nix.nixosModules.sops
+            inputs.xremap-flake.nixosModules.default
+            ./hosts/ServerBoy/configuration.nix
+          ];
+          specialArgs = {
+            inherit inputs;
+          };
         };
       };
     };
-  };
- 
+
 }

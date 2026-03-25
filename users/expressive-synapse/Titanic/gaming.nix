@@ -1,21 +1,21 @@
-{ pkgs, ... }:
+{ inputs, pkgs, ... }:
 
 {
-home.packages = with pkgs; [
-  prismlauncher
-  r2modman
-  scarab
-  olympus
-];
-
-home.persistence."/persist" = {
-  directories = [
-   # ".steam"
-    ".local/share/Steam"
-    ".local/share/PrismLauncher"
-    ".config/retroarch"
-    "Zomboid"
+  home.packages = [
+    pkgs.prismlauncher
+    pkgs.r2modman
+    pkgs.scarab
+    pkgs.olympus
+    inputs.hytale-launcher.packages.${pkgs.system}.default
   ];
-};
-}
 
+  home.persistence."/persist" = {
+    directories = [
+      # ".steam"
+      ".local/share/Steam"
+      ".local/share/PrismLauncher"
+      ".config/retroarch"
+      "Zomboid"
+    ];
+  };
+}

@@ -14,6 +14,8 @@
       # ".steam"
       ".local/share/Steam"
       ".local/share/PrismLauncher"
+      ".local/share/Hytale"
+      ".local/share/hytale-launcher"
       ".config/retroarch"
       "Zomboid"
     ];

@@ -18,6 +18,7 @@
       ".local/share/Hytale"
       ".local/share/hytale-launcher"
       ".config/retroarch"
+      ".config/VintagestoryData"
       "Zomboid"
     ];
   };

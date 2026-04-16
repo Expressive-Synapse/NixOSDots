@@ -2,47 +2,53 @@
 # your system.  Help is available in the configuration.nix(5) man page
 # and in the NixOS manual (accessible by running ‘nixos-help’).
 
-{ inputs, config, lib, pkgs, ... }:
+{
+  inputs,
+  config,
+  lib,
+  pkgs,
+  ...
+}:
 
 {
-  imports =
-    [ # Include the results of the hardware scan.
-      ./hardware/hardware-configuration.nix
-      ./hardware/disko.nix
+  imports = [
+    # Include the results of the hardware scan.
+    ./hardware/hardware-configuration.nix
+    ./hardware/disko.nix
 
-      ./containers/syncthing.nix
+    ./containers/syncthing.nix
 
-      ./netsec/firewall.nix
-      ./netsec/sambamount.nix
-      ./netsec/wireguard.nix
-      ./netsec/clamAV.nix
-      ./netsec/protonvpn.nix
+    ./netsec/firewall.nix
+    ./netsec/sambamount.nix
+    ./netsec/wireguard.nix
+    ./netsec/clamAV.nix
+    ./netsec/protonvpn.nix
 
-      ./system/wayland.nix
-      ./system/pipewire.nix
-      ./system/dbus.nix
-      ./system/gnome-keyring.nix
+    ./system/wayland.nix
+    ./system/pipewire.nix
+    ./system/dbus.nix
+    ./system/gnome-keyring.nix
 
-      ./wm/hyprland.nix
+    ./wm/hyprland.nix
 
-      ./deviceInterfacing.nix
-      ./virtualbox.nix
-      ./gaming.nix
-      ./podman.nix
-      ./pirateTools.nix
-    ];
+    ./deviceInterfacing.nix
+    ./virtualbox.nix
+    ./gaming.nix
+    ./podman.nix
+    ./pirateTools.nix
+  ];
 
   # Bootloader.
   boot.loader.grub.enable = true;
   boot.loader.grub.efiSupport = true;
-#  boot.loader.efi.efiSysMountPoint = "/boot";
-#  boot.loader.efi.canTouchEfiVariables = true;
+  #  boot.loader.efi.efiSysMountPoint = "/boot";
+  #  boot.loader.efi.canTouchEfiVariables = true;
   boot.loader.grub.device = "/dev/sda";
 
-###################################################
-#                    FileSystem                   #
-###################################################
-boot.initrd.postDeviceCommands = lib.mkAfter ''
+  ###################################################
+  #                    FileSystem                   #
+  ###################################################
+  boot.initrd.postResumeCommands = lib.mkAfter ''
     mkdir /btrfs_tmp
     mount /dev/mapper/main /btrfs_tmp
     if [[ -e /btrfs_tmp/root ]]; then
@@ -67,31 +73,31 @@ boot.initrd.postDeviceCommands = lib.mkAfter ''
     umount /btrfs_tmp
   '';
 
-fileSystems."/persist".neededForBoot = true;
-environment.persistence."/persist/system" = {
-  hideMounts = true;
-  directories = [
-    "/etc/nixos"
-  ];
-};
-###################################################
-#                     Network                     #
-###################################################
+  fileSystems."/persist".neededForBoot = true;
+  environment.persistence."/persist/system" = {
+    hideMounts = true;
+    directories = [
+      "/etc/nixos"
+    ];
+  };
+  ###################################################
+  #                     Network                     #
+  ###################################################
   networking.hostName = "Titanic"; # Define your hostname.
   # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
 
   # Enable networking
   networking.networkmanager.enable = true;
 
-###################################################
-#                    Security                     #
-###################################################
+  ###################################################
+  #                    Security                     #
+  ###################################################
 
-security.polkit.enable = true;
+  security.polkit.enable = true;
 
-###################################################
-#                    Location                     #
-###################################################
+  ###################################################
+  #                    Location                     #
+  ###################################################
   # Set your time zone.
   time.timeZone = "America/New_York";
 
@@ -109,44 +115,48 @@ security.polkit.enable = true;
     LC_TELEPHONE = "en_US.UTF-8";
     LC_TIME = "en_US.UTF-8";
   };
-###################################################
-#                     Users                       #
-###################################################
+  ###################################################
+  #                     Users                       #
+  ###################################################
 
-/*---------------expressive-synapse--------------*/
+  # ---------------expressive-synapse--------------
 
-sops.age.keyFile = "/persist/Keys/sops-key.txt";
-sops.secrets."users/expressive-synapse/accountpass" = {
-  neededForUsers = true;
+  sops.age.keyFile = "/persist/Keys/sops-key.txt";
+  sops.secrets."users/expressive-synapse/accountpass" = {
+    neededForUsers = true;
 
-};
+  };
 
-users.users.expressive-synapse = {
-  isNormalUser = true;
-  hashedPasswordFile = config.sops.secrets."users/expressive-synapse/accountpass".path;
-  uid = 1000;
-  description = "Connor Goff";
-  extraGroups = [ "networkmanager" "wheel" "cdrom" ];
-};
-programs.fuse.userAllowOther = true;
-home-manager.extraSpecialArgs = {
-  inherit inputs;
-  inherit pkgs;
-};
-home-manager.users.expressive-synapse = {
-  imports = [ 
+  users.users.expressive-synapse = {
+    isNormalUser = true;
+    hashedPasswordFile = config.sops.secrets."users/expressive-synapse/accountpass".path;
+    uid = 1000;
+    description = "Connor Goff";
+    extraGroups = [
+      "networkmanager"
+      "wheel"
+      "cdrom"
+    ];
+  };
+  programs.fuse.userAllowOther = true;
+  home-manager.extraSpecialArgs = {
+    inherit inputs;
+    inherit pkgs;
+  };
+  home-manager.users.expressive-synapse = {
+    imports = [
       #inputs.impermanence.nixosModules.home-manager.impermanence
-    ../../users/expressive-synapse/general/home.nix
-    ../../users/expressive-synapse/Titanic/home.nix
-  ];
-};
+      ../../users/expressive-synapse/general/home.nix
+      ../../users/expressive-synapse/Titanic/home.nix
+    ];
+  };
 
-###################################################
-#                    Packages                     #
-###################################################
+  ###################################################
+  #                    Packages                     #
+  ###################################################
   nixpkgs.config.allowUnfree = true;
   environment.systemPackages = with pkgs; [
-    vim 
+    vim
     wget
     git
     sops
@@ -154,49 +164,52 @@ home-manager.users.expressive-synapse = {
     nix-index
   ];
 
-###################################################
-#                   Keymapping                    #
-###################################################
-# Configure keymap in X11
-services.xserver = {
-  xkb.layout = "us";
-  xkb.variant = "";
-};
-services.xremap.enable = true;
-services.xremap.config.modmap = [
-  {
-  name = "cool CapsLock";
-  remap = {
-    CapsLock = {
-      held = "leftctrl";
-      alone = "esc";
-      alone_timeout_millis = 150;
-    };
+  ###################################################
+  #                   Keymapping                    #
+  ###################################################
+  # Configure keymap in X11
+  services.xserver = {
+    xkb.layout = "us";
+    xkb.variant = "";
   };
-  }
-];
+  services.xremap.enable = true;
+  services.xremap.config.modmap = [
+    {
+      name = "cool CapsLock";
+      remap = {
+        CapsLock = {
+          held = "leftctrl";
+          alone = "esc";
+          alone_timeout_millis = 150;
+        };
+      };
+    }
+  ];
 
-###################################################
-#                      SOPS                       #
-###################################################
-sops.defaultSopsFile = ../../secrets/secrets.yaml;
-sops.defaultSopsFormat = "yaml";
+  ###################################################
+  #                      SOPS                       #
+  ###################################################
+  sops.defaultSopsFile = ../../secrets/secrets.yaml;
+  sops.defaultSopsFormat = "yaml";
 
-###################################################
-#                     NixOS                       #
-###################################################
+  ###################################################
+  #                     NixOS                       #
+  ###################################################
 
-nix.settings = {
-  substituters = ["https://hyprland.cachix.org"];
-  trusted-public-keys = ["hyprland.cachix.org-1:a7pgxzMz7+chwVL3/pzj6jIBMioiJM7ypFP8PwtkuGc="];
-};
-# This value determines the NixOS release from which the default
-# settings for stateful data, like file locations and database versions
-# on your system were taken. It‘s perfectly fine and recommended to leave
-# this value at the release version of the first install of this system.
-# Before changing this value read the documentation for this option
-# (e.g. man configuration.nix or on https://nixos.org/nixos/options.html).
-system.stateVersion = "23.11"; # Did you read the comment?
+  nix.settings = {
+    substituters = [ "https://hyprland.cachix.org" ];
+    trusted-public-keys = [ "hyprland.cachix.org-1:a7pgxzMz7+chwVL3/pzj6jIBMioiJM7ypFP8PwtkuGc=" ];
+  };
+  # This value determines the NixOS release from which the default
+  # settings for stateful data, like file locations and database versions
+  # on your system were taken. It‘s perfectly fine and recommended to leave
+  # this value at the release version of the first install of this system.
+  # Before changing this value read the documentation for this option
+  # (e.g. man configuration.nix or on https://nixos.org/nixos/options.html).
+  system.stateVersion = "23.11"; # Did you read the comment?
 
-nix.settings.experimental-features = ["nix-command" "flakes"];
+  nix.settings.experimental-features = [
+    "nix-command"
+    "flakes"
+  ];
 }

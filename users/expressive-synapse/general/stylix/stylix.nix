@@ -1,67 +1,74 @@
-{ inputs, pkgs, ... }:
+{
+  inputs,
+  config,
+  pkgs,
+  ...
+}:
 
 let
   theme = "/Catppuccin Mocha.yaml";
 in
 {
 
-imports = [
-  inputs.stylix.homeModules.stylix
+  imports = [
+    inputs.stylix.homeModules.stylix
   ];
 
-stylix.enable = true;
+  gtk.gtk4.theme = config.gtk.theme;
 
-stylix.base16Scheme = ./themes + theme;
+  stylix.enable = true;
 
-stylix.cursor = {
+  stylix.base16Scheme = ./themes + theme;
+
+  stylix.cursor = {
     package = pkgs.catppuccin-cursors.mochaDark;
     name = "catppuccin-mocha-dark-cursors";
     size = 24;
   };
 
-stylix.fonts = {
-  
-  serif = {
-    package = pkgs.dejavu_fonts;
-    name = "DejaVu Serif";
+  stylix.fonts = {
+
+    serif = {
+      package = pkgs.dejavu_fonts;
+      name = "DejaVu Serif";
+    };
+
+    sansSerif = {
+      package = pkgs.dejavu_fonts;
+      name = "DejaVu Sans";
+    };
+
+    monospace = {
+      package = pkgs.nerd-fonts.inconsolata;
+      name = "Inconsolata";
+    };
+
+    emoji = {
+      package = pkgs.noto-fonts-color-emoji;
+      name = "Noto Color Emoji";
+    };
+
   };
 
-  sansSerif = {
-    package = pkgs.dejavu_fonts;
-    name = "DejaVu Sans";
-  };
-
-  monospace = {
-    package = pkgs.nerd-fonts.inconsolata;
-    name = "Inconsolata";
-  };
-
-  emoji = {
-    package = pkgs.noto-fonts-color-emoji;
-    name = "Noto Color Emoji";
-  };
-
-};
-
-stylix.opacity = {
+  stylix.opacity = {
     terminal = 0.7;
     popups = 0.7;
   };
 
-stylix.targets.hyprland.enable = false;
+  stylix.targets.hyprland.enable = false;
 
-stylix.targets.waybar.enable = false;
+  stylix.targets.waybar.enable = false;
 
-stylix.targets.rofi.enable = false;
+  stylix.targets.rofi.enable = false;
 
-stylix.targets.tofi.enable = false;
+  stylix.targets.tofi.enable = false;
 
-stylix.targets.starship.enable = false;
+  stylix.targets.starship.enable = false;
 
-stylix.targets.zen-browser = {
-  profileNames = [
+  stylix.targets.zen-browser = {
+    profileNames = [
       "expressive-synapse"
     ];
-};
-  
+  };
+
 }

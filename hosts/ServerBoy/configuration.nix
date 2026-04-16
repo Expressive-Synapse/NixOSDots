@@ -2,27 +2,33 @@
 # your system.  Help is available in the configuration.nix(5) man page
 # and in the NixOS manual (accessible by running ‘nixos-help’).
 
-{ inputs, config, lib, pkgs, ... }:
+{
+  inputs,
+  config,
+  lib,
+  pkgs,
+  ...
+}:
 
 {
-  imports =
-    [ # Include the results of the hardware scan.
-      ./hardware/hardware-configuration.nix
-      ./hardware/disko.nix
+  imports = [
+    # Include the results of the hardware scan.
+    ./hardware/hardware-configuration.nix
+    ./hardware/disko.nix
 
-      ./podman.nix
+    ./podman.nix
 
-      ./system/upower.nix
-      
-      ./netsec/clamAV.nix
-      ./netsec/samba.nix
-      ./netsec/wireguard.nix
+    ./system/upower.nix
 
-      ./jellyfin.nix
+    ./netsec/clamAV.nix
+    ./netsec/samba.nix
+    ./netsec/wireguard.nix
 
-      ./containers/YaCy.nix
+    ./jellyfin.nix
 
-    ];
+    ./containers/YaCy.nix
+
+  ];
 
   # Bootloader.
   boot.loader.grub.enable = true;
@@ -31,10 +37,10 @@
   boot.loader.efi.canTouchEfiVariables = true;
   boot.loader.grub.device = "nodev";
 
-###################################################
-#                    FileSystem                   #
-###################################################
-boot.initrd.postDeviceCommands = lib.mkAfter ''
+  ###################################################
+  #                    FileSystem                   #
+  ###################################################
+  boot.initrd.postDeviceCommands = lib.mkAfter ''
     mkdir /btrfs_tmp
     mount /dev/mapper/main /btrfs_tmp
     if [[ -e /btrfs_tmp/root ]]; then
@@ -59,17 +65,17 @@ boot.initrd.postDeviceCommands = lib.mkAfter ''
     umount /btrfs_tmp
   '';
 
-fileSystems."/persist".neededForBoot = true;
-environment.persistence."/persist/system" = {
-  hideMounts = true;
-  directories = [
-    "/etc/nixos"
-    "/etc/ssh"
-  ];
-};
-###################################################
-#                     Network                     #
-###################################################
+  fileSystems."/persist".neededForBoot = true;
+  environment.persistence."/persist/system" = {
+    hideMounts = true;
+    directories = [
+      "/etc/nixos"
+      "/etc/ssh"
+    ];
+  };
+  ###################################################
+  #                     Network                     #
+  ###################################################
   networking.hostName = "ServerBoy"; # Define your hostname.
   # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
 
@@ -78,9 +84,9 @@ environment.persistence."/persist/system" = {
 
   services.openssh.enable = true;
 
-###################################################
-#                    Location                     #
-###################################################
+  ###################################################
+  #                    Location                     #
+  ###################################################
   # Set your time zone.
   time.timeZone = "America/New_York";
 
@@ -98,43 +104,46 @@ environment.persistence."/persist/system" = {
     LC_TELEPHONE = "en_US.UTF-8";
     LC_TIME = "en_US.UTF-8";
   };
-###################################################
-#                     Users                       #
-###################################################
+  ###################################################
+  #                     Users                       #
+  ###################################################
 
-/*---------------expressive-synapse--------------*/
+  # ---------------expressive-synapse--------------
 
-sops.age.keyFile = "/persist/Keys/sops-key.txt";
-sops.secrets."users/expressive-synapse/accountpass" = {
-  neededForUsers = true;
+  sops.age.keyFile = "/persist/Keys/sops-key.txt";
+  sops.secrets."users/expressive-synapse/accountpass" = {
+    neededForUsers = true;
 
-};
+  };
 
-users.users.expressive-synapse = {
-  isNormalUser = true;
-  hashedPasswordFile = config.sops.secrets."users/expressive-synapse/accountpass".path;
-  uid = 1000;
-  description = "Connor Goff";
-  extraGroups = [ "networkmanager" "wheel" ];
-};
-programs.fuse.userAllowOther = true;
-home-manager.extraSpecialArgs = {
-  inherit inputs;
-  inherit pkgs;
-};
-home-manager.users.expressive-synapse = {
-  imports = [ 
+  users.users.expressive-synapse = {
+    isNormalUser = true;
+    hashedPasswordFile = config.sops.secrets."users/expressive-synapse/accountpass".path;
+    uid = 1000;
+    description = "Connor Goff";
+    extraGroups = [
+      "networkmanager"
+      "wheel"
+    ];
+  };
+  programs.fuse.userAllowOther = true;
+  home-manager.extraSpecialArgs = {
+    inherit inputs;
+    inherit pkgs;
+  };
+  home-manager.users.expressive-synapse = {
+    imports = [
       #inputs.impermanence.nixosModules.home-manager.impermanence
-    ../../users/expressive-synapse/general/home.nix
-  ];
-};
+      ../../users/expressive-synapse/general/home.nix
+    ];
+  };
 
-###################################################
-#                    Packages                     #
-###################################################
+  ###################################################
+  #                    Packages                     #
+  ###################################################
   nixpkgs.config.allowUnfree = true;
   environment.systemPackages = with pkgs; [
-    vim 
+    vim
     wget
     git
     sops
@@ -142,46 +151,49 @@ home-manager.users.expressive-synapse = {
     upower
   ];
   # fix for home-manager bug
-  programs.dconf.enable = true; 
+  programs.dconf.enable = true;
 
-###################################################
-#                   Keymapping                    #
-###################################################
-# Configure keymap in X11
-services.xserver = {
-  xkb.layout = "us";
-  xkb.variant = "";
-};
-services.xremap.enable = true;
-services.xremap.config.modmap = [
-  {
-  name = "cool CapsLock";
-  remap = {
-    CapsLock = {
-      held = "leftctrl";
-      alone = "esc";
-      alone_timeout_millis = 150;
-    };
+  ###################################################
+  #                   Keymapping                    #
+  ###################################################
+  # Configure keymap in X11
+  services.xserver = {
+    xkb.layout = "us";
+    xkb.variant = "";
   };
-  }
-];
+  services.xremap.enable = true;
+  services.xremap.config.modmap = [
+    {
+      name = "cool CapsLock";
+      remap = {
+        CapsLock = {
+          held = "leftctrl";
+          alone = "esc";
+          alone_timeout_millis = 150;
+        };
+      };
+    }
+  ];
 
-###################################################
-#                      SOPS                       #
-###################################################
-sops.defaultSopsFile = ../../secrets/secrets.yaml;
-sops.defaultSopsFormat = "yaml";
+  ###################################################
+  #                      SOPS                       #
+  ###################################################
+  sops.defaultSopsFile = ../../secrets/secrets.yaml;
+  sops.defaultSopsFormat = "yaml";
 
-###################################################
-#                     NixOS                       #
-###################################################
-# This value determines the NixOS release from which the default
-# settings for stateful data, like file locations and database versions
-# on your system were taken. It‘s perfectly fine and recommended to leave
-# this value at the release version of the first install of this system.
-# Before changing this value read the documentation for this option
-# (e.g. man configuration.nix or on https://nixos.org/nixos/options.html).
-system.stateVersion = "23.11"; # Did you read the comment?
+  ###################################################
+  #                     NixOS                       #
+  ###################################################
+  # This value determines the NixOS release from which the default
+  # settings for stateful data, like file locations and database versions
+  # on your system were taken. It‘s perfectly fine and recommended to leave
+  # this value at the release version of the first install of this system.
+  # Before changing this value read the documentation for this option
+  # (e.g. man configuration.nix or on https://nixos.org/nixos/options.html).
+  system.stateVersion = "23.11"; # Did you read the comment?
 
-nix.settings.experimental-features = ["nix-command" "flakes"];
+  nix.settings.experimental-features = [
+    "nix-command"
+    "flakes"
+  ];
 }

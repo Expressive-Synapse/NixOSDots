@@ -7,7 +7,7 @@
     pkgs.scarab
     pkgs.olympus
     pkgs.vintagestory
-    inputs.hytale-launcher.packages.${pkgs.stdenv.hostPlatform.system}.default
+    # inputs.hytale-launcher.packages.${pkgs.stdenv.hostPlatform.system}.default
   ];
 
   home.persistence."/persist" = {

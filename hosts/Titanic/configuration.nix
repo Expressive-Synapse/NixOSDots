@@ -174,6 +174,7 @@
       "networkmanager"
       "wheel"
       "cdrom"
+      "maccel"
     ];
   };
   programs.fuse.userAllowOther = true;

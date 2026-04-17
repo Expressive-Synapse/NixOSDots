@@ -1,6 +1,9 @@
-{ pkgs, ... }:
+{ pkgs, inputs, ... }:
 
 {
+  imports = [
+    inputs.maccel.nixosModules.default
+  ];
   environment.systemPackages = with pkgs; [
     #mtpfs
     exfat
@@ -37,4 +40,16 @@
     #8BitDo 8BitDo Pro 3 Controller
     SUBSYSTEM=="hidraw", ATTRS{idVendor}=="2dc8", ATTRS{idProduct}=="310b", MODE="0666"
   '';
+
+  hardware.maccel = {
+    enable = true;
+    enableCli = true; # Optional: for parameter discovery
+    parameters = {
+      mode = "linear";
+      sensMultiplier = 1.0;
+      acceleration = 0.3;
+      offset = 2.0;
+      outputCap = 2.0;
+    };
+  };
 }

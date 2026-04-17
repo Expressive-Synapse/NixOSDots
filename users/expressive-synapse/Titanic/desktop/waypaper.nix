@@ -1,15 +1,15 @@
-{ pkgs, ... }: 
+{ pkgs, ... }:
 {
- home.packages = with pkgs; [
-   waypaper
-   swww
-   hyprpaper
-   mpvpaper
+  home.packages = with pkgs; [
+    waypaper
+    awww
+    hyprpaper
+    mpvpaper
   ];
 
-home.persistence."/persist" = {
-  directories = [
-    ".config/waypaper"
-  ];
-};
+  home.persistence."/persist" = {
+    directories = [
+      ".config/waypaper"
+    ];
+  };
 }

@@ -6,27 +6,26 @@
     blesh
   ];
 
-programs.bash = {
-  enable = true;
-  shellAliases = {
-    ll = "ls -l";
-    ".." = "cd ..";
-  };
-  initExtra = /*bash*/"
+  programs.bash = {
+    enable = true;
+    shellAliases = {
+      ll = "ls -l";
+      ".." = "cd ..";
+    };
+    initExtra = /* bash */ "
     source \"$(blesh-share)\"/ble.sh --attach=none\n
     eval \"$(atuin init bash)\"\n
     [[ \${BLE_VERSION-} ]] && ble-attach
   ";
-  bashrcExtra = /*bash*/"
-    eval \"\$(starship init bash)\"\n
-    fastfetch
-  ";
-  
-};
-home.persistence."/persist" = {
-  directories = [
-    ".local/share/atuin"
-  ];
-};
+    bashrcExtra = /* bash */ "
+      fastfetch
+    ";
+
+  };
+  home.persistence."/persist" = {
+    directories = [
+      ".local/share/atuin"
+    ];
+  };
 
 }

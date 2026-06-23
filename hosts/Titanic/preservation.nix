@@ -4,7 +4,9 @@
 
     preserveAt."/persist" = {
       files = [ ];
-      directories = [ ];
+      directories = [
+        "/etc/nixos"
+      ];
 
       users.expressive-synapse = {
         files = [ ];

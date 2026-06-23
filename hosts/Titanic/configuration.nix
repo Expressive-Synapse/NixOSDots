@@ -113,12 +113,7 @@
     }; # NOTE: path = [...]; doesnt work for initrd, use full paths in your script or extraBin
   };
   fileSystems."/persist".neededForBoot = true;
-  environment.persistence."/persist/system" = {
-    hideMounts = true;
-    directories = [
-      "/etc/nixos"
-    ];
-  };
+
   ###################################################
   #                     Network                     #
   ###################################################

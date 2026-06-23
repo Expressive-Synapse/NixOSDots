@@ -6,12 +6,8 @@
 
     ./shell/bash.nix
 
-    ./multiplexers/zellij/zellij.nix
-    ./multiplexers/tmux/tmux.nix
-
     ./stylix/stylix.nix
 
-    ./fileManagement/lf.nix
     ./fileManagement/yazi.nix
 
     ./git.nix

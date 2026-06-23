@@ -13,7 +13,6 @@
     ./desktop/tofi.nix
     ./desktop/wlogout/wlogout.nix
 
-    ./netsec/proton.nix
     ./art.nix
     ./flameshot.nix
     ./deviceInterfacing.nix

@@ -5,10 +5,4 @@
     xev
   ];
 
-  home.persistence."/persist" = {
-    directories = [
-      ".config/antimicrox"
-    ];
-  };
-
 }

@@ -2,14 +2,8 @@
 
 {
 
-
-home.packages = with pkgs; [
-  dosbox-staging
-];
-
-home.persistence."/persist" = {
-  directories = [
-      ".config/dosbox"
+  home.packages = with pkgs; [
+    dosbox-staging
   ];
-};
+
 }

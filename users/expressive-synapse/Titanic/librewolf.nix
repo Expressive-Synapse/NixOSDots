@@ -1,20 +1,14 @@
-{pkgs, ... }:
+{ pkgs, ... }:
 
 {
 
-programs.firefox = {
+  programs.firefox = {
     enable = true;
     package = pkgs.librewolf;
 
     profiles = {
-      expressive-synapse = {};
+      expressive-synapse = { };
     };
-};
-
-home.persistence."/persist" = {
-  directories = [
-    ".librewolf"
-  ];
-};  
+  };
 
 }

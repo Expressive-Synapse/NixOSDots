@@ -7,9 +7,4 @@
     mpvpaper
   ];
 
-  home.persistence."/persist" = {
-    directories = [
-      ".config/waypaper"
-    ];
-  };
 }

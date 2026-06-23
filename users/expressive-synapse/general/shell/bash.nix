@@ -22,10 +22,5 @@
     ";
 
   };
-  home.persistence."/persist" = {
-    directories = [
-      ".local/share/atuin"
-    ];
-  };
 
 }

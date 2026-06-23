@@ -5,9 +5,4 @@
     vesktop
   ];
 
-  home.persistence."/persist" = {
-  directories = [
-    ".config/vesktop"
-  ];
-};
 }

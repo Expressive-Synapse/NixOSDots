@@ -36,6 +36,8 @@
       url = "github:nix-community/impermanence";
     };
 
+    preservation.url = "github:nix-community/preservation";
+
     stylix = {
       url = "github:danth/stylix";
     };
@@ -109,7 +111,7 @@
           modules = [
             inputs.home-manager.nixosModules.home-manager
             inputs.disko.nixosModules.default
-            inputs.impermanence.nixosModules.impermanence
+            inputs.preservation.nixosModules.default
             inputs.sops-nix.nixosModules.sops
             inputs.xremap-flake.nixosModules.default
             ./hosts/Titanic/configuration.nix

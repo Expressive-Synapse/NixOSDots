@@ -36,6 +36,7 @@
     ./gaming.nix
     ./podman.nix
     ./pirateTools.nix
+    ./preservation.nix
   ];
 
   # Bootloader.

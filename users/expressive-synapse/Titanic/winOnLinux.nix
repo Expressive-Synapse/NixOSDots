@@ -8,10 +8,4 @@
     winetricks
   ];
 
-  home.persistence."/persist" = {
-    directories = [
-      ".local/share/bottles"
-      ".local/share/lutris"
-    ];
-  };
 }

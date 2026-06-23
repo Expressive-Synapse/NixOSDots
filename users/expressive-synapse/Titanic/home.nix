@@ -32,16 +32,6 @@
   #                   FileSystem                    #
   ###################################################
 
-  home.persistence."/persist" = {
-    directories = [
-      "Pictures"
-      "Documents"
-      "Videos"
-      ".local/share/FoundryVTT"
-      ".config/VirtualBox"
-    ];
-  };
-
   ###################################################
   #                   Packages                      #
   ###################################################

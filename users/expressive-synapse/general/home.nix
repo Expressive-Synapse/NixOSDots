@@ -2,59 +2,51 @@
 
 {
 
-imports = [
+  imports = [
 
-  ./shell/bash.nix
+    ./shell/bash.nix
 
-  ./multiplexers/zellij/zellij.nix
-  ./multiplexers/tmux/tmux.nix
+    ./multiplexers/zellij/zellij.nix
+    ./multiplexers/tmux/tmux.nix
 
-  ./stylix/stylix.nix
+    ./stylix/stylix.nix
 
-  ./nixCats/nixCats.nix
+    ./nixCats/nixCats.nix
 
-  ./fileManagement/lf.nix
-  ./fileManagement/yazi.nix
+    ./fileManagement/lf.nix
+    ./fileManagement/yazi.nix
 
-  ./git.nix
-  ./helix.nix
-  ./termSystemUtils.nix
-  ./starship.nix
-  ./fastfetch.nix
-];
-
-###################################################
-#                   FileSystem                    #
-###################################################
-
-home.persistence."/persist" = {
-  directories = [
-    ".ssh"
-    ".local/share/keyrings"
+    ./git.nix
+    ./helix.nix
+    ./termSystemUtils.nix
+    ./starship.nix
+    ./fastfetch.nix
   ];
-};
-  
-###################################################
-#                   Packages                      #
-###################################################
-nixpkgs.config.allowUnfreePredicate = _: true;
 
-###################################################
-#                   Packages                      #
-###################################################
-home.sessionVariables = {
-  EDITOR = "vim";
+  ###################################################
+  #                   FileSystem                    #
+  ###################################################
+
+  ###################################################
+  #                   Packages                      #
+  ###################################################
+  nixpkgs.config.allowUnfreePredicate = _: true;
+
+  ###################################################
+  #                   Packages                      #
+  ###################################################
+  home.sessionVariables = {
+    EDITOR = "vim";
   };
 
-###################################################
-#                 Home-Manager                    #
-###################################################
-home.username = "expressive-synapse";
-home.homeDirectory = "/home/expressive-synapse";
+  ###################################################
+  #                 Home-Manager                    #
+  ###################################################
+  home.username = "expressive-synapse";
+  home.homeDirectory = "/home/expressive-synapse";
 
-programs.home-manager.enable = false;
+  programs.home-manager.enable = false;
 
-home.stateVersion = "23.11"; # Please read the comment before changing.
-
+  home.stateVersion = "23.11"; # Please read the comment before changing.
 
 }

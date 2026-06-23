@@ -11,8 +11,6 @@
 
     ./stylix/stylix.nix
 
-    ./nixCats/nixCats.nix
-
     ./fileManagement/lf.nix
     ./fileManagement/yazi.nix
 

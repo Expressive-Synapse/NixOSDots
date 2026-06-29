@@ -38,7 +38,7 @@
     ./pirateTools.nix
     ./preservation.nix
   ];
-
+  hardware.graphics.enable = true;
   # Bootloader.
   boot.loader.grub.enable = true;
   boot.loader.grub.efiSupport = true;

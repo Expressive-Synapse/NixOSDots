@@ -1,6 +1,7 @@
 { pkgs, ... }:
 
 {
+  # Adds Steam and necessary ibraries
   nixpkgs.config.packageOverrides = pkgs: {
     steam = pkgs.steam.override {
       extraPkgs =
@@ -20,6 +21,7 @@
   };
 
   environment.systemPackages = with pkgs; [
+    #adds retroarch and cores
     (retroarch.withCores (
       cores: with cores; [
         genesis-plus-gx
@@ -34,6 +36,13 @@
     mangohud
     protontricks
     parsec-bin
+
+    lutris
+    prismlauncher
+    r2modman
+    scarab
+    olympus
+    vintagestory
   ];
 
   programs.steam.enable = true;

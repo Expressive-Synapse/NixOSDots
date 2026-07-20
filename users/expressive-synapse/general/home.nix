@@ -10,11 +10,8 @@
 
     ./fileManagement/yazi.nix
 
-    ./git.nix
     ./helix.nix
-    ./termSystemUtils.nix
     ./starship.nix
-    ./fastfetch.nix
   ];
 
   ###################################################

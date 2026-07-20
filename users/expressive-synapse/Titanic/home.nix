@@ -13,17 +13,8 @@
     ./desktop/tofi.nix
     ./desktop/wlogout/wlogout.nix
 
-    ./art.nix
     ./flameshot.nix
-    ./deviceInterfacing.nix
-    ./keepass.nix
     ./discord.nix
-    ./gaming.nix
-    ./winOnLinux.nix
-    ./officeTools.nix
-    ./pirateTools.nix
-    ./dosbox.nix
-    ./devTools.nix
     ./zen-browser.nix
   ];
 

@@ -18,23 +18,17 @@
 
     ./containers/syncthing.nix
 
-    ./netsec/firewall.nix
-    ./netsec/sambamount.nix
-    ./netsec/wireguard.nix
-    ./netsec/clamAV.nix
     ./netsec/protonvpn.nix
 
-    ./system/wayland.nix
-    ./system/pipewire.nix
-    ./system/dbus.nix
-    ./system/gnome-keyring.nix
-
-    ./wm/hyprland.nix
+    ./desktop/hyprland.nix
 
     ./deviceInterfacing.nix
-    ./virtualbox.nix
+    ./virtualization.nix
     ./gaming.nix
     ./podman.nix
+    ./office.nix
+    ./tools.nix
+    ./devTools.nix
     ./pirateTools.nix
     ./preservation.nix
   ];
@@ -129,6 +123,17 @@
 
   security.polkit.enable = true;
 
+  services.gnome = {
+    gnome-keyring.enable = true;
+  };
+
+  services.clamav.daemon.enable = true;
+  services.clamav.updater.enable = true;
+  services.clamav.scanner.enable = false;
+
+  networking.firewall.enable = true;
+  networking.firewall.allowedTCPPorts = [ 30000 ]; # FoundryVTT
+  networking.firewall.allowedUDPPorts = [ 30000 ];
   ###################################################
   #                    Location                     #
   ###################################################
@@ -198,16 +203,40 @@
     wl-clipboard
     nix-index
     kew
+    alsa-utils
+    wayland
   ];
+
+  ###################################################
+  #                     Display                     #
+  ###################################################
+  programs.xwayland.enable = true;
+
+  services.xserver = {
+    enable = true;
+    xkb = {
+      layout = "us";
+      variant = "";
+      options = "caps:escape";
+    };
+  };
+
+  ###################################################
+  #                      audio                      #
+  ###################################################
+  security.rtkit.enable = true;
+  services.pipewire = {
+    enable = true;
+    wireplumber.enable = true;
+    alsa.enable = true;
+    alsa.support32Bit = true;
+    pulse.enable = true;
+    jack.enable = true;
+  };
 
   ###################################################
   #                   Keymapping                    #
   ###################################################
-  # Configure keymap in X11
-  services.xserver = {
-    xkb.layout = "us";
-    xkb.variant = "";
-  };
   services.xremap.enable = true;
   services.xremap.config.modmap = [
     {

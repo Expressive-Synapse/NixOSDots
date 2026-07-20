@@ -22,6 +22,8 @@
 
     ./desktop/hyprland.nix
 
+    ./stylix/stylix.nix
+
     ./deviceInterfacing.nix
     ./virtualization.nix
     ./gaming.nix

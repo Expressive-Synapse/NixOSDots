@@ -6,8 +6,6 @@
 
     ./shell/bash.nix
 
-    ./stylix/stylix.nix
-
     ./helix.nix
     ./starship.nix
   ];

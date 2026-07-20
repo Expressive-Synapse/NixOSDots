@@ -23,7 +23,8 @@
     cdemu-daemon
     dust
     fastfetch
- ];
+    (callPackage ../../wrappedPackages/helix_raw.nix { })
+  ];
 
   programs.git = {
     enable = true;

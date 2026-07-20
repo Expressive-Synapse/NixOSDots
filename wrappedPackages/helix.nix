@@ -12,7 +12,7 @@ pkgs.symlinkJoin {
       '';
     in
     ''
-      wrapProgram $out/bin/helix \
+      wrapProgram $out/bin/hx \
       --append-flags "--config ${configFile}"
     '';
 }

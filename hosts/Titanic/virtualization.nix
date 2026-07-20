@@ -5,7 +5,7 @@
 
 {
   environment.systemPackages = with pkgs; [
-    dosbox-stanging
+    dosbox-staging
     wineWow64Packages.waylandFull
     winetricks
   ];

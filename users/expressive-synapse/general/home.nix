@@ -8,8 +8,6 @@
 
     ./stylix/stylix.nix
 
-    ./fileManagement/yazi.nix
-
     ./helix.nix
     ./starship.nix
   ];

@@ -54,15 +54,4 @@ in
     terminal = 0.7;
     popups = 0.7;
   };
-
-  stylix.targets.waybar.enable = false;
-
-  stylix.targets.tofi.enable = false;
-
-  stylix.targets.zen-browser = {
-    profileNames = [
-      "expressive-synapse"
-    ];
-  };
-
 }

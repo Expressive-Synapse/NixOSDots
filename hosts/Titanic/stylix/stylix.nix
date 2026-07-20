@@ -55,15 +55,9 @@ in
     popups = 0.7;
   };
 
-  stylix.targets.hyprland.enable = false;
-
   stylix.targets.waybar.enable = false;
 
-  stylix.targets.rofi.enable = false;
-
   stylix.targets.tofi.enable = false;
-
-  stylix.targets.starship.enable = false;
 
   stylix.targets.zen-browser = {
     profileNames = [

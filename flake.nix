@@ -39,7 +39,7 @@
     preservation.url = "github:nix-community/preservation";
     flake-parts.url = "github:hercules-ci/flake-parts";
     import-tree.url = "github:vic/import-tree";
-    wrapper-modules.url = "github:BirdeeHub/nix-wrapper-modules";
+    wrappers.url = "github:BirdeeHub/nix-wrapper-modules";
 
     stylix = {
       url = "github:danth/stylix";
@@ -93,6 +93,7 @@
       nixpkgs,
       nixpkgs-stable,
       stylix,
+      wrappers,
       ...
     }:
     let

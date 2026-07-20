@@ -1,5 +1,16 @@
-{ pkgs, ... }:
 {
+  pkgs,
+  inputs,
+  lib,
+  ...
+}:
+{
+  imports = [
+    (inputs.wrappers.lib.getInstallModule {
+      name = "helix";
+      value = inputs.wrappers.lib.wrapperModules.helix;
+    })
+  ];
   environment.systemPackages = with pkgs; [
     exiftool
     fd
@@ -12,8 +23,7 @@
     cdemu-daemon
     dust
     fastfetch
-
-  ];
+ ];
 
   programs.git = {
     enable = true;

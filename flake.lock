@@ -1093,7 +1093,7 @@
         "sops-nix": "sops-nix",
         "split-monitor-workspaces": "split-monitor-workspaces",
         "stylix": "stylix",
-        "wrapper-modules": "wrapper-modules",
+        "wrappers": "wrappers",
         "xremap-flake": "xremap-flake",
         "zen-browser": "zen-browser"
       }
@@ -1264,7 +1264,7 @@
         "type": "github"
       }
     },
-    "wrapper-modules": {
+    "wrappers": {
       "inputs": {
         "nixpkgs": "nixpkgs_6"
       },

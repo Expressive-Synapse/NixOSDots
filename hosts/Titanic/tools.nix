@@ -29,7 +29,7 @@
 
   programs.yazi.enable = true;
 
-  programs.yazi.settings = {
+  programs.yazi.settings.yazi = {
     opener = {
       edit = [
         {

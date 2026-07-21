@@ -2,14 +2,15 @@
 
 environment.systemPackages = [
   pkgs.xwayland-satellite
- inputs.noctalia.packages.${pkgs.stdenv.hostPlatform.system}.default
+  pkgs.afterglow-cursors-recolored
+  inputs.noctalia.packages.${pkgs.stdenv.hostPlatform.system}.default
 ];
 
 fonts.packages = with pkgs; [
   nerd-fonts.terminess-ttf
   nerd-fonts.commit-mono
 ];
-  
+ 
   programs.niri = {
     enable = true;
 #   package = (pkgs.callPackage ../../../wrappedPackages/niri.nix { });

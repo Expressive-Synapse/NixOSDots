@@ -4,5 +4,6 @@
     libreoffice
     obsidian
     keepassxc
+    proton-vpn
   ];
 }

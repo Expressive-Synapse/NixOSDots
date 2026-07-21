@@ -18,8 +18,6 @@
 
     ./containers/syncthing.nix
 
-    ./netsec/protonvpn.nix
-
     ./desktop/hyprland.nix
     ./desktop/niri.nix
 

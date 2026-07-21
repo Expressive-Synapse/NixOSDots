@@ -1,4 +1,9 @@
-{ pkgs, inputs, ... }: {
+{ pkgs, ... }: {
+
+environment.systemPackages = with pkgs; [
+  noctalia-shell
+];
+  
   programs.niri = {
     enable = true;
 #   package = (pkgs.callPackage ../../../wrappedPackages/niri.nix { });
@@ -12,7 +17,7 @@
     ];
   };
 
-  # services.displayManager.ly = {
-  #     enable = true;
-  #   };
+   services.displayManager.ly = {
+       enable = true;
+     };
 }

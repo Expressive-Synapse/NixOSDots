@@ -8,21 +8,12 @@
       url = "nixpkgs/nixos-unstable";
     };
 
-    nixpkgs-stable = {
-      url = "nixpkgs/nixos-23.11";
-    };
-
     home-manager = {
       url = "github:nix-community/home-manager/master";
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
-    home-manager-stable = {
-      url = "github:nix-community/home-manager/release-23.11";
-      inputs.nixpkgs.follows = "nixpkgs-stable";
-    };
-
-    sops-nix = {
+   sops-nix = {
       url = "github:Mic92/sops-nix";
       inputs.nixpkgs.follows = "nixpkgs";
     };
@@ -32,14 +23,7 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
-    impermanence = {
-      url = "github:nix-community/impermanence";
-    };
-
     preservation.url = "github:nix-community/preservation";
-    flake-parts.url = "github:hercules-ci/flake-parts";
-    import-tree.url = "github:vic/import-tree";
-    wrappers.url = "github:BirdeeHub/nix-wrapper-modules";
 
     stylix = {
       url = "github:danth/stylix";
@@ -47,6 +31,11 @@
 
     xremap-flake = {
       url = "github:xremap/nix-flake";
+    };
+
+    noctalia = {
+      url = "github:noctalia-dev/noctalia";
+      inputs.nixpkgs.follows = "nixpkgs";
     };
 
     hyprland = {
@@ -61,14 +50,6 @@
     split-monitor-workspaces = {
       url = "github:Duckonaut/split-monitor-workspaces";
       inputs.hyprland.follows = "hyprland";
-    };
-
-    ags = {
-      url = "github:Aylur/ags";
-    };
-
-    nixCats = {
-      url = "github:BirdeeHub/nixCats-nvim";
     };
 
     zen-browser = {
@@ -91,22 +72,12 @@
     inputs@{
       self,
       nixpkgs,
-      nixpkgs-stable,
       stylix,
-      wrappers,
-      ...
+     ...
     }:
     let
       lib = nixpkgs.lib;
       pkgs = nixpkgs.legacyPackages."x86_64-linux";
-
-      pkgs-stable = import nixpkgs-stable {
-        system = "x86_64-linux";
-        config = {
-          allowUnfree = true;
-          allowUnfreePredicate = (_: true);
-        };
-      };
     in
     {
       nixosConfigurations = {
@@ -129,7 +100,6 @@
           modules = [
             inputs.home-manager.nixosModules.home-manager
             inputs.disko.nixosModules.default
-            inputs.impermanence.nixosModules.impermanence
             inputs.sops-nix.nixosModules.sops
             inputs.xremap-flake.nixosModules.default
             ./hosts/ServerBoy/configuration.nix

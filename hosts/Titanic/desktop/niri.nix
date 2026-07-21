@@ -1,7 +1,7 @@
-{ pkgs, ... }: {
+{ pkgs, inputs, ... }: {
 
-environment.systemPackages = with pkgs; [
-  noctalia-shell
+environment.systemPackages = [
+ inputs.noctalia.packages.${pkgs.stdenv.hostPlatform.system}.default
 ];
   
   programs.niri = {

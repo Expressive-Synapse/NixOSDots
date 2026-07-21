@@ -12,7 +12,7 @@ pkgs.symlinkJoin {
       configFile = pkgs.writeText "config" /* toml */ ''
         [[language]]
         name = "nix"
-        auto-format = true;
+        auto-format = true
         formatter = {
           command = "nixfmt"
         }

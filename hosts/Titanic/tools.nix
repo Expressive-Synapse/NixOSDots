@@ -1,8 +1,6 @@
 {
   pkgs,
-  inputs,
-  lib,
-  ...
+   ...
 }:
 {
   environment.systemPackages = with pkgs; [
@@ -18,7 +16,18 @@
     dust
     fastfetch
     (callPackage ../../wrappedPackages/helix.nix { })
+    atuin
   ];
+
+ programs.bash = {
+      enable = true;
+      blesh.enable = true;
+      shellInit = /* bash */ "
+    source \"$(blesh-share)\"/ble.sh --attach=none\n
+    eval \"$(atuin init bash)\"\n
+    [[ \${BLE_VERSION-} ]] && ble-attach
+  ";
+    };
 
   programs.git = {
     enable = true;

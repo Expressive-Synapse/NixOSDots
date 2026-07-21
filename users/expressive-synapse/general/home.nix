@@ -4,10 +4,10 @@
 
   imports = [
 
-    ./shell/bash.nix
+#    ./shell/bash.nix
     ./stylix/stylix.nix
     #    ./helix.nix
-    ./starship.nix
+ #   ./starship.nix
   ];
 
   ###################################################

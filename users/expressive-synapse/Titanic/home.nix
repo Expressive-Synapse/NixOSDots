@@ -10,7 +10,6 @@
     ./desktop/wlogout/wlogout.nix
 
     ./flameshot.nix
-    ./discord.nix
     ./zen-browser.nix
   ];
 

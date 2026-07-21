@@ -6,5 +6,9 @@
     keepassxc
     proton-vpn
     ghostty
+(discord.override {
+      withOpenASAR = false;
+      withVencord = true;
+    })
   ];
 }

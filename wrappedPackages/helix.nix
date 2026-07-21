@@ -2,6 +2,9 @@
 pkgs.symlinkJoin {
   name = "helix";
   paths = [ pkgs.helix ];
+  runtimeInputs = [
+    pkgs.nixfmt
+    pkgs.nil ];
   buildInputs = [ pkgs.makeWrapper ];
   postBuild =
     let
@@ -9,6 +12,9 @@ pkgs.symlinkJoin {
         [[language]]
         name = "nix"
         auto-format = true;
+        formatter = {
+          command = "nixfmt"
+        }
       '';
     in
     ''

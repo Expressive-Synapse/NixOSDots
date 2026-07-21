@@ -23,7 +23,7 @@
     cdemu-daemon
     dust
     fastfetch
-    (callPackage ../../wrappedPackages/helix.nix { })
+#    (callPackage ../../wrappedPackages/helix.nix { })
   ];
 
   programs.git = {

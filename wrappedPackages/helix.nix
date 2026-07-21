@@ -10,13 +10,7 @@ pkgs.symlinkJoin {
   postBuild =
     let
       configFile = pkgs.writeText "config" /* toml */ ''
-        [[language]]
-        name = "nix"
-        auto-format = true
-        formatter = {
-          command = "nixfmt"
-        }
-      '';
+         '';
     in
     ''
       wrapProgram $out/bin/hx \

@@ -4,6 +4,11 @@ environment.systemPackages = [
   pkgs.xwayland-satellite
  inputs.noctalia.packages.${pkgs.stdenv.hostPlatform.system}.default
 ];
+
+fonts.packages = with pkgs; [
+  nerd-font.terminess-ttf
+  nerd-font.commit-mono
+];
   
   programs.niri = {
     enable = true;

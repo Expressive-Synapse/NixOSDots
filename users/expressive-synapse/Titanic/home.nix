@@ -2,13 +2,7 @@
 
 {
   imports = [
-    ./desktop/wm/hyprland.nix
-    ./desktop/waybar/waybar.nix
-    ./desktop/waypaper.nix
-    ./desktop/dunst/dunst.nix
-    ./desktop/tofi.nix
-    ./desktop/wlogout/wlogout.nix
-
+#    ./desktop/wm/hyprland.nix
     ./flameshot.nix
     ./zen-browser.nix
   ];

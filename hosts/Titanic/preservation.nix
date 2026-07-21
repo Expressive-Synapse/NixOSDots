@@ -31,6 +31,7 @@
           ".config/VintagestoryData"
           ".config/VirtualBox"
           ".config/qBittorrent"
+          ".config/niri"
 
           ".local/share/atuin"
           ".local/share/keyrings"

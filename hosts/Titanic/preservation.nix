@@ -32,6 +32,7 @@
           ".config/VirtualBox"
           ".config/qBittorrent"
           ".config/niri"
+          ".config/noctalia"
 
           ".local/share/atuin"
           ".local/share/keyrings"

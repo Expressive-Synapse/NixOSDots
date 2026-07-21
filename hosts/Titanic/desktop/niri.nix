@@ -1,6 +1,7 @@
 { pkgs, inputs, ... }: {
 
 environment.systemPackages = [
+  pkgs.xwayland-satellite
  inputs.noctalia.packages.${pkgs.stdenv.hostPlatform.system}.default
 ];
   

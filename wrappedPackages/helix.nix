@@ -1,10 +1,11 @@
 { pkgs }:
 pkgs.symlinkJoin {
   name = "helix";
-  paths = [ pkgs.helix ];
-  runtimeInputs = [
+  paths = [
     pkgs.nixfmt
-    pkgs.nil ];
+    pkgs.nil
+    pkgs.helix
+  ];
   buildInputs = [ pkgs.makeWrapper ];
   postBuild =
     let

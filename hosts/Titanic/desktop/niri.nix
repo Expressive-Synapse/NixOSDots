@@ -1,18 +1,18 @@
-{pkgs, inputs, ... }: {
+{ pkgs, inputs, ... }: {
   programs.niri = {
     enable = true;
-#    package = (pkgs.callPackage ../../../wrappedPackages/niri.nix {});
+    package = (pkgs.callPackage ../../../wrappedPackages/niri.nix { });
   };
 
-xdg.portal = {
-  enable = true;
-  extraPortals = [
-    pkgs.xdg-desktop-portal-gnome
-    pkgs.xdg-desktop-portal-gtk
-  ];
-};
+  xdg.portal = {
+    enable = true;
+    extraPortals = [
+      pkgs.xdg-desktop-portal-gnome
+      pkgs.xdg-desktop-portal-gtk
+    ];
+  };
 
-# services.displayManager.ly = {
-#     enable = true;
-#   };
+  # services.displayManager.ly = {
+  #     enable = true;
+  #   };
 }

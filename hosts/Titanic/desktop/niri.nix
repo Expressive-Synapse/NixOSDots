@@ -1,6 +1,7 @@
 {pkgs, inputs, ... }: {
   programs.niri = {
     enable = true;
+#    package = (pkgs.callPackage ../../../wrappedPackages/niri.nix {});
   };
 
 xdg.portal = {
@@ -11,7 +12,7 @@ xdg.portal = {
   ];
 };
 
-services.displayManager.ly = {
-    enable = true;
-  };
+# services.displayManager.ly = {
+#     enable = true;
+#   };
 }

@@ -6,8 +6,8 @@ environment.systemPackages = [
 ];
 
 fonts.packages = with pkgs; [
-  nerd-font.terminess-ttf
-  nerd-font.commit-mono
+  nerd-fonts.terminess-ttf
+  nerd-fonts.commit-mono
 ];
   
   programs.niri = {

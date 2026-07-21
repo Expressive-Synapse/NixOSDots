@@ -10,4 +10,8 @@ xdg.portal = {
     pkgs.xdg-desktop-portal-gtk
   ];
 };
+
+services.displayManager.ly = {
+    enable = true;
+  };
 }

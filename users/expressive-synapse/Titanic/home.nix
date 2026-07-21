@@ -3,8 +3,8 @@
 {
   imports = [
 
-    ./terminal/foot.nix
-    ./terminal/ghostty.nix
+#    ./terminal/foot.nix
+#    ./terminal/ghostty.nix
 
     ./desktop/wm/hyprland.nix
     ./desktop/waybar/waybar.nix

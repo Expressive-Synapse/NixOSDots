@@ -5,5 +5,6 @@
     obsidian
     keepassxc
     proton-vpn
+    ghostty
   ];
 }

@@ -21,6 +21,7 @@
     ./netsec/protonvpn.nix
 
     ./desktop/hyprland.nix
+    ./desktop/niri.nix
 
     ./deviceInterfacing.nix
     ./virtualization.nix

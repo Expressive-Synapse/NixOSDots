@@ -1,4 +1,4 @@
-{ pkgs, ... }:
+{ pkgs, inputs, ... }:
 {
   environment.systemPackages = with pkgs; [
     libreoffice
@@ -6,9 +6,10 @@
     keepassxc
     proton-vpn
     ghostty
-(discord.override {
+    (discord.override {
       withOpenASAR = false;
       withVencord = true;
     })
+  inputs.zen-browser.packages.${pkgs.stdenv.hostPlatform.system}.default
   ];
 }

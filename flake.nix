@@ -8,11 +8,6 @@
       url = "nixpkgs/nixos-unstable";
     };
 
-    home-manager = {
-      url = "github:nix-community/home-manager/master";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
-
    sops-nix = {
       url = "github:Mic92/sops-nix";
       inputs.nixpkgs.follows = "nixpkgs";
@@ -53,7 +48,7 @@
     };
 
     zen-browser = {
-      url = "github:0xc000022070/zen-browser-flake";
+      url = "github:youwen5/zen-browser-flake";
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
@@ -84,7 +79,6 @@
         "Titanic" = lib.nixosSystem {
           system = "x86_64-linux";
           modules = [
-            inputs.home-manager.nixosModules.home-manager
             inputs.disko.nixosModules.default
             inputs.preservation.nixosModules.default
             inputs.sops-nix.nixosModules.sops
@@ -98,7 +92,6 @@
         "ServerBoy" = lib.nixosSystem {
           system = "x86_64-linux";
           modules = [
-            inputs.home-manager.nixosModules.home-manager
             inputs.disko.nixosModules.default
             inputs.sops-nix.nixosModules.sops
             inputs.xremap-flake.nixosModules.default

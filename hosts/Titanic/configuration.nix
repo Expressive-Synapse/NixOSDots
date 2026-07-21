@@ -178,15 +178,6 @@
     ];
   };
   programs.fuse.userAllowOther = true;
-  home-manager.extraSpecialArgs = {
-    inherit inputs;
-    inherit pkgs;
-  };
-  home-manager.users.expressive-synapse = {
-    imports = [
-    ./home.nix
-    ];
-  };
 
   ###################################################
   #                    Packages                     #

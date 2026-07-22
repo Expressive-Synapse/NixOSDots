@@ -11,7 +11,6 @@
     simple-mtpfs
     piper
     usbutils
-    jmtpfs
     glib
     via
     cdemu-daemon

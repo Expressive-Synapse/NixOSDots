@@ -6,6 +6,7 @@
       files = [ ];
       directories = [
         "/etc/nixos"
+        "/etc/atuin"
       ];
 
       users.expressive-synapse = {

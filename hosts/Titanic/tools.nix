@@ -15,6 +15,7 @@
     cdemu-daemon
     dust
     fastfetch
+    mmv
     (callPackage ../../wrappedPackages/helix.nix { })
   ];
 

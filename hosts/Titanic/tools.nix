@@ -63,6 +63,8 @@ programs.atuin = {
 
   services.mpd = {
     enable = true;
+    openFirewall = true;
+    user = "expressive-synapse";
     settings = {
       music_directory = "/home/expressive-synapse/mntMedia/Music";
     };

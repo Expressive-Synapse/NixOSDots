@@ -1,5 +1,5 @@
 {
-  pkgs,
+  pkgs, config,
    ...
 }:
 {
@@ -68,6 +68,16 @@ programs.atuin = {
     user = "expressive-synapse";
     settings = {
       music_directory = "/home/expressive-synapse/mntMedia/Music";
+      audio_output = [
+        {
+          type = "pipewire";
+          name = "My PipeWire Output";
+        }
+      ];
     };
+  };
+  # required for pipewire to work
+  systemd.services.mpd.environment = {
+    XDG_RUNTIME_DIR = "/run/user/${toString config.users.users.expressive-synapse.uid}";
   };
 }

@@ -8,14 +8,13 @@
     fd
     feh
     ffmpeg
-    kew
     mpv
     unar
     btop
     cdemu-daemon
     dust
     fastfetch
-    mmv
+    rmpc
     (callPackage ../../wrappedPackages/helix.nix { })
   ];
 
@@ -61,4 +60,11 @@ programs.atuin = {
   };
 
   programs.cdemu.enable = true;
+
+  services.mpd = {
+    enable = true;
+    settings = {
+      music_directory = "/home/expressive-synapse/mntMedia/Music";
+    };
+  };
 }

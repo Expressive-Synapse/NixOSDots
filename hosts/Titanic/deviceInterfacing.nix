@@ -44,8 +44,9 @@
     enable = true;
     enableCli = true; # Optional: for parameter discovery
     parameters = {
-      mode = "linear";
-      sensMultiplier = 1.0;
+      mode = "natural";
+      sensMultiplier = 0.3;
+      inputDpi = 1500.0;
       acceleration = 0.3;
       offset = 2.0;
       outputCap = 2.0;

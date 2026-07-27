@@ -14,6 +14,7 @@
     cdemu-daemon
     dust
     fastfetch
+    mpc
     rmpc
     (callPackage ../../wrappedPackages/helix.nix { })
   ];

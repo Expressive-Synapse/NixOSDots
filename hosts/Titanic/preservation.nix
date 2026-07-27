@@ -7,6 +7,7 @@
       directories = [
         "/etc/nixos"
         "/etc/atuin"
+        "/var/lib/mpd"
       ];
 
       users.expressive-synapse = {

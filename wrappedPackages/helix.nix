@@ -10,6 +10,7 @@ pkgs.symlinkJoin {
   postBuild =
     let
       configFile = pkgs.writeText "config" /* toml */ ''
+        theme = "noctalia"
          '';
     in
     ''

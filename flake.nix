@@ -20,10 +20,6 @@
 
     preservation.url = "github:nix-community/preservation";
 
-    stylix = {
-      url = "github:danth/stylix";
-    };
-
     xremap-flake = {
       url = "github:xremap/nix-flake";
     };
@@ -31,20 +27,6 @@
     noctalia = {
       url = "github:noctalia-dev/noctalia";
       inputs.nixpkgs.follows = "nixpkgs";
-    };
-
-    hyprland = {
-      url = "git+https://github.com/hyprwm/Hyprland?submodules=1";
-    };
-
-    hyprland-plugins = {
-      url = "github:hyprwm/hyprland-plugins";
-      inputs.hyprland.follows = "hyprland";
-    };
-
-    split-monitor-workspaces = {
-      url = "github:Duckonaut/split-monitor-workspaces";
-      inputs.hyprland.follows = "hyprland";
     };
 
     zen-browser = {
@@ -67,7 +49,6 @@
     inputs@{
       self,
       nixpkgs,
-      stylix,
      ...
     }:
     let

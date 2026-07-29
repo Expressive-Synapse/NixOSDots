@@ -27,4 +27,7 @@ fonts.packages = with pkgs; [
    services.displayManager.ly = {
        enable = true;
      };
+
+services.xremap.withWlroots = true;
+
 }

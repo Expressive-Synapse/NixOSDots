@@ -18,7 +18,6 @@
 
     ./containers/syncthing.nix
 
-    ./desktop/hyprland.nix
     ./desktop/niri.nix
 
     ./deviceInterfacing.nix

@@ -32,11 +32,13 @@
   ];
   hardware.graphics.enable = true;
   # Bootloader.
-  boot.loader.grub.enable = true;
-  boot.loader.grub.efiSupport = true;
+  # boot.loader.grub.enable = true;
+  # boot.loader.grub.efiSupport = true;
   #  boot.loader.efi.efiSysMountPoint = "/boot";
   #  boot.loader.efi.canTouchEfiVariables = true;
-  boot.loader.grub.device = "/dev/sda";
+  # boot.loader.grub.device = "/dev/sda";
+
+  boot.loader.systemd-boot.enable = true;
 
   ###################################################
   #                    FileSystem                   #

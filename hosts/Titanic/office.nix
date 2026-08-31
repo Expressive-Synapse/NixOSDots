@@ -6,6 +6,7 @@
     keepassxc
     proton-vpn
     ghostty
+    gimp
     (discord.override {
       withOpenASAR = false;
       withVencord = true;

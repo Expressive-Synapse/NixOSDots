@@ -7,6 +7,7 @@
     proton-vpn
     ghostty
     gimp
+    anytype
     (discord.override {
       withOpenASAR = false;
       withVencord = true;

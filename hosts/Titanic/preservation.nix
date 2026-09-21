@@ -35,6 +35,7 @@
           ".config/qBittorrent"
           ".config/niri"
           ".config/noctalia"
+          ".config/anytype"
 
           ".local/share/atuin"
           ".local/share/keyrings"

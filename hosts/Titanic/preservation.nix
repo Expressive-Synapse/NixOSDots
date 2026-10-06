@@ -36,6 +36,7 @@
           ".config/niri"
           ".config/noctalia"
           ".config/anytype"
+          ".config/dolphin-emu"
 
           ".local/share/atuin"
           ".local/share/keyrings"
@@ -47,6 +48,7 @@
           ".local/share/qBittorrent"
           ".local/share/bottles"
           ".local/share/lutris"
+          ".local/share/dolphin-emu"
         ];
       };
     };

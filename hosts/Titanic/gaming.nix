@@ -33,11 +33,16 @@
         mupen64plus
       ]
     ))
+    (lutris.override {
+      extraLibraries = pkgs: [
+        libadwaita
+        gtk4
+      ];
+    })
     mangohud
     protontricks
     parsec-bin
 
-    lutris
     prismlauncher
     r2modman
     scarab

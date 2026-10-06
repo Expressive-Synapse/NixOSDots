@@ -33,6 +33,7 @@
         mupen64plus
       ]
     ))
+    dolphin-emu
     (lutris.override {
       extraLibraries = pkgs: [
         libadwaita

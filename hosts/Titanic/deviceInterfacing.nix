@@ -16,6 +16,7 @@
     via
     cdemu-daemon
     antimicrox
+    gamepad-tool
     linuxConsoleTools
   ];
 

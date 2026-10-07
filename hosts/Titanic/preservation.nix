@@ -15,6 +15,7 @@
         directories = [
           ".ssh"
           ".zen"
+          ".wine"
           "Pictures"
           "Documents"
           "Videos"

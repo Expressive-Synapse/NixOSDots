@@ -38,6 +38,7 @@
           ".config/noctalia"
           ".config/anytype"
           ".config/dolphin-emu"
+          ".config/input-remapper-2"
 
           ".local/share/atuin"
           ".local/share/keyrings"

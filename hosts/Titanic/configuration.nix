@@ -176,6 +176,7 @@
       "wheel"
       "cdrom"
       "maccel"
+      "yeetmouse"
     ];
   };
   programs.fuse.userAllowOther = true;

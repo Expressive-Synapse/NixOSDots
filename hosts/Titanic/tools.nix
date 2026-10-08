@@ -16,6 +16,7 @@
     fastfetch
     mpc
     rmpc
+    xev
     (callPackage ../../wrappedPackages/helix.nix { })
   ];
 

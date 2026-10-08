@@ -54,4 +54,18 @@
       outputCap = 2.0;
     };
   };
+  services.xremap.enable = true;
+  services.xremap.config.modmap = [
+    {
+      name = "cool CapsLock";
+      remap = {
+        CapsLock = {
+          held = "leftctrl";
+          alone = "esc";
+          alone_timeout_millis = 150;
+        };
+      };
+    }
+  ];
+
 }

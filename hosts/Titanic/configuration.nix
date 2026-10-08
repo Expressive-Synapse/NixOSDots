@@ -185,14 +185,7 @@
   ###################################################
   nixpkgs.config.allowUnfree = true;
   environment.systemPackages = with pkgs; [
-    vim
-    wget
-    git
     sops
-    wl-clipboard
-    nix-index
-    kew
-    alsa-utils
     wayland
   ];
 
@@ -222,23 +215,6 @@
     pulse.enable = true;
     jack.enable = true;
   };
-
-  ###################################################
-  #                   Keymapping                    #
-  ###################################################
-  services.xremap.enable = true;
-  services.xremap.config.modmap = [
-    {
-      name = "cool CapsLock";
-      remap = {
-        CapsLock = {
-          held = "leftctrl";
-          alone = "esc";
-          alone_timeout_millis = 150;
-        };
-      };
-    }
-  ];
 
   ###################################################
   #                      SOPS                       #

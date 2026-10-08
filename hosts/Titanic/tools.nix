@@ -4,7 +4,13 @@
 }:
 {
   environment.systemPackages = with pkgs; [
+    vim
+    git
+    wl-clipboard
+    nix-index
+    alsa-utils
     exiftool
+    wget
     fd
     feh
     ffmpeg

@@ -3,6 +3,7 @@
 {
   imports = [
     inputs.maccel.nixosModules.default
+    inputs.yeetmouse.nixosModules.default
   ];
   environment.systemPackages = with pkgs; [
     #mtpfs
@@ -42,18 +43,23 @@
     SUBSYSTEM=="hidraw", ATTRS{idVendor}=="2dc8", ATTRS{idProduct}=="310b", MODE="0666"
   '';
 
-  hardware.maccel = {
+  hardware.yeetmouse = {
     enable = true;
-    enableCli = true; # Optional: for parameter discovery
-    parameters = {
-      mode = "natural";
-      sensMultiplier = 0.3;
-      inputDpi = 1500.0;
-      acceleration = 0.3;
-      offset = 2.0;
-      outputCap = 2.0;
-    };
+    sensitivity = 1.0;
   };
+  # hardware.maccel = {
+  #   enable = true;
+  #   enableCli = true; # Optional: for parameter discovery
+  #   parameters = {
+  #     mode = "natural";
+  #     sensMultiplier = 0.3;
+  #     inputDpi = 1500.0;
+  #     acceleration = 0.3;
+  #     offset = 2.0;
+  #     outputCap = 2.0;
+  #   };
+  # };
+  
   services.xremap.enable = true;
   services.xremap.config.modmap = [
     {

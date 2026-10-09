@@ -10,7 +10,6 @@
     exfat
     ntfs3g
     fuse
-    simple-mtpfs
     piper
     usbutils
     glib

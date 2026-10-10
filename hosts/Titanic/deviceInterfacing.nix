@@ -3,7 +3,7 @@
 {
   imports = [
     inputs.maccel.nixosModules.default
-    inputs.yeetmouse.nixosModules.default
+    # inputs.yeetmouse.nixosModules.default
   ];
   environment.systemPackages = with pkgs; [
     #mtpfs
@@ -42,11 +42,11 @@
     SUBSYSTEM=="hidraw", ATTRS{idVendor}=="2dc8", ATTRS{idProduct}=="310b", MODE="0666"
   '';
 
-  hardware.yeetmouse = {
-    enable = true;
-    sensitivity = 1.0;
-  };
-  # hardware.maccel = {
+  # hardware.yeetmouse = {
+  #   enable = true;
+  #   sensitivity = 1.0;
+  # };
+  #   hardware.maccel = {
   #   enable = true;
   #   enableCli = true; # Optional: for parameter discovery
   #   parameters = {

@@ -42,10 +42,10 @@
     maccel = {
       url = "github:Gnarus-G/maccel";
     };
-    yeetmouse = {
-      url = "github:AndyFilter/YeetMouse?dir=nix";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
+    # yeetmouse = {
+    #   url = "github:AndyFilter/YeetMouse?dir=nix";
+    #   inputs.nixpkgs.follows = "nixpkgs";
+    # };
   };
 
   outputs =

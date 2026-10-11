@@ -16,6 +16,7 @@
     antimicrox
     gamepad-tool
     linuxConsoleTools
+    solaar
   ];
 
   programs.kdeconnect.enable = true;

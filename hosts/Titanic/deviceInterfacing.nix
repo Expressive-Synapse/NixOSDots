@@ -39,7 +39,9 @@
     SUBSYSTEM=="hidraw", ATTRS{idVendor}=="2dc8", ATTRS{idProduct}=="310b", MODE="0666"
     #8BitDo 8BitDo Pro 3 Controller
     SUBSYSTEM=="hidraw", ATTRS{idVendor}=="2dc8", ATTRS{idProduct}=="310b", MODE="0666"
-  '';
+    #Attack Shark X1 PAW3365 PRO gaming mouse
+    SUBSYSTEM=="hidraw", ATTRS{idVendor}=="1d57", ATTRS{idProduct}=="fa60", MODE="0666"
+    '';
 
  
   services.xremap.enable = true;

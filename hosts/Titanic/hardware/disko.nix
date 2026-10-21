@@ -4,7 +4,7 @@
 disko.devices = {
   disk = {
     disk0 = {
-      device = "/dev/sda";
+      device = "/dev/sdb";
       type = "disk";
       content = {
         type = "gpt";

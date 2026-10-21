@@ -37,11 +37,11 @@
       name = "attack-shark-udev-rules";
       text = ''
         #Attack Shark X1 PAW3365 PRO gaming mouse wireless adapter
-        SUBSYSTEM=="input", ATTRS{idVendor}=="1d57", ATTRS{idProduct}=="fa60", MODE="0666"
+        SUBSYSTEM=="hidraw", ATTRS{idVendor}=="1d57", ATTRS{idProduct}=="fa60", MODE="0666", TAG+="uaccess"
         #Attack Shark X1 PAW3365 PRO gaming mouse
-        SUBSYSTEM=="input", ATTRS{idVendor}=="1d57", ATTRS{idProduct}=="2111", MODE="0666"
+        SUBSYSTEM=="hidraw", ATTRS{idVendor}=="1d57", ATTRS{idProduct}=="2111", MODE="0666", TAG+="uaccess"
        '';
-     destination = "/etc/udev/rules.d/99-attackshark.rules";
+     destination = "/etc/udev/rules.d/60-attackshark.rules";
     })
     (writeTextFile {
       name = "8bitdo-udev-rules";

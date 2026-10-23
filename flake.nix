@@ -40,7 +40,7 @@
     };
     hyperline = {
       url = "github:paralin/hyperline-nix";
-      inputs.nixpkgs.follows = " nixpkgs";
+      inputs.nixpkgs.follows = "nixpkgs";
     };
  };  
   outputs =

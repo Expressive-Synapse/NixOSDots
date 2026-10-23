@@ -57,4 +57,5 @@
 
   services.xserver.desktopManager.retroarch.enable = true;
 
+  programs.hyperline.enable = true;
 }

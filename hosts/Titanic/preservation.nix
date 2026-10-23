@@ -51,6 +51,7 @@
           ".local/share/bottles"
           ".local/share/lutris"
           ".local/share/dolphin-emu"
+          "./local/share/hyperline"
         ];
       };
     };

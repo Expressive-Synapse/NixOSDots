@@ -38,6 +38,10 @@
       url = "github:JPyke3/hytale-launcher-nix";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+    hyperline = {
+      url = "github:paralin/hyperline-nix";
+      inputs.nixpkgs.follows = " nixpkgs";
+    };
  };  
   outputs =
     inputs@{

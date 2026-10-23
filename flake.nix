@@ -62,6 +62,7 @@
             inputs.preservation.nixosModules.default
             inputs.sops-nix.nixosModules.sops
             inputs.xremap-flake.nixosModules.default
+            inputs.hyperline.nixosModules.default
             ./hosts/Titanic/configuration.nix
           ];
           specialArgs = {

@@ -39,6 +39,7 @@
           ".config/anytype"
           ".config/dolphin-emu"
           ".config/input-remapper-2"
+          ".config/obs-studio"
 
           ".local/share/atuin"
           ".local/share/keyrings"
